@@ -72,30 +72,29 @@ async function getAttributes(word) {
               word_singular_masculine: word,
               ipa_singular_masculine: "",
               syllabification_singular_masculine: "",
-              audio_links_singular_masculine: "",
+              link_to_audio_file_singular_masculine: "",
 
               word_singular_feminine: "",
               ipa_singular_feminine: "",
               syllabification_singular_feminine: "",
-              audio_links_singular_feminine: "",
+              link_to_audio_file_singular_feminine: "",
 
               word_plural_masculine: "",
               ipa_plural_masculine: "",
               syllabification_plural_masculine: "",
-              audio_links_plural_masculine: "",
+              link_to_audio_file_plural_masculine: "",
 
               word_plural_feminine: "",
               ipa_plural_feminine: "",
               syllabification_plural_feminine: "",
-              audio_links_plural_feminine: "",
+              link_to_audio_file_plural_feminine: "",
 
               english_translations: "",
               french_translations: "",
               italian_translations: "",
-              german_translations: "",
+              german_translations: "", 
             };
 
-            // Extract inflection table data
             const table = $(".inflection-table");
             table.find("tr").each((i, row) => {
               const cells = $(row).find("td");
@@ -114,38 +113,6 @@ async function getAttributes(word) {
                 wordObject.word_plural_feminine = plural;
               }
             });
-
-            // Extract IPA and syllabification
-            $("span.IPA, span.sill").each((i, elem) => {
-              const text = $(elem).text().trim();
-              if ($(elem).hasClass("IPA")) {
-                if (!wordObject.ipa_singular_masculine) {
-                  wordObject.ipa_singular_masculine = text;
-                }
-              } else if ($(elem).hasClass("sill")) {
-                if (!wordObject.syllabification_singular_masculine) {
-                  wordObject.syllabification_singular_masculine = text;
-                }
-              }
-            });
-
-            // Improved translation extraction
-            const translations = {};
-            $("div[id^='Traducciones-']").each((i, section) => {
-              const lang = $(section).attr("id").split("-")[1];
-              const words = [];
-              $(section)
-                .find("li")
-                .each((i, item) => {
-                  words.push($(item).text().trim());
-                });
-              translations[lang] = words.join(", ");
-            });
-
-            wordObject.english_translations = translations.inglés || "";
-            wordObject.french_translations = translations.francés || "";
-            wordObject.italian_translations = translations.italiano || "";
-            wordObject.german_translations = translations.alemán || "";
 
             console.log("Extracted word forms:", {
               singular_masculine: wordObject.word_singular_masculine,
@@ -167,65 +134,27 @@ async function getAttributes(word) {
 }
 
 async function setEmptyAudioLinks(wordObject) {
-  const audioFields = [
-    "audio_links_singular_masculine",
-    "audio_links_singular_feminine",
-    "audio_links_plural_masculine",
-    "audio_links_plural_feminine",
-  ];
-
-  audioFields.forEach((field) => {
-    wordObject[field] = "";
-  });
-
-  return wordObject;
+  // return the wordObject with empty audio links
 }
 
-async function writeToCSV(wordObjects) {
-  const csvContent = Papa.unparse(wordObjects, {
-    header: true,
-  });
-
-  await fs.writeFile("./datafiles/processed_words.csv", csvContent);
-  return csvContent;
+async function addEnglishTranslations(wordObject) {
+  // return the wordObject with the English translations
 }
 
-async function verifyCsv() {
-  try {
-    const csvData = await fs.readFile(
-      "./datafiles/processed_words.csv",
-      "utf8"
-    );
-    const parsed = Papa.parse(csvData, {
-      header: true,
-      skipEmptyLines: true,
-    });
+async function addFrenchTranslations(wordObject) {
+  // return the wordObject with the french translations
+}
 
-    // Check first row as example
-    const firstRow = parsed.data[0];
-    console.log("\n=== CSV Verification ===");
-    console.log("Number of processed words:", parsed.data.length);
-    console.log("\nFirst word data:");
-    console.log("Masculine forms:");
-    console.log("- Singular:", firstRow.word_singular_masculine);
-    console.log("- IPA:", firstRow.ipa_singular_masculine);
-    console.log("- Syllables:", firstRow.syllabification_singular_masculine);
+async function addItalianTranslations(wordObject) {
+  // return the wordObject with the italian translations
+}
 
-    console.log("\nFeminine forms:");
-    console.log("- Singular:", firstRow.word_singular_feminine);
-    console.log("- Plural:", firstRow.word_plural_feminine);
+async function addGermanTranslations(wordObject) {
+  // return the wordObject with the german translations
+}
 
-    console.log("\nTranslations:");
-    console.log("- English:", firstRow.english_translations);
-    console.log("- French:", firstRow.french_translations);
-    console.log("- Italian:", firstRow.italian_translations);
-    console.log("- German:", firstRow.german_translations);
-
-    return parsed.data;
-  } catch (error) {
-    console.error("Error verifying CSV:", error);
-    return null;
-  }
+async function writeToCSV(wordObject) {
+  // write the wordObject to the csv file
 }
 
 async function uploadToSupabase() {
@@ -234,36 +163,27 @@ async function uploadToSupabase() {
 
 async function main() {
   try {
+    // step 1
     const words = await parseCSV();
-    console.log("✅ step 1/10 parsing source file...");
-    console.log(words)
-/*
-    const processedWords = [];
+    console.log("✅ step 1/10 parsing source  file...");
+    // step 2
     const wordsNotInWiktionary = [];
-
     for (const word of words) {
       const exists = await checkWiktionary(word.word_singular_masculine);
-
       if (exists) {
         console.log(`✅ step 2/10 checking if word exists on Wiktionary...`);
 
+        // step 3
         try {
-          let wordObject = await getAttributes(word.word_singular_masculine);
-          wordObject = await setEmptyAudioLinks(wordObject);
-
-          // Preserve source translations if Wiktionary translations are empty
-          if (!wordObject.english_translations && word.english_translations) {
-            wordObject.english_translations = word.english_translations;
-          }
-
-          processedWords.push(wordObject);
+          const attributes = await getAttributes(word.word_singular_masculine);
+          console.log("Full word object:", attributes);
         } catch (error) {
           console.error(
-            `Error processing ${word.word_singular_masculine}:`,
+            `Error getting attributes for ${word.word_singular_masculine}:`,
             error
           );
-          wordsNotInWiktionary.push(word);
         }
+
       } else {
         console.log(
           `❌ ${word.word_singular_masculine} does not exist on Wiktionary.`
@@ -271,8 +191,31 @@ async function main() {
         wordsNotInWiktionary.push(word);
       }
     }
-*/
-    // ... rest of the main function remains the same
+
+    if (wordsNotInWiktionary.length > 0) {
+      const csvContent = Papa.unparse(wordsNotInWiktionary);
+      await fs.writeFile("./datafiles/wordsNotInWiktionary.csv", csvContent);
+      console.log(
+        `🚫 Saved ${wordsNotInWiktionary.length} words to wordsNotInWiktionary.csv`
+      );
+    }
+
+    // const wordObject = getAttributes()
+    // console.log("✅ step 3/10 downloading word attributes...")
+    // setEmptyAudioLinks(wordObject)
+    // console.log("✅ step 4/10 setting pty audio links...")
+    // addEnglishTranslations(wordObject)
+    // console.log("✅ step 5/10 adding English translations...")
+    // addFrenchTranslations(wordObject)
+    // console.log("✅ step 6/10 adding French translations...")
+    // addItalianranslations(wordObject)
+    // console.log("✅ step 7/10 adding Italian translations...")
+    // addGermanTranslations(wordObject)
+    // console.log("✅ step 8/10 adding German translations...")
+    // writeToCSV(wordObject)
+    // console.log("✅ step 9/10 writing wordObject to CSV...")
+    // uploadToSupabase()
+    // console.log("✅ step 10/10 uploading to supabase...")
   } catch (error) {
     console.error("An error occurred:", error);
   }
