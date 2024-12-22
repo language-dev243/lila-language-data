@@ -22,7 +22,7 @@
 # german_translations -- gettingGermanTranslations
 
 
-- [ ] adding supabase connection via serviceRoleSecret
+- [x] adding supabase connection via serviceRoleSecret
 - [ ] reading adjectives from csv list, each adjective is an object, {adjective: string,english_translations: [string]}
 - [ ] check if word exists in wiktionary, save to exist.csv or not_exist.csv
 - [ ] fetching ipa from wiktionary and save to csv
