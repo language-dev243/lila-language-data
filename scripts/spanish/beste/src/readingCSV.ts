@@ -3,8 +3,9 @@ import Papa from "papaparse";
 
 export async function readingCSV() {
   const sourceFilePath = "./data/source.csv";
+  try {
   const sourceData = await fs.readFile(sourceFilePath, "utf8");
-
+  
   const parsed = Papa.parse(sourceData, {
     header: true,
     skipEmptyLines: true,
@@ -15,4 +16,8 @@ export async function readingCSV() {
   }));
 
   return adjectives;
+
+  } catch (error) {
+      console.error("Unexpected error:", error.message);
+  }
 }
