@@ -11,11 +11,15 @@ export async function readingCSV() {
     skipEmptyLines: true,
   });
 
-  const adjectives = parsed.data.map((row) => ({
-    adjective_singular_masculine: row.word
-  }));
+  const firstRow = parsed.data[0];
+    if (!firstRow) {
+      console.warn("CSV file is empty or has no data rows.");
+      return null;
+    }
 
-  return adjectives;
+    const word = firstRow.word;
+
+  return word;
 
   } catch (error) {
       console.error("Unexpected error:", error.message);
