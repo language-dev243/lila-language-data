@@ -1,6 +1,6 @@
 import readline from "readline"
 
-export function askToContinue() {
+export async function askToContinue() {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,

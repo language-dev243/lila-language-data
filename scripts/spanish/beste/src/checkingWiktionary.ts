@@ -12,15 +12,15 @@ export async function checkingWiktionary(adjectives) {
     try {
       const response = await axios.get(url);
       if (response.status === 200) {
-        adjectivesInWiktionary.push(adjective);
+        adjectivesInWiktionary.push(adjective.adjective_singular_masculine);
       } else {
-        adjectivesNotInWiktionary.push(adjective);
+        adjectivesNotInWiktionary.push(adjective.adjective_singular_masculine);
       }
     } catch (error) {
       console.error("Unexpected error:", error.message);
     }
   }
 
-  console.log("adjectives in wiktionary: ",adjectivesInWiktionary)
-  console.log("adjectives NOT in wiktionary: ",adjectivesNotInWiktionary)
+  console.log("adjectives in wiktionary: ",adjectivesInWiktionary.length)
+  console.log("adjectives NOT in wiktionary: ",adjectivesNotInWiktionary.length)
 }

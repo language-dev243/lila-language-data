@@ -16,7 +16,7 @@ async function main() {
     console.log("💡 step 1: reading from CSV...")
     const adjectives = await readingCSV();
     console.log("✅ adjectives found: ", adjectives.length)
-    askToContinue()
+    await askToContinue()
 
     // step 2: checking adjectives on wiktionary
     console.log("💡 step 2: checkingWiktionary...")
