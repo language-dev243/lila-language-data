@@ -21,6 +21,5 @@ export async function checkingWiktionary(adjectives) {
     }
   }
 
-  console.log("adjectives in wiktionary: ",adjectivesInWiktionary.length)
-  console.log("adjectives NOT in wiktionary: ",adjectivesNotInWiktionary.length)
+  return ({adjectivesInWiktionary, adjectivesNotInWiktionary})
 }
