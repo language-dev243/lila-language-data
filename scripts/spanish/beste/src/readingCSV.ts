@@ -13,7 +13,7 @@ export async function readingCSV() {
 
   const firstRow = parsed.data[0];
     if (!firstRow) {
-      console.warn("CSV file is empty or has no data rows.");
+      console.warn("❌ CSV file is empty or has no data rows.");
       return null;
     }
 

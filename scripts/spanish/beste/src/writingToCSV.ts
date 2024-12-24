@@ -1,4 +1,4 @@
-export async function writingToCSV(adjectivesInWiktionary, adjectivesNotInWiktionary) {
+export async function writingToCSV() {
 
   // reading words from wordsInWiktionary
   // reading words from wordsNotInWiktionary
