@@ -54,7 +54,8 @@ async function main() {
     // await askToContinue()
 
     // step 3: getting inflections of word from wiktionary
-    await fetchingInflections(word.singular_masculine)
+    await fetchingInflections(word)
+    console.log("word: ", word)
 
   } catch (error) {
       console.error("Unexpected error:", error.message);
