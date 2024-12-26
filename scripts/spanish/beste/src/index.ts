@@ -46,23 +46,15 @@ async function main() {
 
   try {
     // step 1: reading adjective from source csv
-    console.log("💡 step 1: reading from CSV...")
     word.singular_masculine = await readingCSV();
-    console.log("✅ word found: ", word.singular_masculine)
-    await askToContinue()
+    // await askToContinue()
 
     // step 2: checking if word is on wiktionary
-    console.log("💡 step 2: checking wiktionary...")
-    const isOnWiktionary = await checkingWiktionary(word.singular_masculine);
+    await checkingWiktionary(word.singular_masculine);
+    // await askToContinue()
 
-    if (!isOnWiktionary) {
-      console.log(`❌ Word "${word.singular_masculine}" not found in wiktionary.\n Exiting process...`);
-      return;
-    }
-
-    // step 3: getting IPA of word from wiktionary
-    console.log("💡 step 3: fetching inflections...")
-    await fetchingInflections(word)
+    // step 3: getting inflections of word from wiktionary
+    await fetchingInflections(word.singular_masculine)
 
   } catch (error) {
       console.error("Unexpected error:", error.message);

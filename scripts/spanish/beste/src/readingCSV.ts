@@ -2,6 +2,9 @@ import fs from "fs/promises";
 import Papa from "papaparse";
 
 export async function readingCSV() {
+
+  console.log("💡 step 1: reading from CSV...")
+
   const sourceFilePath = "./data/test.csv";
   try {
   const sourceData = await fs.readFile(sourceFilePath, "utf8");
@@ -18,7 +21,9 @@ export async function readingCSV() {
     }
 
     const word = firstRow.word;
+    console.log("✅ word found: ", word)
 
+  
   return word;
 
   } catch (error) {
