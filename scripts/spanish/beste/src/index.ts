@@ -5,6 +5,7 @@ import { askToContinue } from "./askToContinue";
 import { readingCSV } from "./readingCSV";
 import { checkingWiktionary } from "./checkingWiktionary";
 import { fetchingInflections } from "./fetchingInflections";
+import { fetchingIPA } from "./fetchingIPA";
 import { writingToCSV } from "./writingToCSV";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
@@ -23,15 +24,15 @@ async function main() {
     "plural_masculine": "",
     "plural_feminine": "",
     "ipa_singular_masculine": "",
+    "ipa_singular_feminine": "",
+    "ipa_plural_masculine": "",
+    "ipa_plural_feminine": "",
     "syllabification_singular_masculine": "",
     "syllable_count_singular_masculine": "",
-    "ipa_singular_feminine": "",
     "syllabification_singular_feminine": "",
     "syllable_count_singular_feminine": "",
-    "ipa_plural_masculine": "",
     "syllabification_plural_masculine": "",
     "syllable_count_plural_masculine": "",
-    "ipa_plural_feminine": "",
     "syllabification_plural_feminine": "",
     "syllable_count_plural_feminine": "",
     "links_to_audio_files_singular_masculine": [],
@@ -53,9 +54,12 @@ async function main() {
     await checkingWiktionary(word.singular_masculine);
     // await askToContinue()
 
-    // step 3: getting inflections of word from wiktionary
+    // step 3: fetching inflections of word from wiktionary
     await fetchingInflections(word)
-    console.log("word: ", word)
+    // await askToContinue()
+
+    // step 4: fetching IPA of word from wiktionary
+    await fetchingIPA(word)
 
   } catch (error) {
       console.error("Unexpected error:", error.message);
