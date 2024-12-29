@@ -6,10 +6,10 @@ export async function fetchingIPA(word) {
   console.log("💡 step 4: fetching IPA...")
 
       try {
-        const urlSingularMasculine = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
+        const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
       word.singular_masculine)}`
         
-        const response = await axios.get(urlSingularMasculine);
+        const response = await axios.get(url);
         const $ = cheerio.load(response.data);
 
         const dataTable = $(".pron-graf");
