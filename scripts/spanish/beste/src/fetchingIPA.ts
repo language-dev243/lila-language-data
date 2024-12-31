@@ -5,30 +5,37 @@ export async function fetchingIPA(word) {
 
   console.log("💡 step 4: fetching IPA...")
 
-      try {
-        const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
-      word.singular_masculine)}`
-        
-        const response = await axios.get(url);
-        const $ = cheerio.load(response.data);
+  try {
 
-        const dataTable = $(".pron-graf");
-       
-          if (dataTable.length > 0) {
-             word.ipa_singular_masculine = dataTable.find("tr:nth-child(2) td:nth-child(2)").text().trim();
-            // Remove everything after the closing square bracket "]"
-             word.ipa_singular_masculine = word.ipa_singular_masculine.replace(/].*$/, "]").trim();
-            // Remove the square brackets
-            word.ipa_singular_masculine = word.ipa_singular_masculine.replace(/[\[\]]/g, "").trim();
+    const inflections = ["singular_masculine", "plural_masculine", "singular_feminine", "plural_feminine"]
 
-             console.log("✅ IPA found: ", word.ipa_singular_masculine)
-            } else {
-              console.log("❌ no IPA found")
-              return
-            }
-          
-      } catch (error) {
-        console.error("Unexpected error:", error.message);
+    for (const inflection of inflections) {
+      const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
+        word[inflection]
+      )}`;
+
+      const response = await axios.get(url);
+      const $ = cheerio.load(response.data);
+
+      const dataTable = $(".pron-graf");
+
+      if (dataTable.length > 0) {
+        let ipa = dataTable.find("tr:nth-child(2) td:nth-child(2)").text().trim();
+        // Remove everything after the closing square bracket "]"
+        ipa = ipa.replace(/].*$/, "]").trim();
+        // Remove the square brackets
+        ipa = ipa.replace(/[\[\]]/g, "").trim();
+
+        word[`ipa_${inflection}`] = ipa;
+
+        console.log(`✅ IPA found");
+      } else {
+        console.log(`❌ No IPA found for ${inflection}`);
         return
       }
+    }
+  } catch (error) {
+    console.error("Unexpected error:", error.message);
+    return
+  }
 }
