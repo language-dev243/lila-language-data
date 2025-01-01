@@ -53,26 +53,26 @@ async function main() {
     // await askToContinue()
 
     // step 2: checking if word is on wiktionary
-    await checkingWiktionary(word.singular_masculine);
+    // await checkingWiktionary(word.singular_masculine);
     // await askToContinue()
 
     // step 3: fetching inflections of word from wiktionary
-    await fetchingInflections(word)
+    // await fetchingInflections(word)
     // await askToContinue()
 
     // step 4: fetching IPA of word from wiktionary
-    await fetchingIPA(word)
+    // await fetchingIPA(word)
     // await askToContinue()
 
     // step 5: fetching syllabifications from wiktionary
-    await fetchingSyllabifications(word)
-    await askToContinue()
+    // await fetchingSyllabifications(word)
+    // await askToContinue()
 
     // step 6: fetching translations
     await fetchingTranslations(word)
-    await askToContinue()
+    // await askToContinue()
 
-    console.log("\n currently word looks like this: ", word)
+    // console.log("\n currently word looks like this: ", word)
 
   } catch (error) {
     console.error("Unexpected error:", error.message);
