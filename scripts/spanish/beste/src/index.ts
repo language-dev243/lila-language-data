@@ -1,16 +1,17 @@
 import "dotenv/config";
-import { createClient } from '@supabase/supabase-js';
+// import { createClient } from '@supabase/supabase-js';
 
 import { askToContinue } from "./askToContinue";
 import { readingCSV } from "./readingCSV";
 import { checkingWiktionary } from "./checkingWiktionary";
 import { fetchingInflections } from "./fetchingInflections";
 import { fetchingIPA } from "./fetchingIPA";
+import { fetchingSyllabifications } from "./fetchingSyllabifications";
 import { writingToCSV } from "./writingToCSV";
 
-const SUPABASE_URL = process.env.SUPABASE_URL!;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+// const SUPABASE_URL = process.env.SUPABASE_URL!;
+// const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+// const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 async function main() {
 
@@ -61,6 +62,10 @@ async function main() {
     // step 4: fetching IPA of word from wiktionary
     await fetchingIPA(word)
     await askToContinue()
+
+    // step 5: fetching syllabifications from wiktionary
+    await fetchingSyllabifications(word)
+    await askToContinue
 
     console.log("currently word looks like this: ", word)
 

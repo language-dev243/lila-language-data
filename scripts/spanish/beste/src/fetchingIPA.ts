@@ -28,12 +28,13 @@ export async function fetchingIPA(word) {
 
         word[`ipa_${inflection}`] = ipa;
 
-        console.log(`✅ IPA found");
       } else {
-        console.log(`❌ No IPA found for ${inflection}`);
+        console.log(`❌ no IPA found for ${inflection}`);
         return
       }
     }
+    console.log("✅ IPA found");
+
   } catch (error) {
     console.error("Unexpected error:", error.message);
     return
