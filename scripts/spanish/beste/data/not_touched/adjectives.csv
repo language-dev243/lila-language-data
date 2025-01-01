@@ -1,0 +1,944 @@
+id,word,english_translations
+3,abandonado,abandoned
+7,abierto,"open, unlocked"
+18,absoluto,absolute
+20,abstracto,abstract
+21,absurdo,absurd
+25,abundante,"abundant, plentiful"
+27,aburrido,"boring, bored"
+34,académico,academic
+38,accesible,accessible
+46,aceptable,"acceptable, suitable"
+70,activo,active
+75,actual,current
+90,adecuado,"adequate, suitable"
+97,adicional,additional
+103,administrativo,administrative
+104,admirable,admirable
+122,aéreo,"aerial, air"
+135,africano,African
+146,agradable,"nice, pleasant"
+149,agradecido,"grateful, thankful"
+150,agrario,"agrarian, agricultural"
+154,agresivo,aggressive
+155,agrícola,"agricultural, farming"
+163,agudo,"sharp, acute"
+173,aislado,isolated
+177,ajeno,"not belonging to, detached"
+193,alegre,"happy, lively, cheerful"
+196,alemán,German
+204,alguno,"some, a few"
+210,alimentario,food
+233,alternativo,"alternating, alternative"
+234,alto,"tall, high"
+241,amable,"kind, nice, friendly"
+246,amargo,"bitter, sour, painful"
+248,amarillento,yellowish
+249,amarillo,yellow
+252,ambicioso,"ambitious, greedy"
+253,ambiental,environmental
+256,ambos,both
+259,americano,American
+266,amoroso,"loving, affectionate"
+272,amplio,"wide, ample, broad"
+277,ancho,wide
+280,andaluz,Andalusian
+282,andino,Andean
+289,animado,"excited, lively"
+296,anónimo,anonymous
+300,ansioso,"anxious, eager"
+307,anterior,"previous, preceding"
+312,antiguo,"old, ancient, former"
+313,anual,"annual, yearly"
+317,apagado,turned off
+321,aparente,apparent
+338,aplicado,applied
+352,apretado,"tight, jammed"
+356,apropiado,appropriate
+360,apto,"appropriate, fit, able"
+366,aquel,that (over there)
+370,árabe,Arab
+377,ardiente,"passionate, ardent"
+380,argentino,Argentine
+384,armado,armed
+389,arqueológico,"archaeological, archeological"
+391,arquitectónico,architectural
+406,arrugado,"wrinkled, creased"
+414,artificial,artificial
+416,artístico,artistic
+433,asiático,"Asian, Asiatic,"
+443,asociado,associated
+448,asombroso,amazing
+450,áspero,"rough, coarse, harsh"
+456,asustado,"scared, frightened"
+467,atento,"attentive, polite"
+470,atómico,"atomic, nuclear"
+474,atractivo,attractive
+492,auténtico,authentic
+496,automático,automatic
+499,autónomo,autonomous
+503,autorizado,authorized
+508,avanzado,advanced
+526,azul,blue
+535,bajo,"short, low"
+543,bancario,"bank, banking"
+551,barato,inexpensive
+554,bárbaro,"savage, horrible"
+561,barroco,"baroque, elaborate"
+565,básico,"basic, essential"
+566,bastante,"rather, fairly, quite a bit (ADV)"
+578,bello,"beautiful, fine"
+587,bíblico,biblical
+596,bienvenido,welcome
+601,biológico,biological
+602,blanco,white
+603,blando,"soft, limp, gentle"
+612,boliviano,Bolivian
+619,bonito,"pretty, nice"
+623,borracho,drunk
+631,brasileño,Brazilian
+632,bravo,"fierce, angry"
+634,breve,"brief, short"
+635,brillante,"brilliant, shiny, sparkling"
+640,británico,British
+645,brusco,"brusque, abrupt, sudden"
+646,brutal,"brutal, savage"
+647,bruto,"brutal, coarse, clumsy"
+649,bueno,good
+669,cada,"each, every"
+684,cálido,warm
+685,caliente,"hot, warm, spirited"
+688,callado,"quiet, reserved"
+713,canadiense,Canadian
+723,cansado,"tired, tiresome"
+735,capaz,"capable, able"
+739,capitalista,capitalist
+750,característico,characteristic
+765,cariñoso,affectionate
+768,caro,"expensive, difficult, dear"
+779,casado,married
+782,casero,homemade
+786,castellano,"Castilian, Spanish"
+791,catalán,Catalan
+797,católico,Catholic
+809,celebrado,"celebrated, famous"
+811,célebre,"famous, renowned"
+812,celeste,"heavenly, sky-blue"
+824,central,central
+830,cercano,near
+832,cerebral,cerebral
+836,cerrado,closed
+850,chileno,Chilean
+852,chino,Chinese
+854,chiquito,tiny
+864,ciego,blind
+867,científico,scientific
+872,cierto,"certain, sure, true"
+880,cinematográfico,cinematic
+896,cívico,"civic, civil"
+897,civil,civil
+901,claro,clear
+904,clásico,classic
+913,climático,climatic
+915,clínico,clinical
+929,coherente,"coherent, connected"
+939,colectivo,"collective, joint"
+943,colgado,hanging
+949,colombiano,Colombian
+951,colonial,colonial
+953,colorado,"red, colored"
+968,comercial,"commercial, shopping"
+972,cómico,comic
+982,cómodo,"comfortable, convenient"
+983,compacto,"compact, dense"
+995,competente,"competent, able"
+998,competitivo,competitive
+1001,complejo,"complex, complicated"
+1004,complementario,"additional, complementary"
+1008,completo,complete
+1010,complicado,"complicated, complex"
+1027,comprometido,"committed, engaged"
+1029,compuesto,"composite, mixed"
+1031,común,common
+1038,comunista,Communist
+1039,comunitario,of the community
+1055,concreto,"concrete, real"
+1083,confuso,"confused, mixed up"
+1092,conocido,"known, well-known"
+1097,consciente,"conscious, aware"
+1099,consecutivo,consecutive
+1106,conservador,conservative
+1108,considerable,considerable
+1118,constante,constant
+1123,constitucional,constitutional
+1141,contemporáneo,contemporary
+1144,contento,"happy, content"
+1148,continental,continental
+1154,continuo,continuous
+1158,contradictorio,contradictory
+1160,contrario,"contrary, opposite"
+1171,contundente,"decisive, blunt, forceful"
+1174,convencional,conventional
+1176,conveniente,convenient
+1207,corporal,"of the body, corporal"
+1211,correcto,"correct, suitable"
+1218,correspondiente,corresponding
+1220,corriente,"current, common"
+1226,corto,"short, brief"
+1234,costarricense,Costa Rican
+1236,costero,coastal
+1238,costoso,"costly, expensive"
+1240,cotidiano,daily
+1246,creativo,creative
+1248,creciente,"growing, increasing"
+1260,criminal,criminal
+1264,cristiano,Christian
+1268,crítico,critical
+1271,crónico,chronic
+1273,crudo,"raw, crude, natural"
+1274,cruel,"cruel, harsh"
+1277,cruzado,"crossbred, double-breasted, crossed"
+1281,cuadrado,square
+1286,cualquiera,"any, anyone"
+1289,cuanto,"en c. a: in terms of, regarding"
+1290,cuánto,how much?
+1294,cuarto,fourth
+1296,cubano,Cuban
+1298,cubierto,covered
+1318,culpable,guilty
+1322,culto,"cultured, educated"
+1324,cultural,cultural
+1337,curioso,"curious, strange"
+1355,debido,d. a: due to
+1356,débil,weak
+1362,decente,"respectable, decent"
+1363,decidido,"determined, resolute"
+1365,décimo,tenth
+1368,decisivo,"decisive, conclusive"
+1372,decorado,decorated
+1382,defensivo,defensive
+1387,definido,definite
+1390,definitivo,"definitive, conclusive"
+1395,delgado,"thin, skinny"
+1396,delicado,delicate
+1397,delicioso,"delicious, delightful, charming"
+1403,demás,"the rest, others"
+1406,democrático,democratic
+1414,denso,"heavy, dense, thick"
+1422,deportivo,"sports, sporty"
+1428,derecho,"right, straight"
+1437,desagradable,unpleasant
+1447,descalzo,barefoot
+1459,desconocido,unknown
+1476,desesperado,"desperate, hopeless"
+1483,desierto,"deserted, desolate"
+1487,desnudo,"nude, naked"
+1490,despacio,"slow, slowly"
+1495,despierto,awake
+1512,detallado,"detailed, thorough"
+1522,determinado,"determined, fixed"
+1538,diario,daily
+1542,dicho,"aforementioned, said"
+1556,diferente,"different, separate"
+1558,difícil,"difficult, hard"
+1565,digital,digital
+1567,digno,worthy
+1570,diminuto,"diminutive, tiny, minute"
+1572,dinámico,dynamic
+1577,diplomático,diplomatic
+1582,directivo,"managerial, administrative"
+1583,directo,"direct, straight"
+1590,discreto,"discreet, tactful"
+1612,disponible,available
+1615,dispuesto,"willing, ready"
+1619,distante,"distant, far, remote"
+1622,distinto,"distinct, different"
+1629,diverso,"different, various, several"
+1630,divertido,"funny, amusing"
+1633,divino,divine
+1639,doble,double
+1646,documental,documentary
+1651,doloroso,painful
+1652,doméstico,domestic
+1654,dominante,"dominant, prevailing"
+1657,dominicano,Dominican
+1665,dorado,"golden, gold-plated"
+1673,dramático,dramatic
+1677,dudoso,"doubtful, dubious"
+1681,dulce,sweet
+1689,duro,hard
+1692,ecológico,"ecological, organic"
+1695,económico,economic
+1705,editorial,editorial
+1708,educativo,educational
+1710,efectivo,effective
+1714,eficaz,effective
+1716,eficiente,efficient
+1721,ejecutivo,executive
+1731,elaborado,"thorough, elaborate"
+1734,electoral,electoral
+1736,eléctrico,electric
+1738,electrónico,electronic
+1740,elegante,"elegant, smart, stylish"
+1742,elemental,"elemental, basic"
+1744,elevado,"elevated, high, lofty"
+1752,embarazada,pregnant
+1764,emocional,emotional
+1776,empresarial,managerial
+1785,encantado,"pleased, delighted"
+1793,encendido,"turned on, burning"
+1803,energético,energetic
+1811,enfermo,"ill, sick"
+1825,enorme,"enormous, vast"
+1838,entero,"entire, whole, complete"
+1884,escaso,"scarce, very little"
+1890,escolar,"school, scholastic"
+1893,escrito,written
+1903,ese,that (m) [esa (f)]
+1906,esencial,essential
+1912,espacial,"spatial, space"
+1916,español,Spanish
+1919,espantoso,"frightening, dreadful"
+1920,especial,special
+1923,especializado,"specialized, skilled"
+1929,específico,specific
+1930,espectacular,spectacular
+1939,espeso,"thick, dense, stiff"
+1943,espiritual,spiritual
+1944,espléndido,"splendid, generous"
+1946,espontáneo,spontaneous
+1953,estable,"stable, steady"
+1959,estadístico,statistical
+1961,estadounidense,"U.S., American"
+1965,estatal,"state, government-owned"
+1969,este,this (m) [esta (f)]
+1972,estético,esthetic
+1982,estratégico,strategic
+1984,estrecho,narrow
+1992,estricto,"strict, rigorous"
+1994,estructural,structural
+1996,estudiantil,student
+1999,estupendo,"marvelous, stupendous"
+2001,estúpido,"stupid, idiotic"
+2005,eterno,eternal
+2007,ético,ethical
+2009,étnico,ethnic
+2011,europeo,European
+2017,evidente,"evident, obvious"
+2024,exacto,"exact, faithful, true"
+2030,excelente,excellent
+2032,excepcional,"exceptional, unusual"
+2034,excesivo,excessive
+2039,exclusivo,exclusive
+2048,existente,existing
+2051,exitoso,successful
+2052,exótico,exotic
+2059,experimental,experimental
+2076,expresivo,expressive
+2079,exquisito,"exquisite, superb"
+2082,extenso,"extensive, large"
+2083,exterior,"exterior, outside"
+2084,externo,"external, outward"
+2087,extra,extra
+2091,extraño,"strange, foreign"
+2092,extraordinario,"extraordinary, exceptional"
+2095,extremo,extreme
+2100,fabuloso,"fabulous, fantastic"
+2103,fácil,easy
+2115,falso,FALSE
+2120,familiar,"familiar, of the family"
+2122,famoso,"famous, well-known"
+2125,fantástico,"fantastic, unreal"
+2128,fascinante,fascinating
+2131,fatal,"fateful, deadly, awful"
+2135,favorable,"favorable, suitable"
+2137,favorito,favorite
+2142,federal,federal
+2145,feliz,"happy, fortunate"
+2146,femenino,"feminine, female"
+2148,feo,"ugly, nasty, rude"
+2150,feroz,"ferocious, fierce"
+2157,ficticio,fictitious
+2160,fiel,"faithful, loyal"
+2165,fijo,"fixed, steady"
+2170,filosófico,philosophical
+2181,financiero,financial
+2185,fino,"fine, delicate"
+2188,firme,"firm, steady"
+2190,fiscal,"fiscal, treasury"
+2194,físico,physical
+2196,flaco,"thin, frail"
+2198,flexible,flexible
+2210,forestal,forest
+2213,formal,"formal, polite"
+2216,formidable,"formidable, tremendous"
+2223,forzado,"forced, stiff"
+2227,fotográfico,photographic
+2232,frágil,"fragile, weak"
+2235,francés,French
+2236,franco,"open, frank, outspoken"
+2243,frecuente,frequent
+2247,fresco,"cool, healthy, fresh"
+2248,frío,cold
+2249,frito,fried
+2251,fronterizo,border
+2254,frustrado,frustrated
+2261,fuerte,strong
+2265,fugaz,"fleeting, brief,"
+2268,funcional,functional
+2274,fundamental,fundamental
+2281,furioso,furious
+2311,general,general
+2317,generoso,generous
+2318,genético,genetic
+2319,genial,"brilliant, inspired"
+2323,geográfico,geographical
+2329,gigantesco,"giant, gigantic"
+2333,global,"global, overall"
+2336,glorioso,glorious
+2347,gordo,"fat, thick"
+2354,gracioso,"funny, charming, amusing"
+2357,gráfico,"graphic, explicit"
+2358,grande,"large, great, big"
+2362,grato,"agreeable, pleasant"
+2363,gratuito,"free, arbitrary, gratuitous"
+2364,grave,"serious, solemn"
+2366,griego,Greek
+2367,gris,"gray, gloomy"
+2370,grueso,thick
+2373,guapo,"handsome, beautiful"
+2377,guatemalteco,Guatemalan
+2378,gubernamental,"governmental,"
+2390,hábil,"skillful, clever"
+2396,habitual,"usual, habitual, customary"
+2412,helado,"iced, freezing, icy"
+2419,herido,wounded (person)
+2423,hermoso,"beautiful, lovely"
+2425,heroico,heroic
+2438,hinchado,"swollen, pompous"
+2440,hispano,Hispanic
+2441,hispanoamericano,Hispano-American
+2444,histórico,historical
+2448,holandés,Dutch
+2452,hondo,deep
+2453,hondureño,Honduran
+2454,honesto,honest
+2460,horizontal,horizontal
+2465,horrible,horrible
+2478,humano,human
+2480,húmedo,"humid, damp"
+2482,humilde,"humble, modest"
+2488,ideal,"ideal, (goal)"
+2490,idéntico,identical
+2495,ideológico,ideological
+2502,igual,"equal, same (as)"
+2505,ilegal,illegal
+2506,ilícito,"illicit, illegal"
+2508,iluminado,illuminated
+2513,ilustre,"renowned, illustrious"
+2517,imaginario,imaginary
+2520,impaciente,impatient
+2523,impecable,"impeccable, faultless"
+2525,imperial,"imperial, imperialist"
+2527,implacable,"relentless, implacable"
+2534,importante,important
+2536,imposible,impossible
+2539,imprescindible,"essential, indispensable"
+2541,impresionante,"impressive, astonishing"
+2552,incapaz,incapable
+2558,incierto,uncertain
+2565,incómodo,uncomfortable
+2566,inconsciente,"unconscious, thoughtless"
+2567,inconveniente,"inconvenience, drawback"
+2570,increíble,"incredible, unbelievable"
+2574,independiente,"independent, self-sufficient"
+2582,indiferente,indifferent
+2583,indígena,"indigenous, native"
+2586,indirecto,indirect
+2587,indispensable,"indispensable, essential"
+2588,individual,individual
+2594,industrial,industrial
+2595,inesperado,"unexpected, unforeseen"
+2596,inevitable,"inevitable, unavoidable"
+2597,inexplicable,unexplainable
+2599,infantil,"of children, childlike, infantile"
+2601,infeliz,"unhappy, unfortunate"
+2602,inferior,"lower, inferior"
+2604,infinito,infinite
+2610,informático,computer
+2611,informativo,informative
+2617,ingenuo,"naïve, ingenuous"
+2618,inglés,English
+2623,inicial,initial
+2629,injusto,"unfair, unjust"
+2631,inmediato,immediate
+2632,inmenso,"immense, vast, huge"
+2634,inminente,imminent
+2635,inmóvil,"immovable, motionless"
+2636,innecesario,unnecessary
+2638,innumerable,"innumerable, countless"
+2640,inocente,"innocent, naïve"
+2641,inolvidable,unforgettable
+2643,inquieto,"restless, anxious"
+2650,insignificante,insignificant
+2654,insólito,"unusual, uncommon"
+2655,insoportable,"unbearable, intolerable"
+2665,institucional,institutional
+2669,insuficiente,insufficient
+2672,intacto,intact
+2674,integral,"comprehensive, integral, built-in"
+2677,intelectual,intellectual
+2679,inteligente,intelligent
+2682,intenso,"intense, acute"
+2689,interesado,(self-) interested
+2690,interesante,interesting
+2693,intermedio,"interim, intermediate"
+2694,interminable,"endless, interminable"
+2695,internacional,international
+2698,interno,internal
+2709,íntimo,"close, intimate"
+2716,inútil,useless
+2728,invisible,invisible
+2736,irlandés,Irish
+2738,irónico,"ironic, mocking"
+2739,irregular,irregular
+2743,islámico,Islamic
+2744,italiano,Italian
+2746,izquierdo,left (opposite of right)
+2750,japonés,Japanese
+2760,judicial,judicial
+2775,junto,together
+2778,jurídico,"legal, juridical"
+2785,justo,"fair, just"
+2786,juvenil,"young, juvenile"
+2796,laboral,"labor, industry"
+2804,lamentable,regrettable
+2815,largo,long
+2820,lateral,"side, lateral"
+2822,latino,Latin
+2823,latinoamericano,Latin American
+2835,legal,legal
+2839,legislativo,legislative
+2840,legítimo,legitimate
+2841,lejano,distant
+2849,lento,slow
+2854,leve,"slight, trifling, light"
+2858,liberal,liberal
+2863,libre,"free, vacant"
+2878,ligero,"light (in weight), slight"
+2880,limitado,limited
+2886,limpio,clean
+2887,lindo,"pretty, nice, lovely"
+2889,lingüístico,linguistic
+2892,liso,"smooth, flat, straight"
+2894,listo,"ready, clever, smart"
+2896,literario,literary
+2899,liviano,"light, frivolous"
+2904,llamativo,striking
+2905,llano,"flat, level, plain"
+2912,lleno,"full, filled"
+2920,local,local
+2923,loco,"crazy, insane"
+2927,lógico,logical
+2938,luminoso,"bright, luminous"
+2945,madrileño,from Madrid
+2949,maduro,"mature, ripe"
+2953,mágico,"magic, magical"
+2955,magnético,magnetic
+2956,magnífico,"magnificent, splendid"
+2966,malo,bad
+2972,manchado,"stained, dirty"
+2993,manual,manual
+3002,maravilloso,"wonderful, marvelous"
+3012,marino,"marine, naval"
+3014,marítimo,"maritime, marine"
+3019,más,more
+3022,masculino,"masculine, manly, male"
+3023,masivo,"mass, massive"
+3026,matemático,mathematical
+3029,material,material
+3030,materno,maternal
+3033,máximo,maximum
+3035,mayor,"larger, older, main"
+3039,mecánico,mechanical
+3043,mediado,"mid, middle"
+3044,mediano,"average, medium, ordinary"
+3051,médico,medical
+3053,medieval,medieval
+3054,medio,"half, middle"
+3055,mediocre,mediocre
+3061,mediterráneo,Mediterranean
+3063,mejor,"best, better (ADV)"
+3067,melancólico,melancholy
+3072,menor,"younger, youngest"
+3073,menos,"less, fewer"
+3075,mensual,monthly
+3076,mental,mental
+3087,meridional,southern
+3089,mero,mere
+3095,metálico,metallic
+3100,mexicano,Mexican
+3103,mi,my
+3116,militar,military
+3122,minero,mining
+3123,mínimo,minimum
+3127,minúsculo,"minute, insignificant"
+3133,miserable,"wretched, miserable"
+3137,mismo,same
+3139,misterioso,mysterious
+3142,mixto,"mixed, co-ed"
+3146,moderado,"moderate, mild"
+3147,moderno,modern
+3148,modesto,"modest, humble"
+3152,mojado,wet
+3156,molecular,molecular
+3159,molesto,"annoyed, bothered, upset"
+3165,monetario,"monetary,"
+3172,montañoso,mountainous
+3176,monumental,monumental
+3178,moral,moral
+3180,moreno,"dark, brown"
+3182,mortal,"mortal, lethal, deadly"
+3192,móvil,mobile
+3200,mucho,"much, many, a lot (ADV)"
+3202,mudo,"mute, silent"
+3206,muerto,dead
+3210,múltiple,"multiple, many"
+3213,mundial,worldwide
+3216,municipal,"municipal, town"
+3222,muscular,muscular
+3226,musical,musical
+3229,musulmán,"Moslem, Muslim"
+3230,mutuo,mutual
+3235,nacional,national
+3237,nacionalista,"nationalist, nationalistic"
+3249,narrativo,narrative
+3250,natal,"native, birth"
+3251,nativo,native
+3252,natural,natural
+3255,naval,naval
+3262,necesario,necessary
+3267,negativo,"negative, pessimistic"
+3271,negro,black
+3274,nervioso,"nervous, uptight"
+3276,nicaragüense,Nicaraguan
+3283,ninguno,"no, none, nobody (PRON)"
+3287,noble,noble
+3291,nocturno,"nocturnal, evening"
+3296,normal,"normal, usual, regular"
+3300,norteamericano,North American
+3305,notable,"outstanding, noteworthy"
+3310,novedoso,"novel, new"
+3318,nuclear,nuclear
+3321,nuestro,our
+3324,nuevo,new
+3325,nulo,"void, null"
+3327,numeroso,numerous
+3335,obligado,"obliged, required"
+3337,obligatorio,"obligatory, compulsory"
+3348,obvio,obvious
+3351,occidental,"occidental, Western"
+3358,oculto,"hidden, occult"
+3367,ofensivo,"offensive, aggressive"
+3369,oficial,"official, authorized"
+3381,olímpico,"Olympic, Olympian"
+3388,opaco,"dull, opaque, heavy"
+3394,operativo,"operative, operational"
+3399,oportuno,"opportune, timely"
+3404,optimista,optimistic
+3405,óptimo,optimum
+3406,opuesto,"opposite, contrary"
+3408,oral,oral
+3412,ordenado,"organized, clean"
+3415,ordinario,"vulgar, ordinary"
+3417,orgánico,organic
+3420,organizado,organized
+3424,orgulloso,"proud, arrogant"
+3426,oriental,"Eastern, oriental"
+3430,original,original
+3432,originario,"native to, originate from"
+3440,oscuro,"dark, obscure"
+3444,otro,"other, another"
+3450,pacífico,peaceful
+3463,pálido,"pale, ghastly, faded"
+3482,paraguayo,Paraguayan
+3484,paralelo,parallel
+3488,parcial,"partial, biased"
+3489,pardo,"brown, dark, dim"
+3496,parlamentario,parliamentary
+3508,particular,"particular, peculiar"
+3511,partidario,"in favor of, supportive"
+3515,pasado,"past, last"
+3523,pasivo,passive
+3542,peculiar,peculiar
+3543,pedagógico,"pedagogical, teaching"
+3551,peligroso,dangerous
+3555,penal,penal
+3557,pendiente,"aware of, pending"
+3565,peor,"worse, worst"
+3566,pequeñito,"very small, tiny"
+3567,pequeño,"little, small, young"
+3573,perdido,lost
+3579,perfecto,perfect
+3585,periodístico,journalistic
+3590,permanente,permanent
+3601,personal,personal
+3606,perteneciente,"pertaining, belonging"
+3608,pertinente,"pertinent, relevant"
+3609,peruano,Peruvian
+3611,pesado,"heavy, boring, tiresome"
+3620,pésimo,"dreadful, awful"
+3625,petrolero,"oil, petroleum"
+3641,pintado,painted
+3660,plano,"flat, plain, even, level"
+3677,pleno,"complete, full"
+3683,pobre,poor
+3685,poco,"little, few, a little bit (ADV)"
+3688,poderoso,powerful
+3692,poético,poetic
+3693,polaco,Polish
+3695,polémico,"controversial, polemical"
+3697,policial,police
+3700,político,political
+3706,popular,popular
+3719,portugués,Portuguese
+3725,posible,possible
+3728,positivo,positive
+3729,posterior,"rear, backside"
+3736,potente,"potent, powerful"
+3741,práctico,"practical, skillful"
+3747,precioso,"beautiful, precious"
+3753,preciso,"precise, necessary"
+3758,preferible,preferable
+3768,preocupado,"worried, concerned"
+3771,preparado,prepared
+3782,presidencial,presidential
+3792,prestigioso,prestigious
+3794,presunto,"alleged, presumed"
+3802,preventivo,"preventive, preemptive"
+3805,previo,previous
+3808,primario,primary
+3810,primero,first
+3811,primitivo,primitive
+3813,primordial,"fundamental, primary"
+3815,principal,"main, principal"
+3823,privado,private
+3825,privilegiado,privileged
+3828,probable,probable
+3833,procedente,coming (from)
+3844,productivo,"productive, profitable"
+3848,profesional,professional
+3854,profundo,"deep, profound"
+3859,progresivo,progressive
+3863,prolongado,"prolonged, lengthy"
+3877,propio,"own, proper, typical"
+3898,proveniente,coming from
+3901,provincial,provincial
+3904,próximo,next
+3908,prudente,"sensible, prudent"
+3911,psicológico,psychological
+3917,publicitario,advertising
+3918,público,public
+3933,puntual,punctual
+3937,puro,"pure, clean"
+3951,quieto,"still, motionless, calm"
+3953,químico,chemical
+3956,quinto,fifth
+3960,racional,rational
+3962,radical,radical
+3973,rápido,"quick, fast"
+3974,raro,"strange, rare, scarce"
+3986,razonable,reasonable
+3990,real,"royal, real, authentic"
+3993,realista,realistic
+4007,reciente,recent
+4015,recomendable,advisable
+4029,recto,"right, straight, honest"
+4039,redondo,round
+4041,reducido,"reduced, limited"
+4045,referente,concerning
+4061,regional,regional
+4071,regular,regular
+4085,relativo,relative
+4088,relevante,"relevant, significant"
+4091,religioso,religious
+4098,remoto,"remote, far-off"
+4107,rentable,profitable
+4116,repentino,sudden
+4120,repleto,"full, overcrowded"
+4130,representativo,representative
+4136,republicano,republican
+4146,reservado,"reserved, booked"
+4149,residente,resident
+4154,resistente,"tough, resistant, durable"
+4163,respectivo,respective
+4167,respetuoso,respectful
+4170,respiratorio,"respiratory, breathing"
+4174,responsable,responsible
+4177,restante,"remaining, leftover"
+4186,resuelto,"resolved, determined"
+4215,revolucionario,revolutionary
+4220,rico,"rich, tasty"
+4221,ridículo,"ridiculous, absurd"
+4224,rígido,"rigid, stiff, firm"
+4226,riguroso,"rigorous, severe"
+4243,rojizo,"reddish, ruddy"
+4244,rojo,red
+4248,romano,Roman
+4249,romántico,romantic
+4256,rosado,"pink, rosy"
+4259,roto,"broken, torn"
+4260,rotundo,categorical
+4262,rubio,"blond, fair"
+4269,rural,"rural, country"
+4270,ruso,Russian
+4278,sabio,"wise, learned"
+4286,sagrado,sacred
+4299,saludable,"healthy, wholesome"
+4303,salvaje,"wild, savage, uncultivated"
+4309,sanguíneo,"blood, bloody"
+4310,sanitario,"health, sanitary, clean"
+4311,sano,"healthy, wholesome"
+4318,satisfactorio,satisfactory
+4319,satisfecho,satisfied
+4323,seco,"dry, arid"
+4330,secundario,secondary
+4340,segundo,second
+4344,seguro,"safe, sure, secure"
+4353,semanal,weekly
+4355,semejante,"similar, such, alike"
+4365,sencillo,"simple, plain, easy"
+4373,sensible,"sensitive, sentient"
+4378,sentimental,sentimental
+4386,sereno,"serene, calm"
+4390,serio,serious
+4398,severo,severe
+4400,sexto,sixth
+4401,sexual,sexual
+4412,significativo,"significant, meaningful"
+4414,siguiente,"following, next"
+4416,silencioso,"quiet, silent"
+4420,silvestre,wild
+4421,simbólico,symbolic
+4423,similar,similar
+4425,simpático,"nice, likeable, friendly"
+4426,simple,"simple, mere, simple-minded"
+4432,sincero,sincere
+4433,sindical,labor union
+4437,singular,"single, singular"
+4438,siniestro,sinister
+4445,sistemático,systematic
+4448,situado,"situated, located"
+4457,social,social
+4459,socialista,socialist
+4463,sofisticado,sophisticated
+4467,solar,solar
+4470,solemne,solemn
+4475,solidario,"united, jointly shared"
+4476,sólido,"solid, strong"
+4477,solitario,"solitary, lonely"
+4478,solo,"lonely, alone"
+4481,soltero,"single, bachelor"
+4486,sombrío,"shady, dark, dismal"
+4491,sonoro,"loud, resounding"
+4493,sonriente,smiling
+4499,sordo,"deaf, dull"
+4500,sorprendente,"surprising, astonishing"
+4506,sostenible,sustainable
+4507,soviético,Soviet
+4508,su,his/her/their/your (–fam)
+4509,suave,"soft, gentle, mild"
+4513,súbito,sudden
+4514,subjetivo,subjective
+4516,subterráneo,underground
+4520,sucesivo,"successive, following"
+4523,sucio,"dirty, filthy, underhanded"
+4526,sueco,Swiss
+4529,suelto,loose
+4532,suficiente,"sufficient, enough"
+4539,suizo,Swiss
+4550,superficial,superficial
+4552,superior,"superior, upper"
+4556,supremo,supreme
+4559,supuesto,"supposed, por s.: of course"
+4575,sutil,subtle
+4579,tal,such (a)
+4589,tanto,"so much, so many"
+4595,tardío,"late, belated"
+4604,teatral,theatrical
+4609,técnico,technical
+4612,tecnológico,technological
+4617,telefónico,telephone
+4625,tembloroso,"trembling, shaky"
+4627,temeroso,fearful
+4632,temporal,temporary
+4633,temprano,early
+4636,tendido,"spread, hung, laid (out)"
+4642,tenso,"tight, tense"
+4647,teórico,theoretical
+4649,tercero,third
+4651,térmico,"thermal, heated"
+4659,terrestre,"earthly, of the earth"
+4660,terrible,terrible
+4661,territorial,"territorial, regional"
+4675,tibio,lukewarm
+4678,tierno,"tender, soft"
+4682,tímido,"timid, shy, half-hearted"
+4685,típico,typical
+4695,todo,"all, every"
+4704,tonto,"stupid, dumb"
+4713,torpe,"clumsy, awkward, slow"
+4718,total,"total, entire"
+4722,tóxico,toxic
+4727,tradicional,traditional
+4735,trágico,tragic
+4747,tranquilo,"calm, tranquil, relaxed"
+4761,transparente,"transparent, clear"
+4769,trasero,"behind, back"
+4784,tremendo,"tremendous, dreadful, huge"
+4793,triste,"sad, unhappy"
+4801,tropical,tropical
+4804,tu,your (+fam)
+4811,turco,Turkish
+4814,turístico,tourist
+4820,último,"last, final"
+4825,único,"only, unique, sole"
+4827,unido,united
+4831,universal,universal
+4833,universitario,university
+4836,urbano,"urban, city, urbane"
+4838,urgente,urgent
+4839,uruguayo,Uruguayan
+4840,usado,"worn out, old, used"
+4845,útil,useful
+4853,vacío,"empty, vacant"
+4857,vago,vague
+4859,válido,valid
+4860,valiente,"brave, courageous, bold"
+4861,valioso,"valuable, precious"
+4868,vano,"vain, useless"
+4870,variable,"variable, changeable"
+4872,variado,"varied, mixed"
+4876,varios,"several, various"
+4878,vasco,Basque
+4880,vasto,"vast, immense, huge"
+4883,vegetal,"plant, vegetable"
+4893,veloz,"fast, quick"
+4899,venezolano,Venezuelan
+4909,verbal,"verbal, oral"
+4913,verdadero,"true, real"
+4914,verde,green
+4922,vertical,"vertical, upright"
+4927,viable,"viable, feasible"
+4940,viejo,"old, aged"
+4945,vigente,"in force, valid"
+4957,violento,violent
+4960,virtual,"virtual, potential"
+4963,visible,visible
+4970,visual,visual
+4971,vital,"vital, lively, essential"
+4976,vivo,"alive, bright"
+4985,voluntario,"voluntary, volunteer"
+4995,vuestro,your (pl/+fam)
+4996,vulgar,"vulgar, common, banal"
+4997,vulnerable,vulnerable
