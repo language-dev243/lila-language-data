@@ -18,7 +18,7 @@ export async function fetchingInflections(word) {
              word.plural_masculine = inflectionTable.find("tr:nth-child(2) td:nth-child(3)").text().trim()
              word.singular_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(2)").text().trim()
              word.plural_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(3)").text().trim()   
-             console.log("✅ inflections found")
+             console.log("✅ inflections found \n")
             } else {
               console.log("❌ no inflections found")
               return

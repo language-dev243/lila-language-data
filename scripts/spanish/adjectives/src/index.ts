@@ -7,6 +7,7 @@ import { checkingWiktionary } from "./checkingWiktionary";
 import { fetchingInflections } from "./fetchingInflections";
 import { fetchingIPA } from "./fetchingIPA";
 import { fetchingSyllabifications } from "./fetchingSyllabifications";
+import { fetchingTranslations } from "./fetchingTranslations";
 import { writingToCSV } from "./writingToCSV";
 
 // const SUPABASE_URL = process.env.SUPABASE_URL!;
@@ -49,25 +50,29 @@ async function main() {
   try {
     // step 1: reading adjective from source csv
     word.singular_masculine = await readingCSV();
-    await askToContinue()
+    // await askToContinue()
 
     // step 2: checking if word is on wiktionary
     await checkingWiktionary(word.singular_masculine);
-    await askToContinue()
+    // await askToContinue()
 
     // step 3: fetching inflections of word from wiktionary
     await fetchingInflections(word)
-    await askToContinue()
+    // await askToContinue()
 
     // step 4: fetching IPA of word from wiktionary
     await fetchingIPA(word)
-    await askToContinue()
+    // await askToContinue()
 
     // step 5: fetching syllabifications from wiktionary
     await fetchingSyllabifications(word)
-    await askToContinue
+    await askToContinue()
 
-    console.log("currently word looks like this: ", word)
+    // step 6: fetching translations
+    await fetchingTranslations(word)
+    await askToContinue()
+
+    console.log("\n currently word looks like this: ", word)
 
   } catch (error) {
     console.error("Unexpected error:", error.message);

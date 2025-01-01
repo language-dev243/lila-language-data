@@ -33,7 +33,7 @@ export async function fetchingIPA(word) {
         return
       }
     }
-    console.log("✅ IPA found");
+    console.log("✅ IPA found \n");
 
   } catch (error) {
     console.error("Unexpected error:", error.message);

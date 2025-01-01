@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 
 export async function fetchingSyllabifications(word) {
 
-    console.log("💡 step 5: fetching syllabification...")
+    console.log("💡 step 5: fetching syllabifications...")
 
     try {
 
@@ -37,7 +37,7 @@ export async function fetchingSyllabifications(word) {
                 return
             }
         }
-        console.log("✅ syllabifications found");
+        console.log("✅ syllabifications found \n");
 
     } catch (error) {
         console.error("Unexpected error:", error.message);

@@ -10,7 +10,7 @@ export async function checkingWiktionary(word) {
     try {
       const response = await axios.get(url);
       if (response.status === 200) {
-        console.log(`✅ word "${word}" found in wiktionary`)
+        console.log(`✅ word "${word}" found in wiktionary \n`)
         return true;
       }
     } catch (error) {
