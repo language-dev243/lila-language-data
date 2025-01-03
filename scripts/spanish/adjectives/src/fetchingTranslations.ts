@@ -1,4 +1,4 @@
-import axios from "axios";
+import { fetchingTranslationsEnglish } from "./fetchingTranslationsEnglish";
 
 export async function fetchingTranslations(word) {
 
@@ -6,19 +6,7 @@ export async function fetchingTranslations(word) {
 
     try {
 
-        const languagePairs = ["enes", "dees"]
-
-        for (const languagePair of languagePairs) {
-
-            const url = `https://${languagePair}.dict.cc/?s=${word.singular_masculine}`
-            console.log("language pair: ", languagePair)
-            console.log("url: ", url)
-        const response = await axios.get(url);
-
-        const translation = response.data;
-        }
-
-        console.log("✅ translations found: ", translation);
+        await fetchingTranslationsEnglish(word)
          
     } catch (error) {
         console.error("Unexpected error:", error.message);
