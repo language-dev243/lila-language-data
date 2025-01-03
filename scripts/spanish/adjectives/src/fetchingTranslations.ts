@@ -1,5 +1,6 @@
 import { fetchingTranslationsEnglish } from "./fetchingTranslationsEnglish";
 import { fetchingTranslationsGerman } from "./fetchingTranslationsGerman";
+import { fetchingTranslationsItalian } from "./fetchingTranslationsItalian";
 
 export async function fetchingTranslations(word) {
 
@@ -7,8 +8,9 @@ export async function fetchingTranslations(word) {
 
     try {
 
-        await fetchingTranslationsEnglish(word)
-        await fetchingTranslationsGerman(word)
+        // await fetchingTranslationsEnglish(word)
+        // await fetchingTranslationsGerman(word)
+        await fetchingTranslationsItalian(word)
 
         console.log("word: ", word)
          
