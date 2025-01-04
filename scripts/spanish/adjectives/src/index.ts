@@ -1,18 +1,14 @@
-import "dotenv/config";
-// import { createClient } from '@supabase/supabase-js';
-
 import { askToContinue } from "./askToContinue";
 import { readingCSV } from "./readingCSV";
+import { checkingSupabase } from "./checkingSupabase";
 import { checkingWiktionary } from "./checkingWiktionary";
 import { fetchingInflections } from "./fetchingInflections";
 import { fetchingIPA } from "./fetchingIPA";
 import { fetchingSyllabifications } from "./fetchingSyllabifications";
 import { fetchingTranslations } from "./fetchingTranslations";
 import { writingToCSV } from "./writingToCSV";
-
-// const SUPABASE_URL = process.env.SUPABASE_URL!;
-// const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-// const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+import { deletingFromCSV } from "./deletingFromCSV";
+import { uploadingToSupabase } from "./uploadingToSupabase";
 
 async function main() {
 
@@ -50,6 +46,12 @@ async function main() {
     word.singular_masculine = await readingCSV();
     // await askToContinue()
 
+    // step 2: checking if word is already in the database
+    await checkingSupabase(word.singular_masculine)
+
+    // if not on supabase, the next steps should be continued
+    // if on supabase, end script here
+
     // step 2: checking if word is on wiktionary
     await checkingWiktionary(word.singular_masculine);
     // await askToContinue()
@@ -71,10 +73,17 @@ async function main() {
     // await askToContinue()
 
     // step 7: writing to csv
-    await writingToCSV(word)
+    // await writingToCSV(word)
+    // await askToContinue()
 
-    console.log("\n currently word looks like this: ", word)
-    await askToContinue()
+    // step 8: deleting from csv
+    // await deletingFromCSV(word)
+    // await askToContinue()
+
+    // step 9: uploading to supabase
+    await uploadingToSupabase(word)
+
+    // console.log("word: ", word)
 
   } catch (error) {
     console.error("Unexpected error:", error.message);
