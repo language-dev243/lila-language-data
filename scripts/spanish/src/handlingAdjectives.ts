@@ -1,20 +1,17 @@
 import { askToContinue } from "./askToContinue";
-import { readingCSV } from "./readingCSV";
-import { checkingSupabase } from "./checkingSupabase";
-import { checkingWiktionary } from "./checkingWiktionary";
-import { fetchingInflections } from "./fetchingInflections";
-import { fetchingIPA } from "./fetchingIPA";
-import { fetchingSyllabifications } from "./fetchingSyllabifications";
-import { fetchingTranslations } from "./fetchingTranslations";
+import { checkingSupabase } from "./adjectives/checkingSupabase";
+import { checkingWiktionary } from "./adjectives/checkingWiktionary";
+import { fetchingInflections } from "./adjectives/fetchingInflections";
+import { fetchingIPA } from "./adjectives/fetchingIPA";
+import { fetchingSyllabifications } from "./adjectives/fetchingSyllabifications";
+import { fetchingTranslations } from "./adjectives/fetchingTranslations";
 import { writingToCSV } from "./writingToCSV";
 import { deletingFromCSV } from "./deletingFromCSV";
-import { uploadingToSupabase } from "./uploadingToSupabase";
+import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
-async function main() {
+export async function handlingAdjectives(word) {
 
-  console.log("it's starting now...\n")
-
-  const word = {
+  const adjective = {
     "singular_masculine": "",
     "singular_feminine": "",
     "plural_masculine": "",
@@ -42,15 +39,12 @@ async function main() {
   }
 
   try {
-    // step 1: reading adjective from source csv
-    word.singular_masculine = await readingCSV();
-    // await askToContinue()
+    // step 0: setting the word
+    adjective.singular_masculine = word;
 
-    // step 2: checking if word is already in the database
-    await checkingSupabase(word.singular_masculine)
-
-    // if not on supabase, the next steps should be continued
-    // if on supabase, end script here
+    // step 1: checking if word is already in the database
+    if (await checkingSupabase(word.singular_masculine)) { return }
+    await askToContinue
 
     // step 2: checking if word is on wiktionary
     await checkingWiktionary(word.singular_masculine);
@@ -73,21 +67,17 @@ async function main() {
     // await askToContinue()
 
     // step 7: writing to csv
-    // await writingToCSV(word)
+    await writingToCSV(word)
     // await askToContinue()
 
     // step 8: deleting from csv
-    // await deletingFromCSV(word)
+    await deletingFromCSV(word)
     // await askToContinue()
 
     // step 9: uploading to supabase
-    await uploadingToSupabase(word)
-
-    // console.log("word: ", word)
+    // await uploadingToSupabase(word)
 
   } catch (error) {
     console.error("Unexpected error:", error.message);
   }
 }
-
-main();

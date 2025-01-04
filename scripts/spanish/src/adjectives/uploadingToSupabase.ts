@@ -47,7 +47,6 @@ export async function uploadingToSupabase(word) {
 
         console.log("✅ word uploaded successfully");
 
-
     } catch (error) {
         console.error("Unexpected error:", error.message);
     }

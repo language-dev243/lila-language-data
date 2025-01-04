@@ -11,7 +11,7 @@ export async function fetchingTranslations(word) {
         await fetchingTranslationsEnglish(word)
         await fetchingTranslationsGerman(word)
         await fetchingTranslationsItalian(word)
-        await fetchingTranslationsFrench(word)         
+        await fetchingTranslationsFrench(word)
     } catch (error) {
         console.error("Unexpected error:", error.message);
         return
