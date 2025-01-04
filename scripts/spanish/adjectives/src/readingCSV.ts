@@ -21,9 +21,8 @@ export async function readingCSV() {
     }
 
     const word = firstRow.word;
-    console.log("✅ word found: ", word)
+    console.log("✅ word found: ", word, "\n")
 
-  
   return word;
 
   } catch (error) {

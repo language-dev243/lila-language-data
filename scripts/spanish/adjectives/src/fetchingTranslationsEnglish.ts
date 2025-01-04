@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 
 export async function fetchingTranslationsEnglish(word) {
 
-    console.log("- fetching english translations...")
+    console.log("💡 fetching english translations...")
 
     try {
         const url = `https://enes.dict.cc/?s=${word.singular_masculine}`

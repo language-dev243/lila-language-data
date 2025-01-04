@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 
 export async function fetchingTranslationsGerman(word) {
 
-    console.log("- fetching german translations...")
+    console.log("💡 fetching german translations...")
 
     try {
         const url = `https://dees.dict.cc/?s=${word.singular_masculine}`
@@ -18,9 +18,6 @@ export async function fetchingTranslationsGerman(word) {
         const regex = /"(.*?)"/g;
         const spanishWordsArray = spanishWords.match(regex).map(match => match.slice(1, -1)).slice(1);
         const germanWordsArray = germanWords.match(regex).map(match => match.slice(1, -1)).slice(1);
-
-        console.log("spanish words: ", spanishWordsArray)
-        console.log("german translations: ", germanWordsArray)
 
         spanishWordsArray.forEach((spanishWord, index) => {
             if (spanishWord === word.singular_masculine) {
