@@ -70,6 +70,9 @@ async function main() {
     await fetchingTranslations(word)
     // await askToContinue()
 
+    // step 7: writing to csv
+    await writingToCSV(word)
+
     console.log("\n currently word looks like this: ", word)
     await askToContinue()
 
