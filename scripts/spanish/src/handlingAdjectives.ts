@@ -44,7 +44,7 @@ export async function handlingAdjectives(word) {
 
     // step 1: checking if word is already in the database
     if (await checkingSupabase(word.singular_masculine)) { return }
-    await askToContinue
+    await askToContinue()
 
     // step 2: checking if word is on wiktionary
     await checkingWiktionary(word.singular_masculine);
