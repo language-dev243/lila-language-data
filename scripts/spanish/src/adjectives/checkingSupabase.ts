@@ -2,6 +2,8 @@ import "dotenv/config";
 import chalk from "chalk";
 import { createClient } from '@supabase/supabase-js';
 
+import { writingToCSV } from "../writingToCSV";
+
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
@@ -18,12 +20,13 @@ export async function checkingSupabase(adjective) {
             .eq('singular_masculine', adjective)
 
         if (error) {
-            console.error('Error checking the database:', error);
+            console.error(`${chalk.red("Error checking the database: ", error)}`);
             return false;
         }
 
         if (data && data.length > 0) {
-            console.log(`${chalk.red(adjective, "already exists on supabase, omitting...")}\n`);
+            console.log(`${chalk.red(adjective, "already exists on supabase")}`);
+            await writingToCSV(adjective, "./data/processed/wordsInSupabase.csv")
             return true;
         } else {
             console.log(`✅ ${chalk.green(adjective, "does not exist on supabase, proceeding...")}`);
