@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 export async function writingToCSV(word, targetFilePath) {
 
-  console.log("💡 writing to CSV...")
+  console.log("💡 writing to CSV")
 
   try {
 

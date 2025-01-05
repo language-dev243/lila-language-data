@@ -2,20 +2,31 @@ import fs from "fs/promises";
 import Papa from "papaparse";
 import chalk from "chalk";
 
-export async function deletingFromCSV() {
+export async function deletingFromCSV(word, targetFilePath) {
 
-    console.log("💡 step 8: deleting from CSV...")
-
-    const sourceFilePath = "./data/test.csv";
+    console.log("💡 deleting from CSV")
 
     try {
-        const sourceData = await fs.readFile(sourceFilePath, "utf8");
+        const sourceData = await fs.readFile(targetFilePath, "utf8");
         const lines = sourceData.split("\n");
-        lines.splice(1, 1);
-        const updatedData = lines.join("\n");
-        await fs.writeFile(sourceFilePath, updatedData, "utf8");
+        const parsedData = Papa.parse(sourceData, { header: true });
 
-        console.log("✅ word deleted \n")
+        if (parsedData.errors.length > 0) {
+            throw new Error(chalk.red("Error parsing the CSV file"));
+        }
+
+        const updatedData = parsedData.data.filter((row) => row.word !== word);
+
+        if (updatedData.length === parsedData.data.length) {
+            console.log(`${chalk.yellow("⚠ word not found in CSV, no changes made")}\n`);
+            return;
+        }
+
+        const updatedCSV = Papa.unparse(updatedData);
+
+        await fs.writeFile(targetFilePath, updatedCSV, "utf8");
+
+        console.log(`${chalk.green("✅ succesfully deleted from csv")}\n`);
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }
