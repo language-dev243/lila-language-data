@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingTranslationsItalian(word) {
 
-    // console.log("💡 fetching italian translations...")
+    console.log("💡 italian")
 
     try {
         const url = `https://www.wordreference.com/esit/${word.singular_masculine}`
@@ -13,9 +14,10 @@ export async function fetchingTranslationsItalian(word) {
         let translation = $('.tran').first().text().trim();
         word.italian_translations.push(translation.replace(/\(.*?\)/g, '').trim())
 
-        // console.log("✅ italian translations found \n");
+        console.log(`${chalk.green("✅ italian translations found")}`);
+
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
         return
     }
 }

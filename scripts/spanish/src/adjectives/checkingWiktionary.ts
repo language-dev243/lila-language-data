@@ -15,7 +15,7 @@ export async function checkingWiktionary(word) {
       return true;
     }
   } catch (error) {
-    console.error("Unexpected error:", error.message);
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
   }
 
   console.log(`${chalk.red("❌ ", word, " not found in wiktionary...\n exiting process...")}`);

@@ -1,3 +1,5 @@
+import chalk from "chalk";
+
 import { askToContinue } from "./askToContinue";
 import { checkingSupabase } from "./adjectives/checkingSupabase";
 import { checkingWiktionary } from "./adjectives/checkingWiktionary";
@@ -58,18 +60,18 @@ export async function handlingAdjectives(word) {
 
     // step 5: fetching syllabifications from wiktionary
     await fetchingSyllabifications(adjective)
-    await askToContinue()
+    // await askToContinue()
 
     // step 6: fetching translations
     await fetchingTranslations(adjective)
     // await askToContinue()
 
     // step 7: uploading to supabase
-    await uploadingToSupabase(adjective3)
+    await uploadingToSupabase(adjective)
 
     return adjective
 
   } catch (error) {
-    console.error("Unexpected error:", error.message);
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
   }
 }

@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { createClient } from '@supabase/supabase-js';
+import chalk from "chalk";
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
@@ -45,9 +46,9 @@ export async function uploadingToSupabase(adjective) {
             throw new Error(`Error inserting word: ${error.message}`);
         }
 
-        // console.log("✅ word uploaded successfully");
+        console.log(`${chalk.green("✅ uploaded successfully to supabase")}`);
 
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }
 }

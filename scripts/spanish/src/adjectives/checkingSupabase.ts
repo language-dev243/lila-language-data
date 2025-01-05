@@ -31,6 +31,6 @@ export async function checkingSupabase(adjective) {
         }
 
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }
 }

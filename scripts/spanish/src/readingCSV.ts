@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import Papa from "papaparse";
+import chalk from "chalk";
 
 export async function readingCSV(sourceFilePath) {
   try {
@@ -11,7 +12,7 @@ export async function readingCSV(sourceFilePath) {
     });
 
     if (!parsed.data || parsed.data.length === 0) {
-      console.warn("❌ CSV file is empty or has no data rows");
+      console.warn(`${chalk.red("❌ CSV file is empty or has no data rows")}\n`)
       return null;
     }
 
@@ -20,6 +21,6 @@ export async function readingCSV(sourceFilePath) {
     return words;
 
   } catch (error) {
-    console.error("Unexpected error:", error.message);
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
   }
 }

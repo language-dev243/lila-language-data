@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingTranslationsEnglish(word) {
 
-    // console.log("💡 fetching english translations...")
+    console.log("💡 english")
 
     try {
         const url = `https://enes.dict.cc/?s=${word.singular_masculine}`
@@ -26,9 +27,10 @@ export async function fetchingTranslationsEnglish(word) {
             }
         });
 
-        // console.log("✅ english translations found \n");
+        console.log(`${chalk.green("✅ english translations found")}`);
+
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
         return
     }
 }

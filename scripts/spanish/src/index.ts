@@ -28,31 +28,12 @@ async function main() {
             await handlingAdjectives(word)
             processedWords.push(word)
             processedWordsCount += 1;
-            console.log(`processed words so far: ${chalk.blue(processedWordsCount)}\n`)
+            console.log(`processed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
         }
 
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }
 }
 
 main();
-
-
-/*
-    import { writingToCSV } from "./writingToCSV";
-    import { deletingFromCSV } from "./deletingFromCSV";
-    import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
-
-    // step 7: writing to csv
-    await writingToCSV(word)
-    // await askToContinue()
-
-    // step 8: deleting from csv
-    await deletingFromCSV(word)
-    // await askToContinue()
-
-    // step 9: uploading to supabase
-    // await uploadingToSupabase(word)
-
-*/

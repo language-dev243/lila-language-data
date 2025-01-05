@@ -27,7 +27,7 @@ export async function fetchingInflections(word) {
 
 
   } catch (error) {
-    console.error("Unexpected error:", error.message);
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     return
   }
 }

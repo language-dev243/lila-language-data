@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import Papa from "papaparse";
+import chalk from "chalk";
 
 export async function writingToCSV(word) {
 
@@ -47,6 +48,6 @@ export async function writingToCSV(word) {
     console.log("✅ written to csv \n");
 
   } catch (error) {
-    console.error("Unexpected error:", error.message);
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
   }
 }

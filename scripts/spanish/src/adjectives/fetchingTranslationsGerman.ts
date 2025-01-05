@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingTranslationsGerman(word) {
 
-    // console.log("💡 fetching german translations...")
+    console.log("💡 german")
 
     try {
         const url = `https://dees.dict.cc/?s=${word.singular_masculine}`
@@ -25,9 +26,10 @@ export async function fetchingTranslationsGerman(word) {
             }
         });
 
-        // console.log("✅ german translations found \n");
+        console.log(`${chalk.green("✅ german translations found")}`);
+
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
         return
     }
 }

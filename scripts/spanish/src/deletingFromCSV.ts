@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import Papa from "papaparse";
+import chalk from "chalk";
 
 export async function deletingFromCSV() {
 
@@ -16,6 +17,6 @@ export async function deletingFromCSV() {
 
         console.log("✅ word deleted \n")
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }
 }

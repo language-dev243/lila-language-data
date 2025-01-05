@@ -41,7 +41,7 @@ export async function fetchingSyllabifications(word) {
         console.log(`${chalk.green("✅ syllabifications found")}`);
 
     } catch (error) {
-        console.error("Unexpected error:", error.message);
+        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
         return
     }
 }
