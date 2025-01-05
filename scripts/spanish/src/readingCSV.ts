@@ -1,31 +1,25 @@
 import fs from "fs/promises";
 import Papa from "papaparse";
 
-export async function readingCSV() {
-
-  console.log("💡 step 1: reading from CSV...")
-
-  const sourceFilePath = "./data/test.csv";
+export async function readingCSV(sourceFilePath) {
   try {
-  const sourceData = await fs.readFile(sourceFilePath, "utf8");
-  
-  const parsed = Papa.parse(sourceData, {
-    header: true,
-    skipEmptyLines: true,
-  });
+    const sourceData = await fs.readFile(sourceFilePath, "utf8");
 
-  const firstRow = parsed.data[0];
-    if (!firstRow) {
-      console.warn("❌ CSV file is empty or has no data rows.");
+    const parsed = Papa.parse(sourceData, {
+      header: true,
+      skipEmptyLines: true,
+    });
+
+    if (!parsed.data || parsed.data.length === 0) {
+      console.warn("❌ CSV file is empty or has no data rows");
       return null;
     }
 
-    const word = firstRow.word;
-    console.log("✅ word found: ", word, "\n")
+    const words = parsed.data.map(row => row.word).filter(Boolean);
 
-  return word;
+    return words;
 
   } catch (error) {
-      console.error("Unexpected error:", error.message);
+    console.error("Unexpected error:", error.message);
   }
 }
