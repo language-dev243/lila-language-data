@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingInflections(word) {
 
-  // console.log("💡 step 3: fetching inflections...")
+  console.log("💡 fetching inflections...")
 
   const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
     word.singular_masculine)}`
@@ -18,9 +19,9 @@ export async function fetchingInflections(word) {
       word.plural_masculine = inflectionTable.find("tr:nth-child(2) td:nth-child(3)").text().trim()
       word.singular_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(2)").text().trim()
       word.plural_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(3)").text().trim()
-      // console.log("✅ inflections found \n")
+      console.log(`${chalk.green("✅ inflections found")}`)
     } else {
-      c// onsole.log("❌ no inflections found")
+      console.log(`${chalk.red("❌ no inflections found")} \n`)
       return
     }
 

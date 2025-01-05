@@ -7,6 +7,9 @@ const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 export async function checkingSupabase(adjective) {
+
+    console.log("💡 checking supabase...")
+
     try {
 
         const { data, error } = await supabase
@@ -20,10 +23,10 @@ export async function checkingSupabase(adjective) {
         }
 
         if (data && data.length > 0) {
-            console.log(`${chalk.red(adjective, " already exists on supabase, omitting", adjective)}`);
+            console.log(`${chalk.red(adjective, "already exists on supabase, omitting...")}\n`);
             return true;
         } else {
-            // console.log(`${adjective} does not exist on supabase`);
+            console.log(`✅ ${chalk.green(adjective, "does not exist on supabase, proceeding...")}`);
             return false;
         }
 

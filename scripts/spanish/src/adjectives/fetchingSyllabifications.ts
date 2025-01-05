@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingSyllabifications(word) {
 
-    // console.log("💡 step 5: fetching syllabifications...")
+    console.log("💡 fetching syllabifications...")
 
     try {
 
@@ -33,11 +34,11 @@ export async function fetchingSyllabifications(word) {
                     word[`syllable_count_${inflection}`] = syllabification.split('-').length;
                 }
             } else {
-                // console.log(`❌ no syllabification found for ${inflection}`);
+                console.log(`${chalk.red("❌ no syllabification found for ", inflection)}`);
                 return
             }
         }
-        // console.log("✅ syllabifications found \n");
+        console.log(`${chalk.green("✅ syllabifications found")}`);
 
     } catch (error) {
         console.error("Unexpected error:", error.message);

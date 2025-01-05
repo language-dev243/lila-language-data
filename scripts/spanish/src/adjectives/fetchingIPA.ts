@@ -1,9 +1,10 @@
 import axios from "axios";
 import * as cheerio from 'cheerio';
+import chalk from "chalk";
 
 export async function fetchingIPA(word) {
 
-  // console.log("💡 step 4: fetching IPA...")
+  console.log("💡 fetching IPA...")
 
   try {
 
@@ -21,19 +22,19 @@ export async function fetchingIPA(word) {
 
       if (dataTable.length > 0) {
         let ipa = dataTable.find("tr:nth-child(2) td:nth-child(2)").text().trim();
-        // Remove everything after the closing square bracket "]"
         ipa = ipa.replace(/].*$/, "]").trim();
-        // Remove the square brackets
         ipa = ipa.replace(/[\[\]]/g, "").trim();
 
         word[`ipa_${inflection}`] = ipa;
 
       } else {
-        // console.log(`❌ no IPA found for ${inflection}`);
+        console.log(`${chalk.red("❌ no IPA found for ", inflection)}`);
         return
       }
     }
-    // console.log("✅ IPA found \n");
+
+    console.log(`${chalk.green("✅ IPA found")}`);
+
 
   } catch (error) {
     console.error("Unexpected error:", error.message);

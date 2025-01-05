@@ -58,7 +58,7 @@ export async function handlingAdjectives(word) {
 
     // step 5: fetching syllabifications from wiktionary
     await fetchingSyllabifications(adjective)
-    // await askToContinue()
+    await askToContinue()
 
     // step 6: fetching translations
     await fetchingTranslations(adjective)
