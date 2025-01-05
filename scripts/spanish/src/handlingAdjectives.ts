@@ -5,8 +5,6 @@ import { fetchingInflections } from "./adjectives/fetchingInflections";
 import { fetchingIPA } from "./adjectives/fetchingIPA";
 import { fetchingSyllabifications } from "./adjectives/fetchingSyllabifications";
 import { fetchingTranslations } from "./adjectives/fetchingTranslations";
-import { writingToCSV } from "./writingToCSV";
-import { deletingFromCSV } from "./deletingFromCSV";
 import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
 export async function handlingAdjectives(word) {
@@ -39,43 +37,37 @@ export async function handlingAdjectives(word) {
   }
 
   try {
-    // step 0: setting the word
+    // step 0: setting the adjective
     adjective.singular_masculine = word;
 
     // step 1: checking if word is already in the database
-    if (await checkingSupabase(word.singular_masculine)) { return }
-    await askToContinue()
+    if (await checkingSupabase(adjective.singular_masculine)) { return }
+    // await askToContinue()
 
     // step 2: checking if word is on wiktionary
-    await checkingWiktionary(word.singular_masculine);
+    await checkingWiktionary(adjective.singular_masculine);
     // await askToContinue()
 
     // step 3: fetching inflections of word from wiktionary
-    await fetchingInflections(word)
+    await fetchingInflections(adjective)
     // await askToContinue()
 
     // step 4: fetching IPA of word from wiktionary
-    await fetchingIPA(word)
+    await fetchingIPA(adjective)
     // await askToContinue()
 
     // step 5: fetching syllabifications from wiktionary
-    await fetchingSyllabifications(word)
+    await fetchingSyllabifications(adjective)
     // await askToContinue()
 
     // step 6: fetching translations
-    await fetchingTranslations(word)
+    await fetchingTranslations(adjective)
     // await askToContinue()
 
-    // step 7: writing to csv
-    await writingToCSV(word)
-    // await askToContinue()
+    // step 7: uploading to supabase
+    await uploadingToSupabase(adjective3)
 
-    // step 8: deleting from csv
-    await deletingFromCSV(word)
-    // await askToContinue()
-
-    // step 9: uploading to supabase
-    // await uploadingToSupabase(word)
+    return adjective
 
   } catch (error) {
     console.error("Unexpected error:", error.message);

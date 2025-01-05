@@ -5,7 +5,7 @@ import { fetchingTranslationsFrench } from "./fetchingTranslationsFrench";
 
 export async function fetchingTranslations(word) {
 
-    console.log("💡 step 6: fetching translations:\n")
+    // console.log("💡 step 6: fetching translations:\n")
 
     try {
         await fetchingTranslationsEnglish(word)

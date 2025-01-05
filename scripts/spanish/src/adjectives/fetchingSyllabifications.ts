@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 
 export async function fetchingSyllabifications(word) {
 
-    console.log("💡 step 5: fetching syllabifications...")
+    // console.log("💡 step 5: fetching syllabifications...")
 
     try {
 
@@ -33,11 +33,11 @@ export async function fetchingSyllabifications(word) {
                     word[`syllable_count_${inflection}`] = syllabification.split('-').length;
                 }
             } else {
-                console.log(`❌ no syllabification found for ${inflection}`);
+                // console.log(`❌ no syllabification found for ${inflection}`);
                 return
             }
         }
-        console.log("✅ syllabifications found \n");
+        // console.log("✅ syllabifications found \n");
 
     } catch (error) {
         console.error("Unexpected error:", error.message);

@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 
 export async function fetchingIPA(word) {
 
-  console.log("💡 step 4: fetching IPA...")
+  // console.log("💡 step 4: fetching IPA...")
 
   try {
 
@@ -29,11 +29,11 @@ export async function fetchingIPA(word) {
         word[`ipa_${inflection}`] = ipa;
 
       } else {
-        console.log(`❌ no IPA found for ${inflection}`);
+        // console.log(`❌ no IPA found for ${inflection}`);
         return
       }
     }
-    console.log("✅ IPA found \n");
+    // console.log("✅ IPA found \n");
 
   } catch (error) {
     console.error("Unexpected error:", error.message);
