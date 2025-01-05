@@ -11,9 +11,15 @@ export async function fetchingIPA(word) {
     const inflections = ["singular_masculine", "plural_masculine", "singular_feminine", "plural_feminine"]
 
     for (const inflection of inflections) {
+
+      let inflectionWord = word[inflection];
+      console.log("Inflection word:", inflectionWord);
+
       const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
         word[inflection]
       )}`;
+
+      console.log("url: ", url)
 
       const response = await axios.get(url);
       const $ = cheerio.load(response.data);
