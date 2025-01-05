@@ -8,12 +8,25 @@ export async function deletingFromCSV(word, targetFilePath) {
 
     try {
         const sourceData = await fs.readFile(targetFilePath, "utf8");
-        const lines = sourceData.split("\n");
-        const parsedData = Papa.parse(sourceData, { header: true });
+
+        const parsedData = Papa.parse(sourceData, {
+            header: true,
+            skipEmptyLines: true,
+            delimiter: "\n"
+        });
 
         if (parsedData.errors.length > 0) {
+            // Log the detailed error information
+            console.log(chalk.red("CSV Parsing Errors:"));
+            parsedData.errors.forEach((error, index) => {
+                console.log(`${chalk.red(`Error ${index + 1}:`)} ${error.message}`);
+                console.log(`${chalk.red("Row:")} ${error.row}`);
+                console.log(`${chalk.red("Code:")} ${error.code}`);
+                console.log(`${chalk.red("Type:")} ${error.type}`);
+            });
             throw new Error(chalk.red("Error parsing the CSV file"));
         }
+
 
         const updatedData = parsedData.data.filter((row) => row.word !== word);
 
@@ -26,7 +39,7 @@ export async function deletingFromCSV(word, targetFilePath) {
 
         await fs.writeFile(targetFilePath, updatedCSV, "utf8");
 
-        console.log(`${chalk.green("✅ succesfully deleted from csv")}\n`);
+        console.log(`${chalk.green("✅ succesfully deleted from source csv")}`);
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
     }

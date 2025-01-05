@@ -14,7 +14,7 @@ async function main() {
     try {
 
         // step 1: reading from source csv
-        console.log(`${chalk.yellow("💡 step 1: reading words from CSV:")}`)
+        console.log(`${chalk.yellow("💡 step 1: reading words from CSV")}`)
         const words = await readingCSV(sourceFilePath);
         console.log(`${chalk.green("✅", words.length, "words found \n")}`)
 
@@ -25,7 +25,7 @@ async function main() {
             await handlingAdjectives(word)
             processedWords.push(word)
             processedWordsCount += 1;
-            console.log(`processed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
+            console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
         }
 
     } catch (error) {

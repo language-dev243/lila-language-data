@@ -13,7 +13,7 @@ export async function writingToCSV(word, targetFilePath) {
     const convertedWord = Papa.unparse([wordObject], { header: false })
     await fs.appendFile(targetFilePath, `\n${convertedWord}`);
 
-    console.log(`${chalk.green("✅ succesfully written to csv")}\n`);
+    console.log(`${chalk.green("✅ succesfully written to wordsInSupabase csv")}`);
 
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
