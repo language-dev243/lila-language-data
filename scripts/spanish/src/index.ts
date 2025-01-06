@@ -5,7 +5,7 @@ import { handlingAdjectives } from "./handlingAdjectives";
 
 async function main() {
 
-    const sourceFilePath = "./data/sources/test.csv"
+    const sourceFilePath = "./data/sources/adjectives.csv"
     let processedWords = []
     let processedWordsCount = 0;
 
@@ -28,7 +28,7 @@ async function main() {
             processedWords.push(word)
             processedWordsCount += 1;
             console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
-            await sleep(3000);
+            await sleep(1000);
         }
 
     } catch (error) {
