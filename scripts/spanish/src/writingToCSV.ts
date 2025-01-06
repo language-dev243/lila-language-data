@@ -8,12 +8,21 @@ export async function writingToCSV(word, targetFilePath) {
 
   try {
 
-    const targetData = await fs.readFile(targetFilePath, "utf8");
+    const csvData = await fs.readFile(targetFilePath, "utf8");
+    const parsedCSVData = Papa.parse(csvData, { header: false, skipEmptyLines: true }).data;
+
+    const wordExistsInCSV = parsedCSVData.some((row) => row[0] === word);
+
+    if (wordExistsInCSV) {
+      console.log(`${chalk.yellow("⚠️ ", word, " already exists in the CSV file, skipping write")}`);
+      return;
+    }
+
     const wordObject = { word };
     const convertedWord = Papa.unparse([wordObject], { header: false })
     await fs.appendFile(targetFilePath, `\n${convertedWord}`);
 
-    console.log(`${chalk.green("✅ succesfully written to wordsInSupabase csv")}`);
+    console.log(`${chalk.green("✅ succesfully written to csv")}`);
 
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)

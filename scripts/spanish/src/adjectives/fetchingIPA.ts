@@ -2,7 +2,10 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-export async function fetchingIPA(word) {
+import { writingToCSV } from "../writingToCSV";
+import { deletingFromCSV } from "../deletingFromCSV";
+
+export async function fetchingIPA(word, sourceFilePath) {
 
   console.log("💡 fetching IPA...")
 
@@ -12,14 +15,9 @@ export async function fetchingIPA(word) {
 
     for (const inflection of inflections) {
 
-      let inflectionWord = word[inflection];
-      console.log("Inflection word:", inflectionWord);
-
       const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
         word[inflection]
       )}`;
-
-      console.log("url: ", url)
 
       const response = await axios.get(url);
       const $ = cheerio.load(response.data);
@@ -44,6 +42,8 @@ export async function fetchingIPA(word) {
 
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+    await writingToCSV(word.singular_masculine, "./data/processed/withError/ipa.csv")
+    await deletingFromCSV(word.singular_masculine, sourceFilePath)
     return
   }
 }

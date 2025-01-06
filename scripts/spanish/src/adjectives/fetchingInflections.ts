@@ -2,7 +2,10 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-export async function fetchingInflections(word) {
+import { writingToCSV } from "../writingToCSV";
+import { deletingFromCSV } from "../deletingFromCSV";
+
+export async function fetchingInflections(word, sourceFilePath) {
 
   console.log("💡 fetching inflections...")
 
@@ -28,6 +31,8 @@ export async function fetchingInflections(word) {
 
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+    await writingToCSV(word.singular_masculine, "./data/processed/withError/inflections.csv")
+    await deletingFromCSV(word.singular_masculine, sourceFilePath)
     return
   }
 }

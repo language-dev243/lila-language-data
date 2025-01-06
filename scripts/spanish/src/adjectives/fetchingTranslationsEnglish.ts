@@ -2,7 +2,10 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-export async function fetchingTranslationsEnglish(word) {
+import { writingToCSV } from "../writingToCSV";
+import { deletingFromCSV } from "../deletingFromCSV";
+
+export async function fetchingTranslationsEnglish(word, sourceFilePath) {
 
     console.log("💡 english")
 
@@ -31,6 +34,8 @@ export async function fetchingTranslationsEnglish(word) {
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+        await writingToCSV(word.singular_masculine, "./data/processed/withError/translationsEN.csv")
+        await deletingFromCSV(word.singular_masculine, sourceFilePath)
         return
     }
 }

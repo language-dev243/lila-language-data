@@ -9,7 +9,7 @@ const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-export async function checkingSupabase(adjective) {
+export async function checkingSupabase(adjective, sourceFilePath) {
 
     console.log("💡 checking supabase")
 
@@ -28,7 +28,7 @@ export async function checkingSupabase(adjective) {
         if (data && data.length > 0) {
             console.log(`${chalk.blue(adjective, "already exists on supabase")}`);
             await writingToCSV(adjective, "./data/processed/wordsInSupabase.csv")
-            await deletingFromCSV(adjective, "./data/sources/test.csv")
+            await deletingFromCSV(adjective, sourceFilePath)
             return true;
         } else {
             console.log(`✅ ${chalk.green(adjective, "does not exist on supabase, proceeding...")}`);

@@ -1,7 +1,10 @@
 import axios from "axios"
 import chalk from "chalk";
 
-export async function checkingWiktionary(word) {
+import { writingToCSV } from "../writingToCSV";
+import { deletingFromCSV } from "../deletingFromCSV";
+
+export async function checkingWiktionary(word, sourceFilePath) {
 
   console.log("💡 checking wiktionary...")
 
@@ -16,6 +19,8 @@ export async function checkingWiktionary(word) {
     }
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+    await writingToCSV(word.singular_masculine, "./data/processed/withError/wiktionary.csv")
+    await deletingFromCSV(word.singular_masculine, sourceFilePath)
   }
 
   console.log(`${chalk.red("❌ ", word, " not found in wiktionary...\n exiting process...")}`);

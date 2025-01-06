@@ -9,7 +9,7 @@ import { fetchingSyllabifications } from "./adjectives/fetchingSyllabifications"
 import { fetchingTranslations } from "./adjectives/fetchingTranslations";
 import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
-export async function handlingAdjectives(word) {
+export async function handlingAdjectives(word, sourceFilePath) {
 
   const adjective = {
     "singular_masculine": "",
@@ -43,27 +43,27 @@ export async function handlingAdjectives(word) {
     adjective.singular_masculine = word;
 
     // step 1: checking if word is already in the database
-    if (await checkingSupabase(adjective.singular_masculine)) { return }
+    if (await checkingSupabase(adjective.singular_masculine, sourceFilePath)) { return }
     // await askToContinue()
 
     // step 2: checking if word is on wiktionary
-    await checkingWiktionary(adjective.singular_masculine);
+    await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
     // await askToContinue()
 
     // step 3: fetching inflections of word from wiktionary
-    await fetchingInflections(adjective)
+    await fetchingInflections(adjective, sourceFilePath)
     // await askToContinue()
 
     // step 4: fetching IPA of word from wiktionary
-    await fetchingIPA(adjective)
+    await fetchingIPA(adjective, sourceFilePath)
     // await askToContinue()
 
     // step 5: fetching syllabifications from wiktionary
-    await fetchingSyllabifications(adjective)
+    await fetchingSyllabifications(adjective, sourceFilePath)
     // await askToContinue()
 
     // step 6: fetching translations
-    await fetchingTranslations(adjective)
+    await fetchingTranslations(adjective, sourceFilePath)
     // await askToContinue()
 
     // step 7: uploading to supabase

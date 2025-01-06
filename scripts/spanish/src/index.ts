@@ -9,23 +9,26 @@ async function main() {
     let processedWords = []
     let processedWordsCount = 0;
 
-    console.log(`\n ${chalk.blue("script starting now...")}\n`)
+    function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
     try {
 
         // step 1: reading from source csv
-        console.log(`${chalk.yellow("💡 step 1: reading words from CSV")}`)
+        console.log(`${chalk.yellow("\n 💡 step 1: reading words from CSV")}`)
         const words = await readingCSV(sourceFilePath);
         console.log(`${chalk.green("✅", words.length, "words found \n")}`)
 
         // step 2: processing words, writing to csvs, uploading to supabase
-        console.log(`${chalk.yellow("💡 step 3: processing words\n")}`)
+        console.log(`${chalk.yellow("💡 step 2: processing words\n")}`)
         for (const word of words) {
             console.log(`currently processing word ${chalk.blue(processedWordsCount + 1)}: ${chalk.green(word)}`)
-            await handlingAdjectives(word)
+            await handlingAdjectives(word, sourceFilePath)
             processedWords.push(word)
             processedWordsCount += 1;
             console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
+            await sleep(3000);
         }
 
     } catch (error) {
