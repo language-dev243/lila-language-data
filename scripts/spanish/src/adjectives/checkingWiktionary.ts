@@ -1,8 +1,8 @@
 import axios from "axios"
 import chalk from "chalk"
 
-import { writingToCSV } from "../writingToCSV";
-import { deletingFromCSV } from "../deletingFromCSV";
+import { writingToCSV } from "../utils/writingToCSV";
+import { deletingFromCSV } from "../utils/deletingFromCSV";
 
 export async function checkingWiktionary(word, sourceFilePath) {
 

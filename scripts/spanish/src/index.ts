@@ -1,6 +1,6 @@
 import chalk from "chalk"
 
-import { readingCSV } from "./readingCSV";
+import { readingCSV } from "./utils/readingCSV";
 import { handlingAdjectives } from "./handlingAdjectives";
 
 async function main() {
@@ -28,7 +28,7 @@ async function main() {
             processedWords.push(word)
             processedWordsCount += 1;
             console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
-            await sleep(1000);
+            // await sleep(1000);
         }
 
     } catch (error) {

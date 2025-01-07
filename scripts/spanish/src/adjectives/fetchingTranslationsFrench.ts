@@ -2,8 +2,8 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-import { writingToCSV } from "../writingToCSV";
-import { deletingFromCSV } from "../deletingFromCSV";
+import { writingToCSV } from "../utils/writingToCSV";
+import { deletingFromCSV } from "../utils/deletingFromCSV";
 
 export async function fetchingTranslationsFrench(word, sourceFilePath) {
 

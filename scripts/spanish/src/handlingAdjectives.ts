@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-import { askToContinue } from "./askToContinue";
+import { askToContinue } from "./utils/askToContinue";
 import { checkingAgainstCSV } from "./utils/checkingAgainstCSV";
 import { checkingSupabase } from "./adjectives/checkingSupabase";
 import { checkingWiktionary } from "./adjectives/checkingWiktionary";

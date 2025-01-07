@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
-import { writingToCSV } from "../writingToCSV";
-import { deletingFromCSV } from "../deletingFromCSV";
+import { writingToCSV } from "../utils/writingToCSV";
+import { deletingFromCSV } from "../utils/deletingFromCSV";
 
 import { fetchingTranslationsEnglish } from "./fetchingTranslationsEnglish";
 import { fetchingTranslationsGerman } from "./fetchingTranslationsGerman";
