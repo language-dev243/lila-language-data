@@ -3,8 +3,8 @@ import Papa from "papaparse";
 
 async function transformCSV() {
 
-    const sourceFilePath = "./data/sources/adjectives.csv"
-    const targetFilePath = "./data/sources/adjectives_transformed.csv"
+    const sourceFilePath = "./data/backups/adjectives_backup.csv"
+    const targetFilePath = "./data/sources/adjectives_backup_transformed.csv"
 
     try {
 

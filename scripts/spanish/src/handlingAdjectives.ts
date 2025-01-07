@@ -47,7 +47,10 @@ export async function handlingAdjectives(word, sourceFilePath) {
     // await askToContinue()
 
     // step 2: checking if word is on wiktionary
-    await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
+    const isInWiktionary = await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
+    if (!isInWiktionary) {
+      return;
+    }
     // await askToContinue()
 
     // step 3: fetching inflections of word from wiktionary
