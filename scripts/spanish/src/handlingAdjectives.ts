@@ -1,6 +1,7 @@
 import chalk from "chalk";
 
 import { askToContinue } from "./askToContinue";
+import { checkingAgainstCSV } from "./utils/checkingAgainstCSV";
 import { checkingSupabase } from "./adjectives/checkingSupabase";
 import { checkingWiktionary } from "./adjectives/checkingWiktionary";
 import { fetchingInflections } from "./adjectives/fetchingInflections";
@@ -39,37 +40,43 @@ export async function handlingAdjectives(word, sourceFilePath) {
   }
 
   try {
-    // step 0: setting the adjective
+    // setting the adjective
     adjective.singular_masculine = word;
 
-    // step 1: checking if word is already in the database
+    // checking word against csv lists
+    const isInCSV = await checkingAgainstCSV(adjective.singular_masculine)
+    if (!isInCSV) {
+      return;
+    }
+
+    // checking if word is already in the database
     if (await checkingSupabase(adjective.singular_masculine, sourceFilePath)) { return }
     // await askToContinue()
 
-    // step 2: checking if word is on wiktionary
+    // checking if word is on wiktionary
     const isInWiktionary = await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
     if (!isInWiktionary) {
       return;
     }
     // await askToContinue()
 
-    // step 3: fetching inflections of word from wiktionary
+    // fetching inflections of word from wiktionary
     await fetchingInflections(adjective, sourceFilePath)
     // await askToContinue()
 
-    // step 4: fetching IPA of word from wiktionary
+    // fetching IPA of word from wiktionary
     await fetchingIPA(adjective, sourceFilePath)
     // await askToContinue()
 
-    // step 5: fetching syllabifications from wiktionary
+    // fetching syllabifications from wiktionary
     await fetchingSyllabifications(adjective, sourceFilePath)
     // await askToContinue()
 
-    // step 6: fetching translations
+    // fetching translations
     await fetchingTranslations(adjective, sourceFilePath)
     // await askToContinue()
 
-    // step 7: uploading to supabase
+    // uploading to supabase
     await uploadingToSupabase(adjective)
 
     return adjective
