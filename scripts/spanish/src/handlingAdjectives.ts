@@ -44,7 +44,7 @@ export async function handlingAdjectives(word, sourceFilePath) {
     adjective.singular_masculine = word;
 
     // checking word against csv lists
-    const isInCSV = await checkingAgainstCSV(adjective.singular_masculine)
+    const isInCSV = await checkingAgainstCSV(adjective.singular_masculine, sourceFilePath)
     if (!isInCSV) {
       return;
     }

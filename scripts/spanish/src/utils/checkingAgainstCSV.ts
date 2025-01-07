@@ -2,7 +2,9 @@ import fs from "fs/promises";
 import Papa from "papaparse";
 import chalk from "chalk";
 
-export async function checkingAgainstCSV(word) {
+import { deletingFromCSV } from "./deletingFromCSV";
+
+export async function checkingAgainstCSV(word, sourceFilePath) {
 
     const csvFilePaths = [
         "./data/processed/wordsInSupabase.csv",
@@ -30,6 +32,7 @@ export async function checkingAgainstCSV(word) {
 
             if (wordExistsInCSV) {
                 console.log(`${chalk.red("⚠️ ", word, " already exists in csv")}`);
+                await deletingFromCSV(word, sourceFilePath)
                 return;
             }
 
