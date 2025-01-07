@@ -4,14 +4,13 @@
 
 - [lila-language-data](#lila-language-data)
   - [mvp todos](#mvp-todos)
-    - [checking against csvs](#checking-against-csvs)
-    - [enforcing typescript](#enforcing-typescript)
-    - [fix fetching ipa](#fix-fetching-ipa)
-    - [fix fetching inflections](#fix-fetching-inflections)
-    - [fix fetching syllabifications](#fix-fetching-syllabifications)
-    - [incorporate libretranslate](#incorporate-libretranslate)
-    - [incorporate mozilla text-to-speech](#incorporate-mozilla-text-to-speech)
-
+    - [✅ checking against csvs](#checking-against-csvs)
+    - [❌ enforcing typescript](#enforcing-typescript)
+    - [❌ fix fetching ipa](#fix-fetching-ipa)
+    - [❌ fix fetching inflections](#fix-fetching-inflections)
+    - [❌ fix fetching syllabifications](#fix-fetching-syllabifications)
+    - [❌ incorporate libretranslate](#incorporate-libretranslate)
+    - [❌ incorporate mozilla text-to-speech](#incorporate-mozilla-text-to-speech)
 ---
 
 ### checking against csvs
