@@ -6,16 +6,16 @@ export async function checkingAgainstCSV(word) {
 
     const csvFilePaths = [
         "./data/processed/wordsInSupabase.csv",
-        "./data/processed/withEror/inflections.csv",
-        "./data/processed/withEror/ipa.csv",
-        "./data/processed/withEror/syllabifications.csv",
+        "./data/processed/withError/inflections.csv",
+        "./data/processed/withError/ipa.csv",
+        "./data/processed/withError/syllabifications.csv",
 
-        "./data/processed/withEror/translationsDE.csv",
-        "./data/processed/withEror/translationsEN.csv",
-        "./data/processed/withEror/translationsFR.csv",
-        "./data/processed/withEror/translationsIT.csv",
+        "./data/processed/withError/translationsDE.csv",
+        "./data/processed/withError/translationsEN.csv",
+        "./data/processed/withError/translationsFR.csv",
+        "./data/processed/withError/translationsIT.csv",
 
-        "./data/processed/withEror/wiktionary.csv",
+        "./data/processed/withError/wiktionary.csv",
     ]
 
     console.log("💡 checking csv files")

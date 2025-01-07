@@ -16,12 +16,12 @@ async function main() {
     try {
 
         // step 1: reading from source csv
-        console.log(`${chalk.yellow("\n 💡 step 1: reading words from CSV")}`)
+        console.log(`${chalk.yellow("\n 💡 reading words from CSV")}`)
         const words = await readingCSV(sourceFilePath);
         console.log(`${chalk.green("✅", words.length, "words found \n")}`)
 
         // step 2: processing words, writing to csvs, uploading to supabase
-        console.log(`${chalk.yellow("💡 step 2: processing words\n")}`)
+        console.log(`${chalk.yellow("💡 processing words\n")}`)
         for (const word of words) {
             console.log(`currently processing word ${chalk.blue(processedWordsCount + 1)}: ${chalk.green(word)}`)
             await handlingAdjectives(word, sourceFilePath)
