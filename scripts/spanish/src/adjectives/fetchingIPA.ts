@@ -33,6 +33,8 @@ export async function fetchingIPA(word, sourceFilePath) {
 
       } else {
         console.log(`${chalk.red("❌ no IPA found for ", inflection)}`);
+        await writingToCSV(word.singular_masculine, "./data/processed/withError/ipa.csv")
+        await deletingFromCSV(word.singular_masculine, sourceFilePath)
         return
       }
     }

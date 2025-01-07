@@ -38,6 +38,8 @@ export async function fetchingSyllabifications(word, sourceFilePath) {
                 }
             } else {
                 console.log(`${chalk.red("❌ no syllabification found for ", inflection)}`);
+                await writingToCSV(word.singular_masculine, "./data/processed/withError/syllabifications.csv")
+                await deletingFromCSV(word.singular_masculine, sourceFilePath)
                 return
             }
         }

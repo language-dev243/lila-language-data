@@ -19,10 +19,12 @@ export async function checkingWiktionary(word, sourceFilePath) {
     }
   } catch (error) {
     console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
-    await writingToCSV(word.singular_masculine, "./data/processed/withError/wiktionary.csv")
-    await deletingFromCSV(word.singular_masculine, sourceFilePath)
+    await writingToCSV(word, "./data/processed/withError/wiktionary.csv")
+    await deletingFromCSV(word, sourceFilePath)
   }
 
   console.log(`${chalk.red("❌ ", word, " not found in wiktionary...\n exiting process...")}`);
+  await writingToCSV(word, "./data/processed/withError/wiktionary.csv")
+  await deletingFromCSV(word, sourceFilePath)
   return false;
 }

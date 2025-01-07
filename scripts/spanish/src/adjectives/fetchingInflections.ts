@@ -25,6 +25,8 @@ export async function fetchingInflections(word, sourceFilePath) {
       console.log(`${chalk.green("✅ inflections found")}`)
     } else {
       console.log(`${chalk.red("❌ no inflections found")} \n`)
+      await writingToCSV(word.singular_masculine, "./data/processed/withError/inflections.csv")
+      await deletingFromCSV(word.singular_masculine, sourceFilePath)
       return
     }
 
