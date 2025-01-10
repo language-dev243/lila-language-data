@@ -1,15 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "ESNext",   
-    "strict": true, 
-    "moduleResolution": "Node",                                     /* Enable all strict type-checking options. */
-    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
-    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "outDir": "./dist",           // This tells TypeScript to output compiled JS files in the dist folder
-    "rootDir": "./src",                               /* Skip type checking all .d.ts files. */
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types/global.d.ts"
+    ],
   },
-  "include": ["src"],                    // Files to include
-  "exclude": ["node_modules"]
+  "include": [
+    "./src/*",
+    "./types/*",
+    "./types/global.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

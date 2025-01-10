@@ -1,7 +1,6 @@
 import chalk from "chalk";
 
-import { askToContinue } from "./utils/askToContinue";
-import { checkingAgainstCSV } from "./utils/checkingAgainstCSV";
+import { checkingJSONFiles } from "./utils/checkingJSONFiles"
 import { checkingSupabase } from "./adjectives/checkingSupabase";
 import { checkingWiktionary } from "./adjectives/checkingWiktionary";
 import { fetchingInflections } from "./adjectives/fetchingInflections";
@@ -10,7 +9,7 @@ import { fetchingSyllabifications } from "./adjectives/fetchingSyllabifications"
 import { fetchingTranslations } from "./adjectives/fetchingTranslations";
 import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
-export async function handlingAdjectives(word, sourceFilePath) {
+export async function handlingAdjectives(words: Words, sourceFilePath: FilePath) {
 
   const adjective = {
     "singular_masculine": "",
@@ -40,48 +39,66 @@ export async function handlingAdjectives(word, sourceFilePath) {
   }
 
   try {
-    // setting the adjective
-    adjective.singular_masculine = word;
 
-    // checking word against csv lists
-    const isInCSV = await checkingAgainstCSV(adjective.singular_masculine, sourceFilePath)
-    if (!isInCSV) {
-      return;
+    console.log(`${chalk.white("💡 processing adjectives\n")}`)
+
+    for (const word of words) {
+
+      // checking json files
+      const existsInJSON = await checkingJSONFiles(word, sourceFilePath)
+      if (existsInJSON) {
+        console.log(`${chalk.red("⚠️ ", word, " already exists in json, exiting ...\n")}`)
+        return;
+      }
+
+      // setting the adjective
+      adjective.singular_masculine = word;
+
+      // checking if word is already in the database
+      const existsInSupabase = await checkingSupabase(adjective)
+      if (existsInSupabase) {
+        console.log(`${chalk.red("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting ...\n")}`)
+        return;
+      }
+
     }
 
-    // checking if word is already in the database
-    if (await checkingSupabase(adjective.singular_masculine, sourceFilePath)) { return }
-    // await askToContinue()
+    /*
+        // checking if word is already in the database
+        if (await checkingSupabase(adjective.singular_masculine, sourceFilePath)) { return }
+        // await askToContinue()
+    
+        // checking if word is on wiktionary
+        const isInWiktionary = await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
+        if (!isInWiktionary) {
+          return;
+        }
+        // await askToContinue()
+    
+        // fetching inflections of word from wiktionary
+        await fetchingInflections(adjective, sourceFilePath)
+        // await askToContinue()
+    
+        // fetching IPA of word from wiktionary
+        await fetchingIPA(adjective, sourceFilePath)
+        // await askToContinue()
+    
+        // fetching syllabifications from wiktionary
+        await fetchingSyllabifications(adjective, sourceFilePath)
+        // await askToContinue()
+    
+        // fetching translations
+        await fetchingTranslations(adjective, sourceFilePath)
+        // await askToContinue()
+    
+        // uploading to supabase
+        await uploadingToSupabase(adjective)
+    
+        */
 
-    // checking if word is on wiktionary
-    const isInWiktionary = await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
-    if (!isInWiktionary) {
-      return;
-    }
-    // await askToContinue()
-
-    // fetching inflections of word from wiktionary
-    await fetchingInflections(adjective, sourceFilePath)
-    // await askToContinue()
-
-    // fetching IPA of word from wiktionary
-    await fetchingIPA(adjective, sourceFilePath)
-    // await askToContinue()
-
-    // fetching syllabifications from wiktionary
-    await fetchingSyllabifications(adjective, sourceFilePath)
-    // await askToContinue()
-
-    // fetching translations
-    await fetchingTranslations(adjective, sourceFilePath)
-    // await askToContinue()
-
-    // uploading to supabase
-    await uploadingToSupabase(adjective)
-
-    return adjective
+    console.log(`${chalk.red("\n💡 done and gone")}`)
 
   } catch (error) {
-    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+    console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
   }
 }

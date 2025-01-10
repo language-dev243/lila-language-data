@@ -2,7 +2,7 @@ import fs from "fs/promises";
 
 import chalk from "chalk";
 
-export async function readingSourceFile(sourceFilePath) {
+export async function readingSourceFile(sourceFilePath: FilePath) {
 
     console.log(`${chalk.white("\n💡 reading from source")}`)
 
@@ -12,7 +12,7 @@ export async function readingSourceFile(sourceFilePath) {
 
         if (!wordsArray || wordsArray.length === 0) {
             console.warn(`${chalk.red("❌ json file is empty or has no data rows")}\n`)
-            return null;
+            return [];
         }
 
         console.log(`${chalk.green("✅", wordsArray.length, "words found \n")}`)
@@ -21,5 +21,4 @@ export async function readingSourceFile(sourceFilePath) {
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
     }
-
 }
