@@ -54,26 +54,26 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       // setting the adjective
       adjective.singular_masculine = word;
 
-      // checking if word is already in the database
+      // checking if adjective is already in the database
       const existsInSupabase = await checkingSupabase(adjective)
       if (existsInSupabase) {
         console.log(`${chalk.red("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting ...\n")}`)
         return;
       }
 
+      // checking if word is on wiktionary
+      const isInWiktionary = await checkingWiktionary(adjective, sourceFilePath);
+      if (!isInWiktionary) {
+        console.log(`${chalk.red("⚠️ ", adjective.singular_masculine, " not found in wiktionary, exiting ...\n")}`)
+        return;
+      }
+
+      // fetching inflections of word from wiktionary
+      await fetchingInflections(adjective, sourceFilePath)
     }
 
     /*
-        // checking if word is already in the database
-        if (await checkingSupabase(adjective.singular_masculine, sourceFilePath)) { return }
-        // await askToContinue()
-    
-        // checking if word is on wiktionary
-        const isInWiktionary = await checkingWiktionary(adjective.singular_masculine, sourceFilePath);
-        if (!isInWiktionary) {
-          return;
-        }
-        // await askToContinue()
+
     
         // fetching inflections of word from wiktionary
         await fetchingInflections(adjective, sourceFilePath)
