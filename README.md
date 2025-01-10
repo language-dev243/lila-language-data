@@ -5,6 +5,8 @@
 - [lila-language-data](#lila-language-data)
   - [mvp todos](#mvp-todos)
     - [✅ checking against csvs](#checking-against-csvs)
+    - [❌ switching to json](#switching-to-json)
+    - [❌ checking against json](#checking-against-json)
     - [❌ enforcing typescript](#enforcing-typescript)
     - [❌ fix fetching ipa](#fix-fetching-ipa)
     - [❌ fix fetching inflections](#fix-fetching-inflections)
@@ -15,6 +17,12 @@
 
 ### checking against csvs
 - ensure that the words read from the source csv are checked against the data csvs before any further processing steps
+
+### switching to json
+- convert the exisiting word data from csv files to json files
+
+### checking against json
+- ensure that the words read from the source json file are checked against the data json files before any further processing steps
 
 ### enforcing typescript
 - set up and enforce typeScript in the project to ensure type safety and maintainability
