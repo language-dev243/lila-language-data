@@ -1,11 +1,11 @@
 import chalk from "chalk"
 
-import { readingCSV } from "./utils/readingCSV";
+import { readingSourceFile } from "./utils/readingSourceFile";
 import { handlingAdjectives } from "./handlingAdjectives";
 
 async function main() {
 
-    const sourceFilePath = "./data/sources/adjectives.csv"
+    const sourceFilePath = "./data/sources/adjectives.json"
     let processedWords = []
     let processedWordsCount = 0;
 
@@ -15,21 +15,23 @@ async function main() {
 
     try {
 
-        // step 1: reading from source csv
-        console.log(`${chalk.yellow("\n 💡 reading words from CSV")}`)
-        const words = await readingCSV(sourceFilePath);
-        console.log(`${chalk.green("✅", words.length, "words found \n")}`)
+        // reading from source 
+        const words = await readingSourceFile(sourceFilePath);
 
-        // step 2: processing words, writing to csvs, uploading to supabase
-        console.log(`${chalk.yellow("💡 processing words\n")}`)
-        for (const word of words) {
-            console.log(`currently processing word ${chalk.blue(processedWordsCount + 1)}: ${chalk.green(word)}`)
-            await handlingAdjectives(word, sourceFilePath)
-            processedWords.push(word)
-            processedWordsCount += 1;
-            console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
-            // await sleep(1000);
-        }
+        /*
+        
+                // step 2: processing words, writing to csvs, uploading to supabase
+                console.log(`${chalk.yellow("💡 processing words\n")}`)
+                for (const word of words) {
+                    console.log(`currently processing word ${chalk.blue(processedWordsCount + 1)}: ${chalk.green(word)}`)
+                    await handlingAdjectives(word, sourceFilePath)
+                    processedWords.push(word)
+                    processedWordsCount += 1;
+                    console.log(`\nprocessed words: ${chalk.blue(processedWordsCount)} of ${chalk.blue(words.length)} \n`)
+                    // await sleep(1000);
+                }
+        
+        */
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
