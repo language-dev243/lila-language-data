@@ -76,18 +76,11 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       }
 
       // fetching IPA of word from wiktionary
-      const foundIPA = await fetchingIPA(adjective, sourceFilePath)
-      if (!foundIPA) {
-
-      }
+      await fetchingIPA(adjective, sourceFilePath)
 
     }
 
     /*
-
-    
-
-    
         // fetching IPA of word from wiktionary
         await fetchingIPA(adjective, sourceFilePath)
         // await askToContinue()
