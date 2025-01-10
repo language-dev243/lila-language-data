@@ -57,27 +57,36 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       // checking if adjective is already in the database
       const existsInSupabase = await checkingSupabase(adjective)
       if (existsInSupabase) {
-        console.log(`${chalk.red("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting ...\n")}`)
+        console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting...\n")}`)
         return;
       }
 
       // checking if word is on wiktionary
       const isInWiktionary = await checkingWiktionary(adjective, sourceFilePath);
       if (!isInWiktionary) {
-        console.log(`${chalk.red("⚠️ ", adjective.singular_masculine, " not found in wiktionary, exiting ...\n")}`)
+        console.log(`${chalk.red("❌ ", adjective.singular_masculine, " not found in wiktionary, exiting...\n")}`)
         return;
       }
 
       // fetching inflections of word from wiktionary
-      await fetchingInflections(adjective, sourceFilePath)
+      const inflectionsFound = await fetchingInflections(adjective, sourceFilePath)
+      if (!inflectionsFound) {
+        console.log(`${chalk.red("❌ no inflections found for ", adjective.singular_masculine, ", exiting...\n")}`)
+        return;
+      }
+
+      // fetching IPA of word from wiktionary
+      const foundIPA = await fetchingIPA(adjective, sourceFilePath)
+      if (!foundIPA) {
+
+      }
+
     }
 
     /*
 
     
-        // fetching inflections of word from wiktionary
-        await fetchingInflections(adjective, sourceFilePath)
-        // await askToContinue()
+
     
         // fetching IPA of word from wiktionary
         await fetchingIPA(adjective, sourceFilePath)

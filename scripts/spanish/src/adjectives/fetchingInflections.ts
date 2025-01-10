@@ -2,15 +2,12 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-import { writingToCSV } from "../utils/writingToCSV";
-import { deletingFromCSV } from "../utils/deletingFromCSV";
-
-export async function fetchingInflections(word, sourceFilePath) {
+export async function fetchingInflections(adjective: SpanishAdjective, sourceFilePath: FilePath) {
 
   console.log("💡 fetching inflections...")
 
   const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(
-    word.singular_masculine)}`
+    adjective.singular_masculine)}`
 
   try {
     const response = await axios.get(url);
@@ -19,22 +16,17 @@ export async function fetchingInflections(word, sourceFilePath) {
     const inflectionTable = $(".inflection-table");
 
     if (inflectionTable.length > 0) {
-      word.plural_masculine = inflectionTable.find("tr:nth-child(2) td:nth-child(3)").text().trim()
-      word.singular_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(2)").text().trim()
-      word.plural_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(3)").text().trim()
+      adjective.plural_masculine = inflectionTable.find("tr:nth-child(2) td:nth-child(3)").text().trim()
+      adjective.singular_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(2)").text().trim()
+      adjective.plural_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(3)").text().trim()
       console.log(`${chalk.green("✅ inflections found")}`)
-    } else {
-      console.log(`${chalk.red("❌ no inflections found")} \n`)
-      await writingToCSV(word.singular_masculine, "./data/processed/withError/inflections.csv")
-      await deletingFromCSV(word.singular_masculine, sourceFilePath)
       return
+    } else {
+      return false
     }
 
-
   } catch (error) {
-    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
-    await writingToCSV(word.singular_masculine, "./data/processed/withError/inflections.csv")
-    await deletingFromCSV(word.singular_masculine, sourceFilePath)
+    console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
     return
   }
 }
