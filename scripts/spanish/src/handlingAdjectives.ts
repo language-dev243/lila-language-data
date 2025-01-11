@@ -58,7 +58,7 @@ export async function handlingAdjectives(words: Words) {
       // setting the adjective
       adjective.singular_masculine = word;
 
-      // checking against adjectiveDatabase
+      // checking against adjective database
       const existsInDatabase = await checkingAgainstDatabase(adjective, unknownAdjectives)
       if (existsInDatabase) {
         console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in database\n⚠️ proceeding to next word\n")}`)
