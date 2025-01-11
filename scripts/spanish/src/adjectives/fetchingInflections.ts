@@ -20,7 +20,7 @@ export async function fetchingInflections(adjective: Adjective, sourceFilePath: 
       adjective.singular_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(2)").text().trim()
       adjective.plural_feminine = inflectionTable.find("tr:nth-child(3) td:nth-child(3)").text().trim()
       console.log(`${chalk.green("✅ inflections found")}`)
-      return
+      return true;
     } else {
       return false
     }

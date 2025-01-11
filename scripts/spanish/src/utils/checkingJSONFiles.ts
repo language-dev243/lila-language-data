@@ -8,7 +8,7 @@ export async function checkingJSONFiles(adjective: Adjective, sourceFilePath: Fi
         "./data/processed/wordsInSupabase.json"
     ]
 
-    console.log("💡 checking files")
+    console.log("💡 checking exisiting json")
 
     try {
 

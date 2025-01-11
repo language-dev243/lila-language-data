@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 export async function readingSourceFile(sourceFilePath: FilePath) {
 
-    console.log(`${chalk.white("\n💡 reading from source")}`)
+    console.log(`${chalk.white("💡 reading from file")}`)
 
     try {
         const fileContent = await fs.readFile(sourceFilePath, "utf8");

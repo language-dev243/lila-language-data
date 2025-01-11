@@ -40,7 +40,7 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
 
   try {
 
-    console.log(`${chalk.white("💡 processing adjectives\n")}`)
+    console.log(`${chalk.white("💡 processing adjectives")}`)
 
     for (const word of words) {
 
@@ -51,35 +51,37 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       const existsInJSON = await checkingJSONFiles(adjective, sourceFilePath)
       if (existsInJSON) {
         console.log(`${chalk.red("⚠️ ", word, " already exists in json, exiting ...\n")}`)
-        return;
+        continue;
       }
 
       // checking if adjective is already in the database
+      /*
       const existsInSupabase = await checkingSupabase(adjective)
       if (existsInSupabase) {
         console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting...\n")}`)
-        return;
+        continue;
       }
+      */
 
       // checking if word is on wiktionary
       const isInWiktionary = await checkingWiktionary(adjective, sourceFilePath);
       if (!isInWiktionary) {
         console.log(`${chalk.red("❌ ", adjective.singular_masculine, " not found in wiktionary, exiting...\n")}`)
-        return;
+        continue;
       }
 
       // fetching inflections of word from wiktionary
       const inflectionsFound = await fetchingInflections(adjective, sourceFilePath)
       if (!inflectionsFound) {
         console.log(`${chalk.red("❌ no inflections found for ", adjective.singular_masculine, ", exiting...\n")}`)
-        return;
+        continue;
       }
 
       // fetching IPA of word from wiktionary
       const foundIPA = await fetchingIPA(adjective, sourceFilePath)
       if (!foundIPA) {
         console.log(`${chalk.red("❌ couldnt find all IPAs, exiting...\n")}`)
-        return;
+        continue;
       }
     }
 

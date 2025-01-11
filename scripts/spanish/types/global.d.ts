@@ -33,6 +33,18 @@ declare global {
         german_translations: string[];
     }
 
+
+    // Union type for inflections
+    type AdjectiveInflectionsUnion = keyof Pick<
+        Adjective,
+        'singular_masculine' | 'singular_feminine' | 'plural_masculine' | 'plural_feminine'
+    >;
+
+    // Union type for IPA properties
+    type AdjectiveIPAUnion = keyof Pick<
+        Adjective,
+        'ipa_singular_masculine' | 'ipa_singular_feminine' | 'ipa_plural_masculine' | 'ipa_plural_feminine'
+    >;
     type Adjectives = Adjective[]
 
     type Word = string;
