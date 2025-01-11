@@ -44,15 +44,15 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
 
     for (const word of words) {
 
+      // setting the adjective
+      adjective.singular_masculine = word;
+
       // checking json files
-      const existsInJSON = await checkingJSONFiles(word, sourceFilePath)
+      const existsInJSON = await checkingJSONFiles(adjective, sourceFilePath)
       if (existsInJSON) {
         console.log(`${chalk.red("⚠️ ", word, " already exists in json, exiting ...\n")}`)
         return;
       }
-
-      // setting the adjective
-      adjective.singular_masculine = word;
 
       // checking if adjective is already in the database
       const existsInSupabase = await checkingSupabase(adjective)

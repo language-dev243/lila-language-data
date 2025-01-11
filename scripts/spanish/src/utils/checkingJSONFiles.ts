@@ -2,7 +2,7 @@ import chalk from "chalk";
 
 import { readingSourceFile } from "./readingSourceFile";
 
-export async function checkingJSONFiles(word: Word, sourceFilePath: FilePath) {
+export async function checkingJSONFiles(adjective: SpanishAdjective, sourceFilePath: FilePath) {
 
     const filePaths: FilePath[] = [
         "./data/processed/wordsInSupabase.json"
@@ -14,10 +14,10 @@ export async function checkingJSONFiles(word: Word, sourceFilePath: FilePath) {
 
         for (const filePath of filePaths) {
 
-            const wordsArray: Words = await readingSourceFile(filePath);
+            const wordsArray: SpanishAdjectives = await readingSourceFile(filePath);
 
             if (wordsArray.length > 0) {
-                wordsArray.includes(word) ? true : false
+                wordsArray.includes(adjective) ? true : false
             } else {
                 return true;
             }
