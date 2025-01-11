@@ -2,13 +2,24 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-export async function fetchingIPA(adjective: SpanishAdjective, sourceFilePath: FilePath) {
+export async function fetchingIPA(adjective: Adjective, sourceFilePath: FilePath) {
 
-  console.log("💡 fetching IPA...")
+  console.log("💡 fetching IPA")
 
-  /// todo: andere loop schreiben, besser durchs objekt iterieren
+  // key of creates a union of object keys
+  // pick creates a type fo the union
+  type Inflections = keyof Pick<Adjective, 'singular_masculine' | 'plural_masculine' | 'singular_feminine' | 'plural_feminine'>;
 
   try {
+
+    const inflections = ["singular_masculine", "plural_masculine", "singular_feminine", "plural_feminine"]
+
+    for (const inflection of inflections) {
+      const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(adjective[inflection])}`;
+      console.log(`Fetching IPA for ${inflection}: ${url}`);
+    }
+
+
 
 
 

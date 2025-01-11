@@ -6,8 +6,7 @@ const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-export async function uploadingToSupabase(adjective) {
-    // console.log("💡 step 9: uploading to supabase...")
+export async function uploadingToSupabase(adjective: Adjective) {
 
     try {
 
@@ -49,6 +48,6 @@ export async function uploadingToSupabase(adjective) {
         console.log(`${chalk.green("✅ uploaded successfully to supabase")}`);
 
     } catch (error) {
-        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+        console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
     }
 }

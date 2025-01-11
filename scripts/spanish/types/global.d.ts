@@ -6,7 +6,7 @@ declare global {
 
     type FilePath = string;
 
-    interface SpanishAdjective {
+    interface Adjective {
         singular_masculine: string;
         singular_feminine: string;
         plural_masculine: string;
@@ -33,7 +33,7 @@ declare global {
         german_translations: string[];
     }
 
-    type SpanishAdjectives = SpanishAdjective[]
+    type Adjectives = Adjective[]
 
     type Word = string;
 

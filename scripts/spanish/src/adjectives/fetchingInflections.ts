@@ -2,7 +2,7 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-export async function fetchingInflections(adjective: SpanishAdjective, sourceFilePath: FilePath) {
+export async function fetchingInflections(adjective: Adjective, sourceFilePath: FilePath) {
 
   console.log("💡 fetching inflections...")
 

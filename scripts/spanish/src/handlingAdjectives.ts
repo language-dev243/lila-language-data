@@ -76,8 +76,11 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       }
 
       // fetching IPA of word from wiktionary
-      await fetchingIPA(adjective, sourceFilePath)
-
+      const foundIPA = await fetchingIPA(adjective, sourceFilePath)
+      if (!foundIPA) {
+        console.log(`${chalk.red("❌ couldnt find all IPAs, exiting...\n")}`)
+        return;
+      }
     }
 
     /*

@@ -7,7 +7,7 @@ import { deletingFromCSV } from "../utils/deletingFromCSV";
 
 export async function fetchingSyllabifications(word, sourceFilePath) {
 
-    console.log("💡 fetching syllabifications...")
+    console.log("💡 fetching syllabifications")
 
     try {
 
@@ -46,7 +46,7 @@ export async function fetchingSyllabifications(word, sourceFilePath) {
         console.log(`${chalk.green("✅ syllabifications found")}`);
 
     } catch (error) {
-        console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+        console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
         await writingToCSV(word.singular_masculine, "./data/processed/withError/syllabifications.csv")
         await deletingFromCSV(word.singular_masculine, sourceFilePath)
         return
