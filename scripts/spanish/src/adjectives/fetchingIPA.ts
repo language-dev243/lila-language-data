@@ -2,7 +2,7 @@ import chalk from "chalk";
 import axios from "axios";
 import * as cheerio from 'cheerio';
 
-export async function fetchingIPA(adjective: Adjective, sourceFilePath: FilePath): Promise<boolean> {
+export async function fetchingIPA(adjective: Adjective): Promise<boolean> {
   console.log(`💡 Fetching IPA for: ${adjective.singular_masculine}`);
 
   try {

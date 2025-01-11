@@ -1,20 +1,20 @@
 import chalk from "chalk";
 
-import { readingSourceFile } from "./readingSourceFile";
+import { readingSourceFile } from "./readingJSONFile";
 
-export async function checkingJSONFiles(adjective: Adjective, sourceFilePath: FilePath) {
+export async function checkingJSONFiles() {
 
     const filePaths: FilePath[] = [
         "./data/processed/wordsInSupabase.json"
     ]
 
-    console.log("💡 checking exisiting json")
+    console.log("💡 checking local database")
 
     try {
 
         for (const filePath of filePaths) {
 
-            const wordsArray: Adjectives = await readingSourceFile(filePath);
+            const wordsArray: Adjectives = await readingJSONFile(filePath);
 
             if (wordsArray.length > 0) {
                 wordsArray.includes(adjective) ? true : false

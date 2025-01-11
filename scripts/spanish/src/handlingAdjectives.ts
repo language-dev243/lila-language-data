@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
-import { checkingJSONFiles } from "./utils/checkingJSONFiles"
-import { checkingSupabase } from "./adjectives/checkingSupabase";
+import { readingLocalJSON } from "./utils/readingLocalJSON";
+import { checkingAgainstDatabase } from "./utils/checkingAgainstDatabase"
 import { checkingWiktionary } from "./adjectives/checkingWiktionary";
 import { fetchingInflections } from "./adjectives/fetchingInflections";
 import { fetchingIPA } from "./adjectives/fetchingIPA";
@@ -9,9 +9,9 @@ import { fetchingSyllabifications } from "./adjectives/fetchingSyllabifications"
 import { fetchingTranslations } from "./adjectives/fetchingTranslations";
 import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
-export async function handlingAdjectives(words: Words, sourceFilePath: FilePath) {
+export async function handlingAdjectives(words: Words) {
 
-  const adjective = {
+  const adjective: Adjective = {
     "singular_masculine": "",
     "singular_feminine": "",
     "plural_masculine": "",
@@ -38,6 +38,17 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
     "german_translations": []
   }
 
+  // add function to update local json with supabase databae
+  /*
+      const existsInSupabase = await checkingSupabase(adjective)
+      if (existsInSupabase) {
+        console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting...\n")}`)
+        continue;
+      }
+      */
+
+  const unknownAdjectives: Adjectives = []
+
   try {
 
     console.log(`${chalk.white("💡 processing adjectives")}`)
@@ -47,38 +58,29 @@ export async function handlingAdjectives(words: Words, sourceFilePath: FilePath)
       // setting the adjective
       adjective.singular_masculine = word;
 
-      // checking json files
-      const existsInJSON = await checkingJSONFiles(adjective, sourceFilePath)
-      if (existsInJSON) {
-        console.log(`${chalk.red("⚠️ ", word, " already exists in json, exiting ...\n")}`)
+      // checking against adjectiveDatabase
+      const existsInDatabase = await checkingAgainstDatabase(adjective, unknownAdjectives)
+      if (existsInDatabase) {
+        console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in database\n⚠️ proceeding to next word\n")}`)
         continue;
       }
-
-      // checking if adjective is already in the database
-      /*
-      const existsInSupabase = await checkingSupabase(adjective)
-      if (existsInSupabase) {
-        console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting...\n")}`)
-        continue;
-      }
-      */
 
       // checking if word is on wiktionary
-      const isInWiktionary = await checkingWiktionary(adjective, sourceFilePath);
+      const isInWiktionary = await checkingWiktionary(adjective);
       if (!isInWiktionary) {
         console.log(`${chalk.red("❌ ", adjective.singular_masculine, " not found in wiktionary, exiting...\n")}`)
         continue;
       }
 
       // fetching inflections of word from wiktionary
-      const inflectionsFound = await fetchingInflections(adjective, sourceFilePath)
+      const inflectionsFound = await fetchingInflections(adjective)
       if (!inflectionsFound) {
         console.log(`${chalk.red("❌ no inflections found for ", adjective.singular_masculine, ", exiting...\n")}`)
         continue;
       }
 
       // fetching IPA of word from wiktionary
-      const foundIPA = await fetchingIPA(adjective, sourceFilePath)
+      const foundIPA = await fetchingIPA(adjective)
       if (!foundIPA) {
         console.log(`${chalk.red("❌ couldnt find all IPAs, exiting...\n")}`)
         continue;

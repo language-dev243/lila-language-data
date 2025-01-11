@@ -1,7 +1,7 @@
 import axios from "axios"
 import chalk from "chalk"
 
-export async function checkingWiktionary(adjective: Adjective, sourceFilePath: FilePath) {
+export async function checkingWiktionary(adjective: Adjective) {
 
   console.log("💡 checking wiktionary...")
 

@@ -6,6 +6,8 @@ declare global {
 
     type FilePath = string;
 
+    type FilePaths = FilePath[];
+
     interface Adjective {
         singular_masculine: string;
         singular_feminine: string;

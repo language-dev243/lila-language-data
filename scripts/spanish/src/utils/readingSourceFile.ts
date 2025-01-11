@@ -2,23 +2,32 @@ import fs from "fs/promises";
 
 import chalk from "chalk";
 
-export async function readingSourceFile(sourceFilePath: FilePath) {
+export async function readingSourceFile() {
 
-    console.log(`${chalk.white("💡 reading from file")}`)
+    console.log(`${chalk.white("💡 reading source file")}`)
+
+    const filePath: FilePath = "./data/sources/adjectives.json"
+
+    const wordsArray: Words = []
 
     try {
-        const fileContent = await fs.readFile(sourceFilePath, "utf8");
-        const wordsArray = JSON.parse(fileContent);
+        const fileContent = await fs.readFile(filePath, "utf8");
+        const words = JSON.parse(fileContent);
 
-        if (!wordsArray || wordsArray.length === 0) {
+        if (!words || words.length === 0) {
             console.warn(`${chalk.red("❌ json file is empty or has no data rows")}\n`)
-            return [];
+            return []
         }
 
-        console.log(`${chalk.green("✅", wordsArray.length, "words found \n")}`)
-        return wordsArray
+        console.log(`${chalk.green("✅", words.length, "words found in source file\n")}`)
+
+        for (const word of words) {
+            wordsArray.push(word)
+        }
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
     }
+
+    return wordsArray
 }

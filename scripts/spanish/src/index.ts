@@ -5,17 +5,14 @@ import { handlingAdjectives } from "./handlingAdjectives";
 
 async function main() {
 
-    const sourceFilePath: FilePath = "./data/sources/adjectives.json"
 
     try {
 
-        // reading from source 
-        const words: Words = await readingSourceFile(sourceFilePath);
+        // reading from the source json
+        const words: Words = await readingSourceFile()
 
-        // processing words
-        await handlingAdjectives(words, sourceFilePath)
-
-
+        // processing adjectives
+        await handlingAdjectives(words)
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
