@@ -8,6 +8,10 @@ declare global {
 
     type FilePaths = FilePath[];
 
+    type Word = string;
+
+    type Words = Word[]
+
     interface Adjective {
         singular_masculine: string;
         singular_feminine: string;
@@ -35,6 +39,7 @@ declare global {
         german_translations: string[];
     }
 
+    type Adjectives = Adjective[]
 
     // Union type for inflections
     type AdjectiveInflectionsUnion = keyof Pick<
@@ -47,12 +52,6 @@ declare global {
         Adjective,
         'ipa_singular_masculine' | 'ipa_singular_feminine' | 'ipa_plural_masculine' | 'ipa_plural_feminine'
     >;
-    type Adjectives = Adjective[]
-
-    type Word = string;
-
-    type Words = Word[]
-
 }
 
 export { };

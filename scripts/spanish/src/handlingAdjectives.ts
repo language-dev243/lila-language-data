@@ -11,42 +11,6 @@ import { uploadingToSupabase } from "./adjectives/uploadingToSupabase";
 
 export async function handlingAdjectives(words: Words) {
 
-  const adjective: Adjective = {
-    "singular_masculine": "",
-    "singular_feminine": "",
-    "plural_masculine": "",
-    "plural_feminine": "",
-    "ipa_singular_masculine": "",
-    "ipa_singular_feminine": "",
-    "ipa_plural_masculine": "",
-    "ipa_plural_feminine": "",
-    "syllabification_singular_masculine": "",
-    "syllable_count_singular_masculine": "",
-    "syllabification_singular_feminine": "",
-    "syllable_count_singular_feminine": "",
-    "syllabification_plural_masculine": "",
-    "syllable_count_plural_masculine": "",
-    "syllabification_plural_feminine": "",
-    "syllable_count_plural_feminine": "",
-    "links_to_audio_files_singular_masculine": [],
-    "links_to_audio_files_singular_feminine": [],
-    "links_to_audio_files_plural_masculine": [],
-    "links_to_audio_files_plural_feminine": [],
-    "english_translations": [],
-    "french_translations": [],
-    "italian_translations": [],
-    "german_translations": []
-  }
-
-  // add function to update local json with supabase databae
-  /*
-      const existsInSupabase = await checkingSupabase(adjective)
-      if (existsInSupabase) {
-        console.log(`${chalk.yellow("⚠️ ", adjective.singular_masculine, " already exists in supabase, exiting...\n")}`)
-        continue;
-      }
-      */
-
   const unknownAdjectives: Adjectives = []
 
   try {
@@ -54,6 +18,33 @@ export async function handlingAdjectives(words: Words) {
     console.log(`${chalk.white("💡 processing adjectives")}`)
 
     for (const word of words) {
+
+      const adjective: Adjective = {
+        "singular_masculine": "",
+        "singular_feminine": "",
+        "plural_masculine": "",
+        "plural_feminine": "",
+        "ipa_singular_masculine": "",
+        "ipa_singular_feminine": "",
+        "ipa_plural_masculine": "",
+        "ipa_plural_feminine": "",
+        "syllabification_singular_masculine": "",
+        "syllable_count_singular_masculine": "",
+        "syllabification_singular_feminine": "",
+        "syllable_count_singular_feminine": "",
+        "syllabification_plural_masculine": "",
+        "syllable_count_plural_masculine": "",
+        "syllabification_plural_feminine": "",
+        "syllable_count_plural_feminine": "",
+        "links_to_audio_files_singular_masculine": [],
+        "links_to_audio_files_singular_feminine": [],
+        "links_to_audio_files_plural_masculine": [],
+        "links_to_audio_files_plural_feminine": [],
+        "english_translations": [],
+        "french_translations": [],
+        "italian_translations": [],
+        "german_translations": []
+      }
 
       // setting the adjective
       adjective.singular_masculine = word;

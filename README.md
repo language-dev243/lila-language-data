@@ -1,31 +1,26 @@
 # lila-language-data
 
-## mvp todos
-
-- [lila-language-data](#lila-language-data)
-  - [mvp todos](#mvp-todos)
-    - [✅ checking against csvs](#checking-against-csvs)
-    - [❌ switching to json](#switching-to-json)
-    - [❌ checking against json](#checking-against-json)
-    - [❌ enforcing typescript](#enforcing-typescript)
-    - [❌ fix fetching ipa](#fix-fetching-ipa)
-    - [❌ fix fetching inflections](#fix-fetching-inflections)
-    - [❌ fix fetching syllabifications](#fix-fetching-syllabifications)
-    - [❌ incorporate libretranslate](#incorporate-libretranslate)
-    - [❌ incorporate mozilla text-to-speech](#incorporate-mozilla-text-to-speech)
+- [MVP Todos](#mvp-todos)
+  - [✅ Checking Against CSVs](#checking-against-csvs)
+  - [❌ Switching to JSON and TypeScript](#switching-to-json-and-typescript)
+  - [❌ Fix Fetching IPA](#fix-fetching-ipa)
+  - [❌ Fix Fetching Inflections](#fix-fetching-inflections)
+  - [❌ Fix Fetching Syllabifications](#fix-fetching-syllabifications)
+  - [❌ Incorporate LibreTranslate](#incorporate-libretranslate)
+  - [❌ Incorporate Mozilla Text-to-Speech](#incorporate-mozilla-text-to-speech)
+- [Notes](#notes)
 ---
 
+## mvp todos
+
 ### checking against csvs
-- ensure that the words read from the source csv are checked against the data csvs before any further processing steps
+- [x] ensure that the words read from the source csv are checked against the data csvs before any further processing steps
 
-### switching to json
-- convert the exisiting word data from csv files to json files
-
-### checking against json
-- ensure that the words read from the source json file are checked against the data json files before any further processing steps
-
-### enforcing typescript
-- set up and enforce typeScript in the project to ensure type safety and maintainability
+### switching to json and ts
+- [ ] add function to pull all the data from supabase and create a local json copy
+- [ ] convert the exisiting word data from csv files to json files
+- [ ] ensure that the words read from the source json file are checked against the data json files before any further processing steps
+- [ ] set up and enforce typeScript in the project to ensure type safety and maintainability
 
 ### fix fetching ipa
 - fix the process for fetching ipa representations for words
@@ -93,9 +88,14 @@ Let me know if you'd like more detailed instructions on how to scrape or use the
 - integrate libretranslate for translation functionality, and use freedict as a fallback translation source (with downloadable data sets)
 - 
 ### incorporate mozilla text-to-speech
-- add mozilla tts functionality to generate speech from text.
+- add mozilla tts functionality to generate speech from text
+- research webspace for storing audio files
+- generate and save audio files
 
-
-
-
-
+## notes
+- add own oss license
+- add testing
+- adjust CD/CI process (add linting and automatic testing)
+- get rid of (all) dependencies
+- create nice readme file
+- add column "language level", find source for levels (a1-c2), adjust database data

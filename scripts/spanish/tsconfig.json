@@ -22,7 +22,8 @@
   "include": [
     "./src/*",
     "./types/*",
-    "./types/global.d.ts"
+    "./types/global.d.ts",
+    "src/utils/syncLocalWithSupabase.ts"
   ],
   "exclude": [
     "node_modules"
