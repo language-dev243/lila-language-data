@@ -1,6 +1,6 @@
 import { readingLocalJSON } from "./readingLocalJSON";
 
-export async function checkingAgainstDatabase(adjective: Adjective, unknownAdjectives: Adjectives) {
+export async function checkingAgainstDatabase(adjective: Adjective) {
 
     const localAdjectives: Adjectives = await readingLocalJSON()
 

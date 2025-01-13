@@ -4,7 +4,7 @@ import chalk from "chalk";
 
 export async function readingSourceFile() {
 
-    console.log(`${chalk.white("💡 reading source file")}`)
+    console.log(`${chalk.blue("💡 reading new words")}`)
 
     const filePath: FilePath = "./data/sources/adjectives.json"
 

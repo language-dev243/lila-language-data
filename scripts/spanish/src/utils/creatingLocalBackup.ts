@@ -18,5 +18,5 @@ export async function creatingLocalBackup(supabaseData: Adjectives) {
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
     }
-    console.log(chalk.green("✅ local backup saved successfully"));
+    console.log(chalk.green("✅ local backup saved successfully\n"));
 }

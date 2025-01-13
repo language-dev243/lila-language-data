@@ -2,7 +2,7 @@ import chalk from "chalk"
 
 import { syncLocalWithSupabase } from "./utils/syncLocalWithSupabase";
 import { readingSourceFile } from "./utils/readingSourceFile";
-import { handlingAdjectives } from "./handlingAdjectives";
+import { handlingAdjective } from "./adjectives/handlingAdjective";
 
 async function main() {
 
@@ -12,14 +12,17 @@ async function main() {
         await syncLocalWithSupabase()
 
         // getting new words from the source json
-        // const words: Words = await readingSourceFile()
+        const words: Words = await readingSourceFile()
 
         // todo: loop through the new words and 
         // pass them to to correspondending functions
         // adjectives to handling adjectives function
 
-        // processing adjectives
-        // await handlingAdjectives(words)
+        for (const word of words) {
+
+
+            await handlingAdjective(word)
+        }
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)

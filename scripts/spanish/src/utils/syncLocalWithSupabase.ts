@@ -27,7 +27,7 @@ export async function syncLocalWithSupabase() {
         console.log(`${chalk.white("💡 comparing local data with supabase")}`)
         // if local data doesnt equal supabase data, supabase gets written to local json
         if (isEqual) {
-            console.log(chalk.yellow("⚠ local data is up-to-date with supabase"));
+            console.log(chalk.yellow("⚠ local data is up-to-date with supabase\n"));
             return;
         } else {
             console.log(`${chalk.yellow("⚠ differences found")}`)
