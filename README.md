@@ -1,14 +1,15 @@
 # lila-language-data
 
-- [MVP Todos](#mvp-todos)
-  - [✅ Checking Against CSVs](#checking-against-csvs)
-  - [❌ Switching to JSON and TypeScript](#switching-to-json-and-typescript)
-  - [❌ Fix Fetching IPA](#fix-fetching-ipa)
-  - [❌ Fix Fetching Inflections](#fix-fetching-inflections)
-  - [❌ Fix Fetching Syllabifications](#fix-fetching-syllabifications)
-  - [❌ Incorporate LibreTranslate](#incorporate-libretranslate)
-  - [❌ Incorporate Mozilla Text-to-Speech](#incorporate-mozilla-text-to-speech)
-- [Notes](#notes)
+- [lila-language-data](#lila-language-data)
+  - [mvp todos](#mvp-todos)
+    - [checking against csvs](#checking-against-csvs)
+    - [switching to json and ts](#switching-to-json-and-ts)
+    - [fix fetching ipa](#fix-fetching-ipa)
+    - [fix fetching inflections](#fix-fetching-inflections)
+    - [fix fetching syllabifications](#fix-fetching-syllabifications)
+    - [incorporate libretranslate](#incorporate-libretranslate)
+    - [incorporate mozilla text-to-speech](#incorporate-mozilla-text-to-speech)
+  - [notes](#notes)
 ---
 
 ## mvp todos
@@ -86,16 +87,19 @@ Let me know if you'd like more detailed instructions on how to scrape or use the
 
 ### incorporate libretranslate
 - integrate libretranslate for translation functionality, and use freedict as a fallback translation source (with downloadable data sets)
-- 
+
 ### incorporate mozilla text-to-speech
 - add mozilla tts functionality to generate speech from text
 - research webspace for storing audio files
 - generate and save audio files
 
 ## notes
-- add own oss license
+- add own oss license + add wiktionary license (see their eula)
 - add testing
 - adjust CD/CI process (add linting and automatic testing)
 - get rid of (all) dependencies
 - create nice readme file
 - add column "language level", find source for levels (a1-c2), adjust database data
+- add all other word categories
+- fill the database with words
+- create decks object + generate decks (100 beginner words, song from manu chao, etc)
