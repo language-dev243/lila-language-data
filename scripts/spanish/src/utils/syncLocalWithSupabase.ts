@@ -1,4 +1,3 @@
-import fs from "fs/promises";
 import chalk from "chalk";
 import "dotenv/config";
 import { createClient } from '@supabase/supabase-js';
@@ -13,7 +12,7 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 export async function syncLocalWithSupabase() {
 
-    console.log(`${chalk.blue("\n💡 syncing local data with supabase\n")}`)
+    console.log(`${chalk.blue("\n💡 syncing local data with supabase")}`)
 
     try {
         // loading local data
@@ -28,9 +27,10 @@ export async function syncLocalWithSupabase() {
         console.log(`${chalk.white("💡 comparing local data with supabase")}`)
         // if local data doesnt equal supabase data, supabase gets written to local json
         if (isEqual) {
-            console.log(chalk.yellow("⚠ local data is up-to-date with supabase, exiting..."));
+            console.log(chalk.yellow("⚠ local data is up-to-date with supabase"));
             return;
         } else {
+            console.log(`${chalk.yellow("⚠ differences found")}`)
             await creatingLocalBackup(supabaseData)
         }
 
