@@ -14,15 +14,11 @@ async function main() {
         // getting new words from the source json
         const words: Words = await readingSourceFile()
 
-        // todo: loop through the new words and 
-        // pass them to to correspondending functions
-        // adjectives to handling adjectives function
+        // compare local supabase with the new words in source json
+        // if there are new words remaining, pass them to to correspondending functions
+        // like: adjectives to handling adjectives function
+        await handlingAdjective(word)
 
-        for (const word of words) {
-
-
-            await handlingAdjective(word)
-        }
 
     } catch (error) {
         console.log(`${chalk.red("Unexpected error:", (error as Error).message)}\n`)
@@ -30,3 +26,4 @@ async function main() {
 }
 
 main();
+
