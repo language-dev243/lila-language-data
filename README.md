@@ -1,105 +1,128 @@
-# lila-language-data
+# lila language data collection app
 
-- [lila-language-data](#lila-language-data)
-  - [mvp todos](#mvp-todos)
-    - [checking against csvs](#checking-against-csvs)
-    - [switching to json and ts](#switching-to-json-and-ts)
-    - [fix fetching ipa](#fix-fetching-ipa)
-    - [fix fetching inflections](#fix-fetching-inflections)
-    - [fix fetching syllabifications](#fix-fetching-syllabifications)
-    - [incorporate libretranslate](#incorporate-libretranslate)
-    - [incorporate mozilla text-to-speech](#incorporate-mozilla-text-to-speech)
-  - [notes](#notes)
----
+a node.js application for collecting and processing language data to support my flashcard application. it also serves as a learning opportunity to explore various technologies:
 
-## mvp todos
+- javascript
+- typescript
+- testing
+- web scraping
+- git
+- sql
+- ci/cd
 
-### checking against csvs
-- [x] ensure that the words read from the source csv are checked against the data csvs before any further processing steps
+## core requirements
 
-### switching to json and ts
-- [ ] add function to pull all the data from supabase and create a local json copy
-- [ ] convert the exisiting word data from csv files to json files
-- [ ] ensure that the words read from the source json file are checked against the data json files before any further processing steps
-- [ ] set up and enforce typeScript in the project to ensure type safety and maintainability
+### functional requirements
+- process source json files containing word lists (e.g., adjectives, nouns)
+- fetch word attributes depending on word type
+- store processed data in supabase
+- support multiple word types (adjectives, nouns, etc.)
 
-### fix fetching ipa
-- fix the process for fetching ipa representations for words
+### technical requirements
+- all code written in typescript
+- minimum 80% test coverage
+- robust error handling and logging
+- rate limiting for external api calls
+- data validation to ensure input integrity
+- local data caching for performance
+- automated ci/cd pipeline for deployment
 
-- possible sources:
-- 1. Forvo
+## quality standards
+- eslint + prettier: enforce consistent code formatting and quality
+- git hooks (husky): pre-commit checks to prevent errors from entering the repository
+- documentation: basic overview for the project's scope and commands
+- error reporting and monitoring: ensure issues are visible
+- performance metrics: monitor and optimize processing times
 
-    What it is: Forvo is a community-driven website with audio recordings and IPA transcriptions for words in various languages, including Spanish.
-    How to use: Forvo has a free website and offers IPA transcriptions for a vast number of words in Spanish.
-    API: Forvo has a paid API, but you can explore its API documentation to see if it fits your needs. It might be useful if you need large-scale access or integration into your app.
-    Web scraping: If you don't want to pay for the API, you could scrape the IPA data from the website, but make sure to follow their terms of service.
+### Project Structure
 
-2. SpanishDict
+src/
+├── core/
+├── services/
+├── types/
+├── utils/
+├── config/
+└── tests/
 
-    What it is: SpanishDict is a popular site that offers translations, conjugations, and pronunciation in Spanish, along with IPA transcriptions for many words.
-    How to use: They provide IPA for individual words, and the site is generally very accurate.
-    API: SpanishDict doesn’t have a public API, but it has a huge dictionary and pronunciation resources that can be scraped. You can consider scraping the IPA transcription along with the word pronunciation if it aligns with their terms of service.
+data/
+├── source/
+├── processed/
+└── cache/
 
-3. Wiktionary
+## development roadmap
 
-    What it is: Wiktionary contains entries for Spanish words and often provides IPA transcriptions. It's a collaborative project, so it has a large database of transcriptions for many Spanish adjectives.
-    How to use: You can access the IPA transcriptions by looking at the Spanish word pages.
-    API: There is no official API for Wiktionary, but you can use the Wikimedia API to scrape Wiktionary entries (with some restrictions). You can query specific pages like https://en.wiktionary.org/wiki/{word} for IPA transcriptions.
-    Web scraping: Scraping the IPA transcriptions from Wiktionary is feasible, as long as you respect their terms of use.
+### phase 1: setup & core infrastructure
 
-4. IPA Source
+1. **project initialization**
+   - initialize the project and create `package.json`.
+   - add basic metadata like name, version, and author.
+   - define core scripts: `dev`, `build`, and `start`.
 
-    What it is: IPA Source is a valuable resource for finding phonetic transcriptions for a variety of languages, including Spanish. While it's more focused on musical texts, it could provide a reliable base for words or phrases.
-    How to use: You can browse the transcriptions directly on the website.
-    API: IPA Source does not offer an API, and scraping may be limited in some cases.
+2. **typescript setup**
+   - configure `tsconfig.json` for strict type checking and clear output structure.
+   - set the `rootdir` to `./src` and the `outdir` to `./dist`.
 
-5. Linguee
+3. **directory structure**
+   - create folders for `adjectives`, `utils`, `data`, and `types`.
+   - ensure logical separation of functionality for easy navigation.
 
-    What it is: Linguee is an online dictionary that combines machine translations with human translations. It also shows phonetic transcriptions for many Spanish words, although not all of them.
-    How to use: You can check individual entries for IPA transcriptions.
-    API: Linguee does not provide a public API, but you can still scrape data if it's permissible.
+4. **dependency installation**
+   - install essential libraries for functionality:
+     - `chalk`, `axios`, `dotenv`, `@supabase/supabase-js`, `papaparse`, `cheerio`.
+   - install dev dependencies for development and testing:
+     - `typescript`, `eslint`, `jest`, and related tools.
 
-6. Google Translate
+5. **eslint and prettier setup**
+   - configure eslint for consistent code quality.
+   - add prettier for automatic code formatting.
+   - integrate linting and formatting scripts in `package.json`.
 
-    What it is: Google Translate offers IPA-like transcriptions for many languages, including Spanish.
-    How to use: You can translate words and find the IPA in the phonetic text format (though it's not always exactly IPA).
-    API: Google Cloud Translation API is available, but it’s a paid service. It could be useful if you need reliable translations and pronunciation, though IPA may not be directly available via the API.
+6. **supabase integration**
+   - set up the supabase client with environment variables for credentials.
+   - create `.env` file to store sensitive configuration values.
 
-7. Glosbe
+7. **basic functionality**
+   - implement core utilities for word processing:
+     - fetching word attributes (inflections, ipa, syllabifications, translations).
+     - uploading processed data to supabase.
+     - reading and syncing local data.
 
-    What it is: Glosbe is a multilingual dictionary and translation platform. It may provide IPA transcriptions for many words, especially in commonly spoken languages like Spanish.
-    How to use: You can search for individual words, and IPA transcriptions may be available in the results.
-    API: Glosbe provides an open API that can be used to fetch translations and sometimes phonetic transcriptions for words. It's free but requires registration.
+8. **testing framework**
+   - install and configure jest for typescript testing.
+   - write basic tests to verify utility functions.
 
-Summary:
+9. **ci/cd pipeline**
+   - configure a github actions workflow to automate:
+     - code linting.
+     - running tests.
+     - building the project.
 
-    Best free option: Forvo is a great resource for IPA transcriptions, especially if you need accuracy for common words. It provides an API with some limitations but is a premium service.
-    Alternative for scraping: Wiktionary offers IPA transcriptions and can be scraped with caution, but make sure to comply with their terms.
-    Free API options: Glosbe has a free API that can be explored, and you might find IPA transcriptions for Spanish words there.
+10. **documentation**
+    - update `readme.md` with:
+      - core requirements.
+      - commands to run the app (install, build, start, test).
+      - basic usage instructions.
 
-Let me know if you'd like more detailed instructions on how to scrape or use these services!
+### phase 2: core features
+- implement a word processing pipeline
+- integrate with external apis for data fetching
+- develop mechanisms for data storage in supabase
 
-### fix fetching inflections
-- address issues related to fetching inflection forms of words
+### phase 3: quality & optimization
+- add comprehensive error handling and logging
+- implement rate limiting to manage api usage effectively
+- introduce caching to improve efficiency
 
-### fix fetching syllabifications
-- resolve any problems with the syllabification data retrieval for words
+### phase 4: expansion
+- extend support for additional word types
+- add support for more languages
+- focus on performance improvements and scalability
 
-### incorporate libretranslate
-- integrate libretranslate for translation functionality, and use freedict as a fallback translation source (with downloadable data sets)
+## tech stack
+- node.js (v23)
+- typescript (v5+)
+- jest for testing
+- eslint + prettier
+- supabase for database and storage
+- github actions for ci/cd
 
-### incorporate mozilla text-to-speech
-- add mozilla tts functionality to generate speech from text
-- research webspace for storing audio files
-- generate and save audio files
-
-## notes
-- add own oss license + add wiktionary license (see their eula)
-- add testing
-- adjust CD/CI process (add linting and automatic testing)
-- get rid of (all) dependencies
-- create nice readme file
-- add column "language level", find source for levels (a1-c2), adjust database data
-- add all other word categories
-- fill the database with words
-- create decks object + generate decks (100 beginner words, song from manu chao, etc)
