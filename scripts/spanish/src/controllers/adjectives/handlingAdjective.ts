@@ -1,6 +1,6 @@
 import chalk from "chalk";
 
-import { checkingAgainstDatabase } from "../utils/checkingAgainstDatabase"
+import { checkingAgainstDatabase } from "../../utils/checkingAgainstDatabase"
 import { checkingWiktionary } from "./checkingWiktionary";
 import { fetchingInflections } from "./fetchingInflections";
 import { fetchingIPA } from "./fetchingIPA";

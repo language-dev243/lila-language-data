@@ -2,16 +2,16 @@ import axios from "axios";
 import * as cheerio from 'cheerio';
 import chalk from "chalk";
 
-import { writingToCSV } from "../utils/writingToCSV";
-import { deletingFromCSV } from "../utils/deletingFromCSV";
+import { writingToCSV } from "../../utils/writingToCSV";
+import { deletingFromCSV } from "../../utils/deletingFromCSV";
 
-export async function fetchingSyllabifications(word, sourceFilePath) {
+export async function fetchingSyllabifications(word: Word, sourceFilePath: FilePath) {
 
     console.log("💡 fetching syllabifications")
 
     try {
 
-        const inflections = ["singular_masculine", "plural_masculine", "singular_feminine", "plural_feminine"]
+        const inflections: string[] = ["singular_masculine", "plural_masculine", "singular_feminine", "plural_feminine"]
 
         for (const inflection of inflections) {
             const url = `https://es.m.wiktionary.org/wiki/${encodeURIComponent(

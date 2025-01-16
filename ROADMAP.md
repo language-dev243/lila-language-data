@@ -1,12 +1,12 @@
 # detailed development roadmap
 
-0 of 194 tasks finished
+2 of 194 tasks finished
 
 ## phase 1: foundation setup (weeks 1-2)
 
 ### 1.1 project initialization (2-3 days)
-- [ ] set up new directory structure
-- [ ] initialize git repository
+- [x] set up new directory structure
+- [x] initialize git repository
 - [ ] create initial package.json
 - [ ] define name, version, author
 - [ ] set up basic scripts (dev, build, start)

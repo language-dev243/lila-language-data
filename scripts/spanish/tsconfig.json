@@ -21,7 +21,7 @@
   },
   "include": [
     "./src/*",
-    "./types/*",
+    "./src/types/*",
     "./types/global.d.ts",
     "src/utils/syncLocalWithSupabase.ts",
     "src/adjectives/handlingAdjective.ts"

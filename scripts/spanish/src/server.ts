@@ -2,7 +2,7 @@ import chalk from "chalk"
 
 import { syncLocalWithSupabase } from "./utils/syncLocalWithSupabase";
 import { readingSourceFile } from "./utils/readingSourceFile";
-import { handlingAdjective } from "./adjectives/handlingAdjective";
+import { handlingAdjective } from "./controllers/adjectives/handlingAdjective";
 
 async function main() {
 
