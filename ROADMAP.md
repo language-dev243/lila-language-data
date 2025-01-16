@@ -1,5 +1,7 @@
 # detailed development roadmap
 
+0 of 194 tasks finished
+
 ## phase 1: foundation setup (weeks 1-2)
 
 ### 1.1 project initialization (2-3 days)
