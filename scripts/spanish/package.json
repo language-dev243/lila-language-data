@@ -1,11 +1,12 @@
 {
-  "name": "beste",
+  "name": "lila-language-data",
   "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
+  "description": "script to gather language data",
+  "license": " GPL-3.0-or-later",
+  "author": "languagedev",
   "type": "module",
-  "main": "index.js",
+  "main": "server.ts",
+  "repository": "github:language-dev243/lila-language-data",
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",

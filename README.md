@@ -4,8 +4,9 @@ a node.js application for collecting and processing language data to support my 
 
 - javascript
 - typescript
-- testing
+- testing (tdd)
 - web scraping
 - git
 - sql
 - ci/cd
+- docker

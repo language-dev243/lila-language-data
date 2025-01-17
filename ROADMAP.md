@@ -1,19 +1,32 @@
 # detailed development roadmap
 
-2 of 194 tasks finished
+4 of 193 tasks finished
 
 ## phase 1: foundation setup (weeks 1-2)
 
 ### 1.1 project initialization (2-3 days)
-- [x] set up new directory structure
-- [x] initialize git repository
-- [ ] create initial package.json
-- [ ] define name, version, author
-- [ ] set up basic scripts (dev, build, start)
-- [ ] configure module type (esm)
-- [ ] create .gitignore file
-- [ ] add node_modules, dist, .env, etc.
-- [ ] set up readme.md with basic project description
+
+#### 1.1.1 set up new directory structure
+
+adopted folder structure from [typescript node starter](https://github.com/microsoft/TypeScript-Node-Starter)
+
+#### 1.1.2 create initial package.json
+
+read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json) added license GPLv3
+defined name, version, author, github url
+configured module type (esm)
+set up basic scripts (dev, build, start)
+
+#### 1.1.3 create .gitignore file
+
+add node_modules, dist, .env, etc.
+
+#### 1.1.4 set up readme.md with basic project description
+
+adding description
+
+#### 1.1.5 adding docker
+
 - [ ] create dockerfile
 - [ ] set up multi-stage build process
 - [ ] configure development and production stages
