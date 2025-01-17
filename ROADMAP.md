@@ -8,25 +8,25 @@
 
 #### 1.1.1 set up new directory structure
 
-adopted folder structure from [typescript node starter](https://github.com/microsoft/TypeScript-Node-Starter)
+- [x] adopted folder structure from [typescript node starter](https://github.com/microsoft/TypeScript-Node-Starter)
 
 #### 1.1.2 create initial package.json
 
-read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json) added license GPLv3
-defined name, version, author, github url
-configured module type (esm)
-set up basic scripts (dev, build, start)
+- [x] read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json) added license GPLv3
+- [x] defined name, version, author, github url
+- [x] configured module type (esm)
+- [x] set up basic scripts (dev, build, start)
 
 #### 1.1.3 create .gitignore file
 
-add node_modules, dist, .env, etc.
+- [x] add node_modules, dist, .env, etc.
 
 #### 1.1.4 set up readme.md with basic project description
 
-adding description
+- [x] adding description
 
 #### 1.1.5 adding docker
-
+- [x] [installing docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository), creating dockerhub account
 - [ ] create dockerfile
 - [ ] set up multi-stage build process
 - [ ] configure development and production stages
