@@ -26,8 +26,9 @@
 - [x] adding description
 
 #### 1.1.5 adding docker
-- [x] [installing docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository), creating dockerhub account
-- [ ] create dockerfile
+- [x] [installing docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
+- [x] creating dockerhub account
+- [ ] create dockerfile ([dockerfile reference](https://docs.docker.com/build/concepts/dockerfile/))
 - [ ] set up multi-stage build process
 - [ ] configure development and production stages
 - [ ] add .dockerignore file
