@@ -8,7 +8,7 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "sourceMap": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
@@ -18,6 +18,18 @@
       "./node_modules/@types",
       "./types/global.d.ts"
     ],
+    "baseUrl": "./",
+    "paths": {
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@controllers/*": [
+        "src/controllers/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ]
+    },
   },
   "include": [
     "./src/*",

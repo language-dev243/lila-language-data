@@ -2,7 +2,7 @@
   "name": "lila-language-data",
   "version": "1.0.0",
   "description": "script to gather language data",
-  "license": " GPL-3.0-or-later",
+  "license": "GPL-3.0-or-later",
   "author": "languagedev",
   "type": "module",
   "main": "server.ts",
@@ -30,7 +30,7 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0"
   },
-  "Dependencies": {
+  "dependencies": {
     "chalk": "^5.4.1"
   }
 }

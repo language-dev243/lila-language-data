@@ -1,6 +1,6 @@
 # detailed development roadmap
 
-16 of 193 tasks finished
+26 of 193 tasks finished
 
 ## phase 1: foundation setup (weeks 1-2)
 
@@ -37,16 +37,16 @@
 - [x] configure development environment
 
 ### 1.3 typescript configuration (1-2 days)
-- [ ] install typescript and required dependencies
-- [ ] configure tsconfig.json
-- [ ] set target to esnext
-- [ ] enable strict mode
-- [ ] configure module resolution
-- [ ] set up path aliases
-- [ ] configure type roots
-- [ ] create global type definitions
-- [ ] set up build pipeline
-- [ ] create docker build pipeline for typescript
+- [x] install typescript and required dependencies
+- [x] configure tsconfig.json
+- [x] set target to esnext
+- [x] enable strict mode
+- [x] configure module resolution
+- [x] set up path aliases
+- [x] configure type roots
+- [x] create global type definitions
+- [x] set up build pipeline
+- [x] create docker build pipeline for typescript
 
 ### 1.4 code quality setup (2-3 days)
 - [ ] install and configure eslint
