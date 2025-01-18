@@ -1,6 +1,6 @@
 # detailed development roadmap
 
-26 of 193 tasks finished
+26 of 193 tasks finished (xx%)
 
 ## phase 1: foundation setup (weeks 1-2)
 
@@ -79,7 +79,11 @@
 ## phase 2: core infrastructure (weeks 3-4)
 
 ### 2.1 database setup (2-3 days)
+- [ ] set up local PostgreSQL database for development
+- [ ] create database connection configuration for dev/prod environments
+- [ ] implement environment-based database switching
 - [ ] set up supabase project
+- [ ] create database sync mechanism between local and Supabase
 - [ ] create database schema with tdd approach
 - [ ] write tests for database schema
 - [ ] define tables for adjectives
@@ -120,6 +124,17 @@
 - [ ] set up persistent storage
 - [ ] implement backup volumes
 - [ ] configure shared volumes
+
+### 2.4 Server Setup (2-3 days)
+- [ ] set up Express/Node HTTP server
+- [ ] configure port listening (development and production ports)
+- [ ] implement graceful shutdown handling
+- [ ] set up process manager (PM2 or similar)
+- [ ] create health check endpoints
+- [ ] implement basic API routing structure
+- [ ] set up environment-specific configurations
+- [ ] create server startup scripts
+- [ ] implement logging for server events
 
 ## phase 3: core features (weeks 5-7)
 
