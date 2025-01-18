@@ -1,6 +1,6 @@
 # detailed development roadmap
 
-4 of 193 tasks finished
+16 of 193 tasks finished
 
 ## phase 1: foundation setup (weeks 1-2)
 
@@ -12,7 +12,8 @@
 
 #### 1.1.2 create initial package.json
 
-- [x] read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json) added license GPLv3
+- [x] read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json)
+- [x] added license GPLv3
 - [x] defined name, version, author, github url
 - [x] configured module type (esm)
 - [x] set up basic scripts (dev, build, start)
@@ -25,19 +26,17 @@
 
 - [x] adding description
 
-#### 1.1.5 adding docker
-- [x] [installing docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
+### 1.2 adding docker
+- [x] [install docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 - [x] creating dockerhub account
-- [ ] create dockerfile ([dockerfile reference](https://docs.docker.com/build/concepts/dockerfile/W))
-- [ ] set up multi-stage build process
-- [ ] configure development and production stages
-- [ ] add .dockerignore file
-- [ ] create docker-compose.yml
-- [ ] configure development environment
-- [ ] set up service dependencies
-- [ ] define volumes and networks
+- [x] ([create dockerfile](https://docs.docker.com/build/concepts/dockerfile/W))
+- [x] set up multi-stage build process
+- [x] configure development and production stages
+- [x] add .dockerignore file
+- [x] create docker-compose.yml
+- [x] configure development environment
 
-### 1.2 typescript configuration (1-2 days)
+### 1.3 typescript configuration (1-2 days)
 - [ ] install typescript and required dependencies
 - [ ] configure tsconfig.json
 - [ ] set target to esnext
@@ -49,7 +48,7 @@
 - [ ] set up build pipeline
 - [ ] create docker build pipeline for typescript
 
-### 1.3 code quality setup (2-3 days)
+### 1.4 code quality setup (2-3 days)
 - [ ] install and configure eslint
 - [ ] set up typescript parser
 - [ ] configure rules
@@ -63,7 +62,7 @@
 - [ ] add editorconfig file
 - [ ] set up automated code quality checks in docker
 
-### 1.4 testing infrastructure (2-3 days)
+### 1.5 testing infrastructure (2-3 days)
 - [ ] set up jest with typescript support
 - [ ] configure test environment
 - [ ] implement test-driven development workflow
