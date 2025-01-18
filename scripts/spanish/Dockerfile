@@ -1,16 +1,17 @@
-# Stage 1: Builder
-FROM node:current-alpine3.20 AS builder
+# stage 1: base image
+FROM node:current-alpine3.20 AS base
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build
 
-# Stage 2: Final Runtime Image
-FROM node:current-alpine3.20
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-COPY package*.json ./
-RUN npm ci --only=production
-EXPOSE 3000
+# stage 2: development
+FROM base AS development
+ENV NODE_ENV=development
+CMD ["npx", "tsx", "src/server.ts"]
+
+# stage 3: production
+FROM base AS production
+ENV NODE_ENV=production
+RUN npm run build
 CMD ["node", "dist/server.js"]
