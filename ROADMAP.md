@@ -49,11 +49,11 @@
 - [x] create docker build pipeline for typescript
 
 ### 1.4 code quality setup (2-3 days)
-- [ ] install and configure eslint
+- [ ] install and [configure eslint](https://eslint.org/docs/latest/use/configure/)
 - [ ] set up typescript parser
 - [ ] configure rules
 - [ ] add typescript-specific rules
-- [ ] install and configure prettier
+- [ ] install and [configure prettier](https://prettier.io/docs/en/configuration.html)
 - [ ] create .prettierrc
 - [ ] set up format on save
 - [ ] set up pre-commit hooks with husky
