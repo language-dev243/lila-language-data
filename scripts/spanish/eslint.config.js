@@ -17,8 +17,8 @@ export default [{
     },
   rules: {
       // TypeScript specific rules
-      "adjacent-overload-signatures": "off",
-      "@typescript-eslint/no-explicit-any": "warn",
+      "adjacent-overload-signatures": ["error"],
+      "@typescript-eslint/no-explicit-any": ["error"],
       "@typescript-eslint/explicit-function-return-type": "warn",
       "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
       "@typescript-eslint/no-non-null-assertion": "warn",
