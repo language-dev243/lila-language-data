@@ -1,4 +1,4 @@
-import readline from "readline"
+import readline from "readline";
 
 export async function askToContinue() {
   const rl = readline.createInterface({
@@ -12,7 +12,7 @@ export async function askToContinue() {
       (answer) => {
         rl.close();
         resolve(answer.trim().toLowerCase() === "y" || answer.trim() === "");
-      }
+      },
     );
   });
 }

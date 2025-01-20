@@ -12,15 +12,16 @@ export async function readingCSV(sourceFilePath) {
     });
 
     if (!parsed.data || parsed.data.length === 0) {
-      console.warn(`${chalk.red("❌ CSV file is empty or has no data rows")}\n`)
+      console.warn(
+        `${chalk.red("❌ CSV file is empty or has no data rows")}\n`,
+      );
       return null;
     }
 
-    const words = parsed.data.map(row => row.word).filter(Boolean);
+    const words = parsed.data.map((row) => row.word).filter(Boolean);
 
     return words;
-
   } catch (error) {
-    console.log(`${chalk.red("Unexpected error:", error.message)}\n`)
+    console.log(`${chalk.red("Unexpected error:", error.message)}\n`);
   }
 }

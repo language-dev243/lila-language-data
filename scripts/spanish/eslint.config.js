@@ -1,45 +1,45 @@
-import globals from "globals";
+import eslint from "@eslint/js";
+import jestPlugin from "eslint-plugin-jest";
 import tseslint from "typescript-eslint";
-import recommendedTslint from "@typescript-eslint/eslint-plugin";
-import prettierPlugin from "eslint-plugin-prettier";
+import prettierConfig from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier"
 
-/** @type {import('eslint').Linter.Config[]} */
-
-export default [{
-
-  files: ["**/*.{js,mjs,cjs,ts}"],
-  languageOptions: 
-    { 
-      parser: '@typescript-eslint/parser', 
-      globals: globals.node,
-      ecmaVersion: "latest",
-      sourceType: "module"
+export default tseslint.config(
+  {
+    ignores: ["**/build/**", "**/dist/**"],
+  },
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  prettierConfig,
+  {
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+      jest: jestPlugin,
+      prettier: prettierPlugin
     },
-  rules: {
-      // TypeScript specific rules
-      "adjacent-overload-signatures": ["error"],
-      "@typescript-eslint/no-explicit-any": ["error"],
-      "@typescript-eslint/explicit-function-return-type": "warn",
-      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      
-      
-      // General rules
-      "no-console": ["warn", { allow: ["warn", "error"] }],
-      "no-debugger": "warn",
-      "no-duplicate-imports": "error",
-      
-      // Import rules
-      "import/prefer-default-export": "off",
-      "import/no-default-export": "off",
-
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        projectService: true,
+      },
+    },
+    rules: {
       "prettier/prettier": "error",
-
-      ...recommendedTslint.rules,
+      "@typescript-eslint/no-unsafe-argument": "error",
+      "@typescript-eslint/no-unsafe-assignment": "error",
+      "@typescript-eslint/no-unsafe-call": "error",
+      "@typescript-eslint/no-unsafe-member-access": "error",
+      "@typescript-eslint/no-unsafe-return": "error",
     },
-  plugins:
-    {
-       prettier: prettierPlugin,
-       "@typescript-eslint": tseslint.plugin,
-    }
-}];
+  },
+  {
+    // disable type-aware linting on JS files
+    files: ["**/*.js"],
+    extends: [tseslint.configs.disableTypeChecked],
+  },
+  {
+    // enable jest rules on test files
+    files: ["test/**"],
+    extends: [jestPlugin.configs["flat/recommended"]],
+  },
+);
