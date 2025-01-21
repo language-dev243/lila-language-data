@@ -63,7 +63,7 @@
 - [x] add lint-staged
 - [x] configure typescript checking
 - [x] add editorconfig file
-- [ ] set up automated code quality checks in docker
+- [x] set up automated code quality checks in docker
 
 ### 1.5 testing infrastructure (2-3 days)
 

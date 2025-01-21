@@ -5,7 +5,13 @@ COPY package*.json ./
 RUN npm ci
 COPY . .
 
-# stage 2: development
+# stage 2: code quality checks
+FROM base AS quality
+RUN npm run lint \
+    && npm run format \
+    && npm run build
+
+# stage 3: development
 FROM base AS development
 ENV NODE_ENV=development
 CMD ["npx", "tsx", "src/server.ts"]

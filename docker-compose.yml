@@ -1,4 +1,12 @@
 services:
+  # Quality check service
+  quality:
+    build:
+      context: .
+      target: quality
+    volumes:
+      - .:/app
+
   # Development service
   dev:
     build:
@@ -11,6 +19,9 @@ services:
     ports:
       - "3000:3000"
     command: ["npx", "tsx", "src/server.ts"]
+    depends_on:
+      quality:
+        condition: service_completed_successfully
 
   # Production service
   prod:
@@ -22,3 +33,6 @@ services:
     ports:
       - "3000:3000"
     command: ["node", "dist/server.js"]
+    depends_on:
+      quality:
+        condition: service_completed_successfully
