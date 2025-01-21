@@ -55,7 +55,7 @@
 - [x] add typescript-specific rules
 - [x] install and [configure prettier](https://prettier.io/docs/en/configuration.html) see also [here](https://typescript-eslint.io/users/what-about-formatting/#suggested-usage---prettier)
 - [x] create .prettierrc
-- [ ] set up format on save
+- [x] set up format on save
 - [ ] set up pre-commit hooks with husky
 - [ ] add lint-staged
 - [ ] configure typescript checking

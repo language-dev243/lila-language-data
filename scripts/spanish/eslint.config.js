@@ -2,7 +2,7 @@ import eslint from "@eslint/js";
 import jestPlugin from "eslint-plugin-jest";
 import tseslint from "typescript-eslint";
 import prettierConfig from "eslint-config-prettier";
-import prettierPlugin from "eslint-plugin-prettier"
+import prettierPlugin from "eslint-plugin-prettier";
 
 export default tseslint.config(
   {
@@ -15,7 +15,7 @@ export default tseslint.config(
     plugins: {
       "@typescript-eslint": tseslint.plugin,
       jest: jestPlugin,
-      prettier: prettierPlugin
+      prettier: prettierPlugin,
     },
     languageOptions: {
       parser: tseslint.parser,
