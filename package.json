@@ -9,7 +9,7 @@
   "repository": "github:language-dev243/lila-language-data",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint .",
+    "lint": "eslint --ext ts src",
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "tsx src/server.ts",
