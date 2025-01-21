@@ -59,10 +59,10 @@
 - [x] install and [configure prettier](https://prettier.io/docs/en/configuration.html) see also [here](https://typescript-eslint.io/users/what-about-formatting/#suggested-usage---prettier)
 - [x] create .prettierrc
 - [x] set up format on save
-- [ ] set up pre-commit hooks with husky
+- [x] set up pre-commit hooks with husky
 - [x] add lint-staged
 - [x] configure typescript checking
-- [ ] add editorconfig file
+- [x] add editorconfig file
 - [ ] set up automated code quality checks in docker
 
 ### 1.5 testing infrastructure (2-3 days)
