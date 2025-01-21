@@ -22,7 +22,7 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "typeRoots": ["./node_modules/@types", "./types/global.d.ts"],
     "baseUrl": "./",
     "paths": {
@@ -31,6 +31,6 @@
       "@services/*": ["src/services/*"]
     }
   },
-  "include": ["./src/*", "./src/types/*", "./types/global.d.ts"],
+  "include": ["./src/**/*", "./tests/**/*"],
   "exclude": ["node_modules", "dist"]
 }
