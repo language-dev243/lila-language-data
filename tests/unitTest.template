@@ -1,0 +1,18 @@
+import {exampleFunction} from "../src/exampleFunction";
+
+describe("exampleFunction", () => {
+  it("should return the expected result for valid input", () => {
+    const input = "valid input";
+    const expectedOutput = "expected output";
+
+    const result = exampleFunction(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  it("should throw an error for invalid input", () => {
+    const input = "invalid input";
+
+    expect(() => exampleFunction(input)).toThrowError("Invalid input");
+  });
+});

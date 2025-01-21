@@ -1,0 +1,29 @@
+import {exampleService} from "../src/exampleService";
+import {exampleDatabase} from "../src/exampleDatabase";
+
+describe("exampleService", () => {
+  beforeAll(async () => {
+    await exampleDatabase.connect();
+  });
+
+  afterAll(async () => {
+    await exampleDatabase.disconnect();
+  });
+
+  it("should perform a complete operation successfully", async () => {
+    const input = "valid input";
+    const expectedOutput = "expected output";
+
+    const result = await exampleService.performOperation(input);
+
+    expect(result).toBe(expectedOutput);
+  });
+
+  it("should handle errors correctly", async () => {
+    const input = "invalid input";
+
+    await expect(exampleService.performOperation(input)).rejects.toThrow(
+      "Operation failed",
+    );
+  });
+});

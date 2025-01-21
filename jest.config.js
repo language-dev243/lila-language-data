@@ -6,7 +6,11 @@
 /** @type {import('jest').Config} */
 const config = {
   preset: "ts-jest",
-
+  testEnvironment: "node",
+  coverageReporters: [
+    ["json", {skipFull: true}],
+    ["text", {skipFull: true}],
+  ],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

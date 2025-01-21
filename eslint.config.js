@@ -42,4 +42,15 @@ export default tseslint.config(
     files: ["test/**"],
     extends: [jestPlugin.configs["flat/recommended"]],
   },
+  {
+    overrides: [
+      {
+        files: ["tests/**/*"],
+        plugins: ["jest"],
+        env: {
+          "jest/globals": true,
+        },
+      },
+    ],
+  },
 );

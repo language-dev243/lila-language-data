@@ -67,13 +67,11 @@
 
 ### 1.5 testing infrastructure (2-3 days)
 
-- [ ] set up jest with typescript support
-- [ ] configure test environment
-- [ ] implement test-driven development workflow
-- [ ] create test templates following tdd principles
-- [ ] set up test-first development guidelines
-- [ ] establish red-green-refactor cycle
-- [ ] set up test coverage reporting
+- [x] set up jest with typescript support
+- [x] configure test environment
+- [x] create test templates following tdd principles
+- [x] adding tests to husky
+- [x] set up test coverage reporting
 - [ ] configure github actions for ci testing
 - [ ] create docker test environment
 - [ ] set up test containers
@@ -85,6 +83,11 @@
 ### 2.1 database setup (2-3 days)
 
 - [ ] set up local PostgreSQL database for development
+      (also connect to jest), see
+      // jest.setup.js
+      if (process.env.NODE_ENV === 'test') {
+      process.env.DATABASE_URL = process.env.TEST_DATABASE_URL;
+      }
 - [ ] create database connection configuration for dev/prod environments
 - [ ] implement environment-based database switching
 - [ ] set up supabase project
