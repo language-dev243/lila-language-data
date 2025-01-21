@@ -57,8 +57,8 @@
 - [x] create .prettierrc
 - [x] set up format on save
 - [ ] set up pre-commit hooks with husky
-- [ ] add lint-staged
-- [ ] configure typescript checking
+- [x] add lint-staged
+- [x] configure typescript checking
 - [ ] add editorconfig file
 - [ ] set up automated code quality checks in docker
 

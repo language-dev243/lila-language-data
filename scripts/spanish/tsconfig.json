@@ -3,8 +3,17 @@
     "target": "ESNext",
     "module": "ESNext",
     "strict": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
     "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
     "declaration": true,
+    "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "sourceMap": true,
@@ -35,10 +44,9 @@
     "./src/*",
     "./src/types/*",
     "./types/global.d.ts",
-    "src/utils/syncLocalWithSupabase.ts",
-    "src/adjectives/handlingAdjective.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
