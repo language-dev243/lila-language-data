@@ -23,30 +23,14 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types/global.d.ts"
-    ],
+    "typeRoots": ["./node_modules/@types", "./types/global.d.ts"],
     "baseUrl": "./",
     "paths": {
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@controllers/*": [
-        "src/controllers/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ]
-    },
+      "@utils/*": ["src/utils/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@services/*": ["src/services/*"]
+    }
   },
-  "include": [
-    "./src/*",
-    "./src/types/*",
-    "./types/global.d.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["./src/*", "./src/types/*", "./types/global.d.ts"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,0 +1,12 @@
+.husky
+.vscode
+.dockerignore
+.gitignore
+.git
+.prettierignore
+.prettierrc
+docker-compose.yml
+Dockerfile
+LICENSE
+data
+node_modules

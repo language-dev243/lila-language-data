@@ -27,6 +27,7 @@
 - [x] adding description
 
 ### 1.2 adding docker
+
 - [x] [install docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 - [x] creating dockerhub account
 - [x] ([create dockerfile](https://docs.docker.com/build/concepts/dockerfile/W))
@@ -37,6 +38,7 @@
 - [x] configure development environment
 
 ### 1.3 typescript configuration (1-2 days)
+
 - [x] install typescript and required dependencies
 - [x] configure tsconfig.json
 - [x] set target to esnext
@@ -49,6 +51,7 @@
 - [x] create docker build pipeline for typescript
 
 ### 1.4 code quality setup (2-3 days)
+
 - [x] install and [configure eslint](https://eslint.org/docs/latest/use/configure/), see also [here](https://typescript-eslint.io/packages/typescript-eslint)
 - [x] set up typescript parser
 - [x] configure rules
@@ -63,6 +66,7 @@
 - [ ] set up automated code quality checks in docker
 
 ### 1.5 testing infrastructure (2-3 days)
+
 - [ ] set up jest with typescript support
 - [ ] configure test environment
 - [ ] implement test-driven development workflow
@@ -79,6 +83,7 @@
 ## phase 2: core infrastructure (weeks 3-4)
 
 ### 2.1 database setup (2-3 days)
+
 - [ ] set up local PostgreSQL database for development
 - [ ] create database connection configuration for dev/prod environments
 - [ ] implement environment-based database switching
@@ -98,6 +103,7 @@
 - [ ] implement health checks
 
 ### 2.2 api integration (3-4 days)
+
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
 - [ ] implement wiktionary api integration
@@ -113,6 +119,7 @@
 - [ ] implement service discovery
 
 ### 2.3 file system structure (2-3 days)
+
 - [ ] set up data directory structure
 - [ ] create source directory
 - [ ] set up processed directory
@@ -126,6 +133,7 @@
 - [ ] configure shared volumes
 
 ### 2.4 Server Setup (2-3 days)
+
 - [ ] set up Express/Node HTTP server
 - [ ] configure port listening (development and production ports)
 - [ ] implement graceful shutdown handling
@@ -139,6 +147,7 @@
 ## phase 3: core features (weeks 5-7)
 
 ### 3.1 word processing pipeline (1 week)
+
 - [ ] implement base word processor using tdd
 - [ ] write tests for each processor component
 - [ ] implement components following red-green-refactor
@@ -153,6 +162,7 @@
 - [ ] configure processing queue
 
 ### 3.2 data management (1 week)
+
 - [ ] create data sync system with tdd
 - [ ] implement backup mechanism
 - [ ] build validation pipeline
@@ -164,6 +174,7 @@
 - [ ] implement sync service
 
 ### 3.3 error handling (3-4 days)
+
 - [ ] create error logging system
 - [ ] implement retry mechanisms
 - [ ] add validation errors
@@ -176,6 +187,7 @@
 ## phase 4: quality assurance (weeks 8-9)
 
 ### 4.1 testing suite (1 week)
+
 - [ ] expand unit tests following tdd
 - [ ] word processor tests
 - [ ] api integration tests
@@ -190,6 +202,7 @@
 - [ ] configure test reporting
 
 ### 4.2 monitoring & logging (4-5 days)
+
 - [ ] implement logging system
 - [ ] add performance monitoring
 - [ ] create health checks
@@ -201,6 +214,7 @@
 - [ ] implement log aggregation
 
 ### 4.3 documentation (3-4 days)
+
 - [ ] create api documentation
 - [ ] write setup guides
 - [ ] add usage examples
@@ -214,6 +228,7 @@
 ## phase 5: optimization & scaling (weeks 10-11)
 
 ### 5.1 performance optimization (1 week)
+
 - [ ] implement caching system
 - [ ] optimize database queries
 - [ ] add batch processing
@@ -226,6 +241,7 @@
 - [ ] optimize docker builds
 
 ### 5.2 scaling features (1 week)
+
 - [ ] add support for new word types
 - [ ] implement language expansion
 - [ ] create processing queue
@@ -239,6 +255,7 @@
 ## phase 6: deployment & maintenance (week 12)
 
 ### 6.1 deployment setup (3-4 days)
+
 - [ ] create deployment scripts
 - [ ] set up continuous deployment
 - [ ] configure production environment
@@ -250,6 +267,7 @@
 - [ ] implement blue-green deployment
 
 ### 6.2 maintenance tools (2-3 days)
+
 - [ ] create maintenance scripts
 - [ ] add database maintenance tools
 - [ ] implement cleanup utilities
@@ -261,6 +279,7 @@
 - [ ] configure container monitoring
 
 ## ongoing tasks
+
 - [ ] security updates
 - [ ] dependency management
 - [ ] performance monitoring
