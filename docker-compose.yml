@@ -1,5 +1,5 @@
 services:
-  # Quality check service
+  # quality check service
   quality:
     build:
       context: .
@@ -7,13 +7,13 @@ services:
     volumes:
       - .:/app
 
-  # Development service
+  # development service
   dev:
     build:
       context: .
       target: development
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=dev
     volumes:
       - .:/app
     ports:
@@ -23,16 +23,30 @@ services:
       quality:
         condition: service_completed_successfully
 
-  # Production service
+  # production service
   prod:
     build:
       context: .
       target: production
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=prod
     ports:
       - "3000:3000"
     command: ["node", "dist/server.js"]
+    depends_on:
+      quality:
+        condition: service_completed_successfully
+
+# testing service
+  test:
+    build:
+      context: .
+      target: testing
+    environment:
+      - NODE_ENV=test
+    ports:
+      - "3000:3000"
+    command: ["npm", "test"]
     depends_on:
       quality:
         condition: service_completed_successfully

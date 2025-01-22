@@ -72,7 +72,7 @@
 - [x] create test templates following tdd principles
 - [x] adding tests to husky
 - [x] set up test coverage reporting
-- [ ] configure github actions for ci testing
+- [x] configure github actions for ci testing
 - [ ] create docker test environment
 - [ ] set up test containers
 - [ ] configure test database container

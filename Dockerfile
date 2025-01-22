@@ -21,3 +21,8 @@ FROM base AS production
 ENV NODE_ENV=production
 RUN npm run build
 CMD ["node", "dist/server.js"]
+
+# stage 5: testing
+FROM base AS testing
+ENV NODE_ENV=test
+CMD ["npm", "test"]
