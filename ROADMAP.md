@@ -73,7 +73,7 @@
 - [x] adding tests to husky
 - [x] set up test coverage reporting
 - [x] configure github actions for ci testing
-- [ ] create docker test environment
+- [x] create docker test environment
 - [ ] set up test containers
 - [ ] configure test database container
 - [ ] implement integration test environment
@@ -88,7 +88,7 @@
       if (process.env.NODE_ENV === 'test') {
       process.env.DATABASE_URL = process.env.TEST_DATABASE_URL;
       }
-- [ ] create database connection configuration for dev/prod environments
+- [ ] create database connection configuration for development/production/testing environments
 - [ ] implement environment-based database switching
 - [ ] set up supabase project
 - [ ] create database sync mechanism between local and Supabase

@@ -24,5 +24,5 @@ CMD ["node", "dist/server.js"]
 
 # stage 5: testing
 FROM base AS testing
-ENV NODE_ENV=test
+ENV NODE_ENV=testing
 CMD ["npm", "test"]

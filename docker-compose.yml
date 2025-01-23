@@ -8,12 +8,12 @@ services:
       - .:/app
 
   # development service
-  dev:
+  development:
     build:
       context: .
       target: development
     environment:
-      - NODE_ENV=dev
+      - NODE_ENV=development
     volumes:
       - .:/app
     ports:
@@ -24,12 +24,12 @@ services:
         condition: service_completed_successfully
 
   # production service
-  prod:
+  production:
     build:
       context: .
       target: production
     environment:
-      - NODE_ENV=prod
+      - NODE_ENV=production
     ports:
       - "3000:3000"
     command: ["node", "dist/server.js"]
@@ -38,12 +38,12 @@ services:
         condition: service_completed_successfully
 
 # testing service
-  test:
+  testing:
     build:
       context: .
       target: testing
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=testing
     ports:
       - "3000:3000"
     command: ["npm", "test"]
