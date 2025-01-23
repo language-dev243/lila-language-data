@@ -7,6 +7,28 @@ services:
     volumes:
       - .:/app
 
+  # development database service
+  development_database:
+    image: postgres:15-alpine
+    container_name: development_database
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "5432:5432" # Expose on a different port (5433) to avoid conflicts
+    volumes:
+      - development_database_data:/var/lib/postgresql/data
+
+  # testing database service
+  testing_database:
+    image: postgres:15-alpine
+    container_name: testing_database
+    environment:
+      - NODE_ENV=testing
+    ports:
+      - "5433:5433" # Expose on a different port (5433) to avoid conflicts
+    volumes:
+      - testing_database_data:/var/lib/postgresql/data
+
   # development service
   development:
     build:
@@ -50,3 +72,7 @@ services:
     depends_on:
       quality:
         condition: service_completed_successfully
+
+volumes:
+  development_database_data:
+  testing_database_data:
