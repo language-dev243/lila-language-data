@@ -14,7 +14,7 @@ services:
     environment:
       - NODE_ENV=development
     ports:
-      - "5432:5432" # Expose on a different port (5433) to avoid conflicts
+      - "5432:5432"
     volumes:
       - development_database_data:/var/lib/postgresql/data
 
@@ -25,7 +25,7 @@ services:
     environment:
       - NODE_ENV=testing
     ports:
-      - "5433:5433" # Expose on a different port (5433) to avoid conflicts
+      - "5433:5433"
     volumes:
       - testing_database_data:/var/lib/postgresql/data
 
@@ -59,7 +59,7 @@ services:
       quality:
         condition: service_completed_successfully
 
-# testing service
+  # testing service
   testing:
     build:
       context: .
