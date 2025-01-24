@@ -4,11 +4,9 @@
 - local test postgres database, in sync with supabase
 - dev app connects to local db, prod app to supabase
 
-
 ---
 
 Next tasks:
-
 
 1. Configure GitHub Actions for CI Testing
 
@@ -62,7 +60,6 @@ https://jestjs.io/docs/testing-frameworks
 
 Phase 2: Core Infrastructure (Weeks 3-4)
 
-
 ---
 
 6. Set Up Local PostgreSQL Database for Development
@@ -70,8 +67,6 @@ Phase 2: Core Infrastructure (Weeks 3-4)
 Install and configure PostgreSQL locally or as a Docker container for development. Create a development database and set up connection credentials in .env files. Configure the application to use this database during local development.
 
 Documentation: PostgreSQL Documentation
-
-
 
 ---
 
@@ -81,8 +76,6 @@ Create a centralized configuration for managing database connections. Use enviro
 
 Documentation: Node.js PostgreSQL Guide
 
-
-
 ---
 
 8. Implement Environment-Based Database Switching
@@ -90,8 +83,6 @@ Documentation: Node.js PostgreSQL Guide
 Enable dynamic database switching based on the NODE_ENV variable. For example, use the test database when running tests and the development database during local development. Update configuration files to handle this switching seamlessly.
 
 Documentation: dotenv for Environment Variables
-
-
 
 ---
 
@@ -101,8 +92,6 @@ Create a project in Supabase and configure it with the necessary tables, schemas
 
 Documentation: Supabase Documentation
 
-
-
 ---
 
 10. Create Database Sync Mechanism Between Local and Supabase
@@ -110,8 +99,6 @@ Documentation: Supabase Documentation
 Implement a mechanism to sync your local database schema and data with the Supabase database. Use tools like pg_dump for exporting and psql for importing schemas and data. Automate the process with scripts for ease of use.
 
 Documentation: PostgreSQL pg_dump
-
-
 
 ---
 
@@ -121,8 +108,6 @@ Define your database schema based on test-driven development principles. Write t
 
 Documentation: Database Design Basics
 
-
-
 ---
 
 12. Write Tests for Database Schema
@@ -130,8 +115,6 @@ Documentation: Database Design Basics
 Write test cases that validate schema elements, including tables, columns, relations, and constraints. Use tools like Jest with database libraries to automate schema testing. Incorporate these tests into your CI pipeline.
 
 Documentation: Jest and Databases
-
-
 
 ---
 
@@ -141,8 +124,6 @@ Plan the structure of the adjectives table. Include fields such as singular/plur
 
 Documentation: PostgreSQL Table Creation
 
-
-
 ---
 
 14. Set Up Relations
@@ -150,8 +131,6 @@ Documentation: PostgreSQL Table Creation
 Define relationships between the adjectives table and other tables. For instance, create a relation between adjectives and translations using foreign keys. Ensure relationships are designed for scalability and data integrity.
 
 Documentation: PostgreSQL Table Relationships
-
-
 
 ---
 
@@ -161,8 +140,6 @@ Add indexes to frequently queried columns, such as singular_masculine or plural_
 
 Documentation: PostgreSQL Indexing Guide
 
-
-
 ---
 
 16. Configure Database Access
@@ -170,8 +147,6 @@ Documentation: PostgreSQL Indexing Guide
 Set up roles and permissions for the database. Create separate roles for development, testing, and production environments to enforce security best practices. Use connection pooling for efficient database access.
 
 Documentation: PostgreSQL Role Management
-
-
 
 ---
 
@@ -181,8 +156,6 @@ Define environment variables for database connection strings, API keys, and othe
 
 Documentation: dotenv
 
-
-
 ---
 
 18. Create Database Migration Scripts
@@ -190,8 +163,6 @@ Documentation: dotenv
 Use a migration tool like knex or sequelize-cli to manage schema changes. Write scripts to add, modify, or remove database objects. Store these migration files in version control for traceability.
 
 Documentation: Knex Migrations
-
-
 
 ---
 
@@ -201,8 +172,6 @@ Create a database container using Docker. Configure it with volumes for persiste
 
 Documentation: Docker PostgreSQL Setup
 
-
-
 ---
 
 20. Configure Persistence Volume
@@ -210,8 +179,6 @@ Documentation: Docker PostgreSQL Setup
 Attach a volume to the database container for storing data persistently. This ensures data is not lost when the container restarts. Use named volumes in your Docker configuration.
 
 Documentation: Docker Volumes
-
-
 
 ---
 
@@ -221,8 +188,6 @@ Add a service in docker-compose.yml to automate database backups. Use PostgreSQL
 
 Documentation: PostgreSQL Backup and Restore
 
-
-
 ---
 
 22. Implement Health Checks
@@ -231,9 +196,6 @@ Configure health checks for your database container to monitor its availability.
 
 Documentation: PostgreSQL pg_isready
 
-
-
 ---
 
 Each point now provides a detailed description of what to do to complete the task, along with a link to the relevant documentation. Let me know if you need more assistance!
-
