@@ -84,21 +84,15 @@
 
 - [x] set up local PostgreSQL database for development
 - [x] create database connection configuration for development/production/testing environments
-- [ ] implement environment-based database switching
-- [ ] set up supabase project
-- [ ] create database sync mechanism between local and Supabase
-- [ ] create database schema with tdd approach
+- [x] set up supabase project
 - [ ] write tests for database schema
-- [ ] define tables for adjectives
-- [ ] set up relations
-- [ ] create indexes
-- [ ] configure database access
-- [ ] set up environment variables
-- [ ] create database migration scripts
-- [ ] set up database container
-- [ ] configure persistence volume
+- [x] define tables for adjectives
+- [x] configure database access
+- [x] set up environment variables
+- [x] set up database container
+- [x] configure persistence volume
 - [ ] set up backup container
-- [ ] implement health checks
+- [x] implement health checks
 
 ### 2.2 api integration (3-4 days)
 
