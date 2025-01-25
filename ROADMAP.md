@@ -76,7 +76,6 @@
 - [x] create docker test environment
 - [x] set up test containers
 - [x] configure test database container
-- [ ] implement integration test environment
 
 ## phase 2: core infrastructure (weeks 3-4)
 
@@ -85,13 +84,13 @@
 - [x] set up local PostgreSQL database for development
 - [x] create database connection configuration for development/production/testing environments
 - [x] set up supabase project
-- [ ] write tests for database schema
 - [x] define tables for adjectives
 - [x] configure database access
 - [x] set up environment variables
 - [x] set up database container
 - [x] configure persistence volume
 - [ ] set up backup container
+- [ ] automated sync supabase <=> local db
 - [x] implement health checks
 
 ### 2.2 api integration (3-4 days)
