@@ -74,21 +74,16 @@
 - [x] set up test coverage reporting
 - [x] configure github actions for ci testing
 - [x] create docker test environment
-- [ ] set up test containers
-- [ ] configure test database container
+- [x] set up test containers
+- [x] configure test database container
 - [ ] implement integration test environment
 
 ## phase 2: core infrastructure (weeks 3-4)
 
 ### 2.1 database setup (2-3 days)
 
-- [ ] set up local PostgreSQL database for development
-      (also connect to jest), see
-      // jest.setup.js
-      if (process.env.NODE_ENV === 'test') {
-      process.env.DATABASE_URL = process.env.TEST_DATABASE_URL;
-      }
-- [ ] create database connection configuration for development/production/testing environments
+- [x] set up local PostgreSQL database for development
+- [x] create database connection configuration for development/production/testing environments
 - [ ] implement environment-based database switching
 - [ ] set up supabase project
 - [ ] create database sync mechanism between local and Supabase
