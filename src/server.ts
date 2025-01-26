@@ -3,7 +3,22 @@ import chalk from "chalk";
 async function main() {
   try {
     console.log("hello world");
+
+    // libretranslate container is working and running
+    // local database container is working and running
+
     // step 1: reading source file => wordsFromSource
+    // what if file not exists
+    // what if file is empty
+    // what if file contains no array
+    // what if file contains an array not only containing strings
+    // what if file contains an array of 303004040 strings
+    // if more then 10 strings in the array, only process the first ten
+
+    // step x: determine language via libretranslate
+    // and put the words in their corresponding arrays, e.g. newEnglishWords, newSpanishWords
+    // step x:
+
     // step 2: reading database => wordsInDatabase
     // step 3: compare wordsFromSource and wordsInDatabase, the words that are not in the database get further processed
     // step 4: check if word exists in wiktionary, if not, it gets saved in database table words not in wiktionary, if exists go to next step

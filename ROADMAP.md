@@ -1,6 +1,6 @@
 # detailed development roadmap
 
-38 of 206 tasks finished (18.45%)
+56 of 197 tasks finished (28.43%)
 
 ## phase 1: foundation setup (weeks 1-2)
 
