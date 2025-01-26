@@ -95,6 +95,7 @@
 
 ### 2.2 api integration (3-4 days)
 
+- [ ] set up libre translate container
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
 - [ ] implement wiktionary api integration
