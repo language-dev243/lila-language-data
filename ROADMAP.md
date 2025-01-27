@@ -99,8 +99,6 @@
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
 - [ ] implement wiktionary api integration
-- [ ] implement dict.cc api integration
-- [ ] implement wordreference api integration
 - [ ] implement rate limiting
 - [ ] add request caching
 - [ ] create api error handling
@@ -110,21 +108,9 @@
 - [ ] configure api caching layer
 - [ ] implement service discovery
 
-### 2.3 file system structure (2-3 days)
-
-- [ ] set up data directory structure
-- [ ] create source directory
-- [ ] set up processed directory
-- [ ] configure backup directory
-- [ ] implement file handling utilities with tdd
-- [ ] create json parsing utilities
-- [ ] set up csv handling
-- [ ] configure docker volumes
-- [ ] set up persistent storage
-- [ ] implement backup volumes
-- [ ] configure shared volumes
-
 ### 2.4 Server Setup (2-3 days)
+
+this will be done later
 
 - [ ] set up Express/Node HTTP server
 - [ ] configure port listening (development and production ports)
