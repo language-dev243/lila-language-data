@@ -1,51 +1,48 @@
 import chalk from "chalk";
 
+import {readingSourceFile} from "@utils/readingSourceFile";
+import {detectingLanguages} from "@utils/detectingLanguages";
+import {checkingDatabase} from "@utils/checkingDatabase";
+import {handlingEnglishWords} from "@controllers/english/handlingEnglishWords";
+import {handlingFrenchWords} from "@controllers/french/handlingFrenchWords";
+import {handlingGermanWords} from "@controllers/german/handlingGermanWords";
+import {handlingItalianWords} from "@controllers/italian/handlingItalianWords";
+import {handlingSpanishWords} from "@controllers/spanish/handlingSpanishWords";
+
 async function main() {
   try {
-    console.log("hello world");
+    console.log(`${chalk.blue("💡 starting word processing pipeline\n")}`);
+    // console.log(`${chalk.green("✅ words found")}`);
+    // console.log(`${chalk.red("❌ json file is empty or has no data rows")}`);
 
-    // step 1: reading source file => wordsFromSource array
-    // what if file not exists
-    // what if file is empty
-    // what if file contains no array
-    // what if file contains an array not only containing strings
-    // what if file contains an array of 303004040 strings
+    // step 1: reading source file
+    // return array of strings
+    await readingSourceFile();
 
-    // step 2: determine language via libretranslate
-    // and put the words in their corresponding arrays, e.g. newEnglishWords, newSpanishWords etc
-    // store all detected languages in a variable for step 3
+    // step 2: determine languages via libretranslate
+    // save words and corresponding languages into newWordsObject
+    // and return newWordsObject
+    await detectingLanguages();
 
-    // step 3: reading database (only the languages detected in step 2)
-    // and put the words in their corresponding arrays, e.g. englishWordsInDatabase, spanishWordsInDatabase etc
+    // step x: check database against newWordsObject
+    // and return newWordsObject without the words that are already in the db
+    // newWordsObject will look like this
+    // newWordsObject = {
+    //   english: ["red"],
+    //   spanish: ["rojo", "grande"]
+    // }
+    await checkingDatabase();
 
-    // step 4: compare wordsFromSource and wordsInDatabase
-    // the words that are not in the database get further processed
-
-    // step 5: check if word exists in wiktionary
-    // if not, it gets saved in database
-    // if exists go to next step
-
-    // step 6: determine word category from wiktionary
-    // if no word categroy is found, it gets saved in database
-    // if the category is found, send the word to the corresponding function, e.g. handlingSpanishAdjectives, handlingGermanNounds
-    // these functions handle everything specific to the categroy, e.g. singular/plural, inflections
-
-    // step 6: check if ipa exist in wiktionary
-    // if not, it gets save in database
-    // if exists go to next step
-
-    // step 7: check if syllabification exist in wiktionary
-    // if not, it gets save in database table words without syllabification
-    // if exists go to next step
-
-    // step 8: get translations from self hosted libre translate
-    // if not all translations are found, save them in the database
-
-    // step 9: save the processed words to the database
-
-    // step 10: console.log summary
-    // how many processed words, what languages
-    // how many succesfully written, how many have not all atributes etc
+    // need help here with how to iterate here
+    // if newWordsObject has english key with values then
+    // give the values to the handlingEnglishWords function
+    // same for every other possilbe key
+    // the supported languages will be: english, spanish, frensch, italian, german
+    await handlingEnglishWords();
+    await handlingFrenchWords();
+    await handlingGermanWords();
+    await handlingItalianWords();
+    await handlingSpanishWords();
   } catch (error) {
     console.error(
       `${chalk.red("Unexpected error:", (error as Error).message)}\n`,
