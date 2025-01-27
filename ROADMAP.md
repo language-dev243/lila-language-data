@@ -99,6 +99,7 @@
 - [ ] add volume to keep language data
 - [ ] startup script for first start of libretranslate container (downloading language data)
 - [ ] startup script for every other start (updating language data)
+- [ ] refactoring dockerfile and docker compose file
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
 - [ ] implement wiktionary api integration
