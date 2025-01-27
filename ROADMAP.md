@@ -95,7 +95,10 @@
 
 ### 2.2 api integration (3-4 days)
 
-- [ ] set up libre translate container
+- [x] set up libre translate container
+- [ ] add volume to keep language data
+- [ ] startup script for first start of libretranslate container (downloading language data)
+- [ ] startup script for every other start (updating language data)
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
 - [ ] implement wiktionary api integration

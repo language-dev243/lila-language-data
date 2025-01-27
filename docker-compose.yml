@@ -26,6 +26,17 @@ services:
       timeout: 5s
       retries: 5
 
+  # libretranslate service
+  libretranslate:
+    build:
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "5000:5000"
+    command: ["libretranslate", "--update-models", "--load-only en,es,fr,it,de"]
+
   # development service
   development:
     build:
