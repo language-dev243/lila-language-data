@@ -6,25 +6,14 @@
 
 ### 1.1 project initialization (2-3 days)
 
-#### 1.1.1 set up new directory structure
-
 - [x] adopted folder structure from [typescript node starter](https://github.com/microsoft/TypeScript-Node-Starter)
-
-#### 1.1.2 create initial package.json
-
 - [x] read [package.json documentation](https://docs.npmjs.com/cli/v11/configuring-npm/package-json)
 - [x] added license GPLv3
 - [x] defined name, version, author, github url
 - [x] configured module type (esm)
 - [x] set up basic scripts (dev, build, start)
-
-#### 1.1.3 create .gitignore file
-
-- [x] add node_modules, dist, .env, etc.
-
-#### 1.1.4 set up readme.md with basic project description
-
-- [x] adding description
+- [x] create .gitignore file, add node_modules, dist, .env, etc.
+- [x] set up readme
 
 ### 1.2 adding docker
 
@@ -36,6 +25,13 @@
 - [x] add .dockerignore file
 - [x] create docker-compose.yml
 - [x] configure development environment
+- [ ] set up libre translate container
+- [ ] development depends on development database and libretranslate container
+- [ ] add volume to libretranslate container to keep language data
+- [ ] startup script for first start of libretranslate container (downloading language data)
+- [ ] startup script for every other start (updating language data)
+- [ ] refactoring dockerfile and docker compose file
+- [ ] set up backup strategy + backup container
 
 ### 1.3 typescript configuration (1-2 days)
 
@@ -79,6 +75,11 @@
 
 ## phase 2: core infrastructure (weeks 3-4)
 
+### 2.0.1 documentation of infrasctructure
+
+- [ ] add comments to all config files
+- [ ] README.md: describe interconnection between all tools, add badges etc
+
 ### 2.1 database setup (2-3 days)
 
 - [x] set up local PostgreSQL database for development
@@ -89,20 +90,15 @@
 - [x] set up environment variables
 - [x] set up database container
 - [x] configure persistence volume
-- [ ] set up backup container
-- [ ] automated sync supabase <=> local db
 - [x] implement health checks
+- [ ] automated sync supabase <=> local db
 
 ### 2.2 api integration (3-4 days)
 
-- [x] set up libre translate container
-- [ ] add volume to keep language data
-- [ ] startup script for first start of libretranslate container (downloading language data)
-- [ ] startup script for every other start (updating language data)
-- [ ] refactoring dockerfile and docker compose file
+- [ ] add function structure via files
 - [ ] set up external api clients using tdd
 - [ ] write integration tests first
-- [ ] implement wiktionary api integration
+- [ ] implement wiktionary api integration (add wiktionary license)
 - [ ] implement rate limiting
 - [ ] add request caching
 - [ ] create api error handling
@@ -111,20 +107,6 @@
 - [ ] set up api proxy container
 - [ ] configure api caching layer
 - [ ] implement service discovery
-
-### 2.4 Server Setup (2-3 days)
-
-this will be done later
-
-- [ ] set up Express/Node HTTP server
-- [ ] configure port listening (development and production ports)
-- [ ] implement graceful shutdown handling
-- [ ] set up process manager (PM2 or similar)
-- [ ] create health check endpoints
-- [ ] implement basic API routing structure
-- [ ] set up environment-specific configurations
-- [ ] create server startup scripts
-- [ ] implement logging for server events
 
 ## phase 3: core features (weeks 5-7)
 
@@ -165,6 +147,18 @@ this will be done later
 - [ ] set up error monitoring containers
 - [ ] configure log aggregation
 - [ ] set up error tracking service
+
+### 3.4 Server Setup (2-3 days)
+
+- [ ] set up Express/Node HTTP server
+- [ ] configure port listening (development and production ports)
+- [ ] implement graceful shutdown handling
+- [ ] set up process manager (PM2 or similar)
+- [ ] create health check endpoints
+- [ ] implement basic API routing structure
+- [ ] set up environment-specific configurations
+- [ ] create server startup scripts
+- [ ] implement logging for server events
 
 ## phase 4: quality assurance (weeks 8-9)
 
