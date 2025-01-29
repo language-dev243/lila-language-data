@@ -95,35 +95,27 @@
 
 ### 2.2 api integration (3-4 days)
 
-- [ ] add function structure via files
-- [ ] set up external api clients using tdd
-- [ ] write integration tests first
-- [ ] implement wiktionary api integration (add wiktionary license)
-- [ ] implement rate limiting
-- [ ] add request caching
-- [ ] create api error handling
-- [ ] set up retry mechanisms
-- [ ] containerize api services
-- [ ] set up api proxy container
-- [ ] configure api caching layer
-- [ ] implement service discovery
+- [ ] set up external API clients (e.g., LibreTranslate, Wiktionary)
+- [ ] implement API rate limiting and retries
+- [ ] add caching mechanisms for frequent API requests
+- [ ] create reusable API service modules
+- [ ] containerize API services (Docker)
+- [ ] write unit and integration tests for API functionality
+- [ ] handle API errors robustly and log appropriately
 
 ## phase 3: core features (weeks 5-7)
 
 ### 3.1 word processing pipeline (1 week)
 
-- [ ] implement base word processor using tdd
-- [ ] write tests for each processor component
-- [ ] implement components following red-green-refactor
-- [ ] create word validation system
-- [ ] build inflection processor
-- [ ] develop ipa fetcher
-- [ ] create syllabification processor
-- [ ] implement translation fetcher
-- [ ] add audio file handler
-- [ ] containerize processing pipeline
-- [ ] set up worker containers
-- [ ] configure processing queue
+- [ ] implement a language processing pipeline:
+  - [ ] read words from a source file (`readingSourceFile`)
+  - [ ] detect languages via LibreTranslate (`detectingLanguages`)
+  - [ ] check against the database and filter out existing entries (`checkingDatabase`)
+  - [ ] process language-specific words using modular handlers (english, french, spanish, etc.)
+  - [ ] handle linguistic tasks: inflections, syllabification, IPA fetching, etc.
+  - [ ] fetch translations and save results back to the database
+- [ ] log pipeline metrics (success/failure statistics)
+- [ ] containerize the pipeline for scalability
 
 ### 3.2 data management (1 week)
 
