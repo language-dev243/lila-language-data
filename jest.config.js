@@ -5,12 +5,21 @@
 
 /** @type {import('jest').Config} */
 const config = {
-  preset: "ts-jest",
+  preset: "ts-jest/presets/default-esm",
   testEnvironment: "node",
+  verbose: true,
   coverageReporters: [
     ["json", {skipFull: true}],
     ["text", {skipFull: true}],
   ],
+  transform: {
+    "^.+\\.tsx?$": ["ts-jest", {useESM: true}],
+  },
+  extensionsToTreatAsEsm: [".ts"],
+  testPathIgnorePatterns: ["./dist"],
+  moduleNameMapper: {
+    "^@utils/(.*)$": "<rootDir>/src/utils/$1", // Resolves path aliases
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
