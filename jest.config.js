@@ -18,6 +18,7 @@ const config = {
   extensionsToTreatAsEsm: [".ts"],
   testPathIgnorePatterns: ["./dist"],
   moduleNameMapper: {
+    "^(\\.{1,2}/.*)\\.js$": "$1",
     "^@utils/(.*)$": "<rootDir>/src/utils/$1", // Resolves path aliases
   },
   // All imported modules in your tests should be mocked automatically
@@ -33,7 +34,7 @@ const config = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,

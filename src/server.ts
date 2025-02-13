@@ -17,7 +17,8 @@ async function main() {
 
     // step 1: reading source file
     // return array of strings
-    await readingSourceFile();
+    const words: Words = await readingSourceFile();
+    console.log("words: ", words);
 
     // step 2: determine languages via libretranslate
     // save words and corresponding languages into newWordsObject

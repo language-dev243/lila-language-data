@@ -1,11 +1,33 @@
-export async function readingSourceFile() {
-  console.log("hello from readingSourceFile");
-  const wordsArray = ["rojo", "grande", "armadillo"];
-  return wordsArray;
-}
+import fs from "fs/promises";
+import chalk from "chalk";
 
-// what if file not exists
-// what if file is empty
-// what if file contains no array
-// what if file contains an array not only containing strings
-// what if file contains an array of 303004040 strings
+export async function readingSourceFile(): Promise<Words> {
+  console.log(`${chalk.white("💡 reading new words")}`);
+
+  const filePath: FilePath = "data/spanish_adjectives.json";
+  let words: Words = [];
+
+  try {
+    const fileContent = await fs.readFile(filePath, "utf8");
+    const parsedData = JSON.parse(fileContent) as Words;
+
+    if (!Array.isArray(parsedData) || parsedData.length === 0) {
+      console.warn(
+        `${chalk.red("❌ json file is empty or has no data rows")}\n`,
+      );
+      return [];
+    }
+
+    words = parsedData as Words;
+    console.log(
+      `${chalk.green("✅", words.length, "words found in source file\n")}`,
+    );
+  } catch (error) {
+    console.log(
+      `${chalk.red("Unexpected error:", (error as Error).message)}\n`,
+    );
+    throw error;
+  }
+
+  return words;
+}
