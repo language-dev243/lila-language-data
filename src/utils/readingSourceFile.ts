@@ -4,7 +4,7 @@ import chalk from "chalk";
 export async function readingSourceFile(): Promise<Words> {
   console.log(`${chalk.white("💡 reading new words")}`);
 
-  const filePath: FilePath = "data/source.json";
+  const filePath: FilePath = "data/spanish_adjectives.json";
   let words: Words = [];
 
   try {
