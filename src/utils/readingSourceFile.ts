@@ -4,7 +4,7 @@ import chalk from "chalk";
 export async function readingSourceFile(): Promise<Words> {
   console.log(`${chalk.white("💡 reading new words")}`);
 
-  const filePath: FilePath = "data/spanish_adjectives.json";
+  const filePath: FilePath = "data/source.json";
   let words: Words = [];
 
   try {
@@ -23,7 +23,7 @@ export async function readingSourceFile(): Promise<Words> {
       `${chalk.green("✅", words.length, "words found in source file\n")}`,
     );
   } catch (error) {
-    console.log(
+    console.error(
       `${chalk.red("Unexpected error:", (error as Error).message)}\n`,
     );
     throw error;
