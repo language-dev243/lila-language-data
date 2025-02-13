@@ -108,7 +108,7 @@
 ### 3.1 word processing pipeline (1 week)
 
 - [ ] implement a language processing pipeline:
-  - [ ] read words from a source file (`readingSourceFile`)
+  - [x] read words from a source file (`readingSourceFile`)
   - [ ] detect languages via LibreTranslate (`detectingLanguages`)
   - [ ] check against the database and filter out existing entries (`checkingDatabase`)
   - [ ] process language-specific words using modular handlers (english, french, spanish, etc.)
